@@ -1,0 +1,11 @@
+{
+  "name": "ms-agency",
+  "version": "1.0.0",
+  "description": "MS Agency - Agence web parisienne pour commerces locaux",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve . -l 3000"
+  },
+  "author": "MS Agency",
+  "license": "MIT"
+}
