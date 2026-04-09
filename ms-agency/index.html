@@ -3,439 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MS Agency — Agence web parisienne. On cree votre site internet en 48h. Restaurants, artisans, commerces locaux. A partir de 490€.">
+  <meta name="description" content="MS Agency — Sites internet pour commerces locaux. Design sur mesure, livraison 48h, a partir de 490€. Paris et Ile-de-France.">
   <title>MS Agency — Votre site web en 48h</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Epilogue:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --black: #080808;
-      --black-2: #111111;
-      --black-3: #1A1A1A;
-      --gold: #E8A020;
-      --gold-dark: #C8881A;
-      --gold-light: #FFF3D6;
-      --white: #FFFFFF;
-      --off-white: #F5F4F0;
-      --text-muted: rgba(255,255,255,0.55);
-      --text-dim: rgba(255,255,255,0.35);
-      --border: rgba(255,255,255,0.08);
-      --border-gold: rgba(232,160,32,0.3);
-      --radius: 8px;
-      --radius-lg: 16px;
-    }
-
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Epilogue', -apple-system, sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      border-bottom: 1px solid var(--border);
-      background: rgba(8,8,8,0.92);
-      backdrop-filter: blur(16px);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
-    }
-    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 2px; }
-    .nav-logo-ms { font-family: 'Anton', sans-serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.05em; }
-    .nav-logo-agency { font-family: 'Anton', sans-serif; font-size: 1.4rem; color: var(--gold); letter-spacing: 0.05em; }
-    .nav-links { display: flex; gap: 0; list-style: none; }
-    .nav-links a {
-      color: var(--text-muted); text-decoration: none; font-size: 0.875rem;
-      font-weight: 500; padding: 8px 16px; transition: color 0.15s; cursor: pointer;
-    }
-    .nav-links a:hover { color: var(--white); }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-tel { color: var(--text-muted); font-size: 0.85rem; text-decoration: none; font-weight: 500; transition: color 0.15s; }
-    .nav-tel:hover { color: var(--white); }
-    .nav-cta {
-      background: var(--gold); color: var(--black); padding: 9px 20px;
-      border-radius: var(--radius); font-weight: 700; font-size: 0.875rem;
-      text-decoration: none; transition: all 0.15s; cursor: pointer; white-space: nowrap;
-    }
-    .nav-cta:hover { background: var(--gold-dark); }
-    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--white); }
-
-    /* ─── HERO ─── */
-    .hero {
-      min-height: 100vh; padding: 120px 32px 80px;
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
-      background: var(--black);
-    }
-    .hero-grid-bg {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-glow {
-      position: absolute; top: -200px; right: -100px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(232,160,32,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
-
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1px solid var(--border-gold);
-      background: rgba(232,160,32,0.06);
-      color: var(--gold); padding: 6px 14px; border-radius: 100px;
-      font-size: 0.78rem; font-weight: 700; margin-bottom: 28px;
-      letter-spacing: 0.5px; text-transform: uppercase;
-    }
-    .hero-tag-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: blink 2s infinite; }
-    @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-
-    .hero h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(3.2rem, 8vw, 7rem);
-      line-height: 0.95; letter-spacing: 0.01em;
-      margin-bottom: 28px;
-      text-transform: uppercase;
-    }
-    .hero h1 .gold { color: var(--gold); }
-    .hero h1 .outline {
-      -webkit-text-stroke: 2px var(--white);
-      color: transparent;
-    }
-
-    .hero-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-top: 48px; }
-    .hero-sub { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; max-width: 440px; }
-    .hero-actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
-    .btn-gold {
-      background: var(--gold); color: var(--black); padding: 15px 32px;
-      border-radius: var(--radius); font-weight: 800; font-size: 0.95rem;
-      text-decoration: none; transition: all 0.15s; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
-    }
-    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); }
-    .btn-outline-white {
-      background: transparent; color: var(--white); padding: 15px 32px;
-      border-radius: var(--radius); font-weight: 600; font-size: 0.95rem;
-      text-decoration: none; transition: all 0.15s; border: 1px solid var(--border);
-      display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
-    }
-    .btn-outline-white:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
-
-    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-    .hero-stat { background: var(--black-2); padding: 24px 20px; text-align: center; }
-    .hero-stat-val { font-family: 'Anton', sans-serif; font-size: 2.2rem; color: var(--gold); letter-spacing: 0.02em; line-height: 1; }
-    .hero-stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
-
-    /* ─── MARQUEE ─── */
-    .marquee { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0; overflow: hidden; background: var(--black-2); }
-    .marquee-track { display: flex; gap: 48px; animation: scroll 20s linear infinite; white-space: nowrap; }
-    .marquee-track:hover { animation-play-state: paused; }
-    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .marquee-item { font-family: 'Anton', sans-serif; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: center; gap: 20px; }
-    .marquee-sep { color: var(--gold); font-size: 1rem; }
-
-    /* ─── SERVICES ─── */
-    .services { padding: 100px 32px; background: var(--black); }
-    .container { max-width: 1200px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .section-label::before { content: ''; width: 24px; height: 1px; background: var(--gold); display: inline-block; }
-    .section-title { font-family: 'Anton', sans-serif; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 16px; }
-    .section-sub { color: var(--text-muted); max-width: 520px; }
-
-    .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 56px; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-    .service-card {
-      background: var(--black-2); padding: 36px 30px;
-      transition: background 0.2s; cursor: default;
-    }
-    .service-card:hover { background: var(--black-3); }
-    .service-num { font-family: 'Anton', sans-serif; font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 20px; }
-    .service-icon { width: 44px; height: 44px; border: 1px solid var(--border-gold); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 18px; }
-    .service-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
-    .service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
-    .service-tag { display: inline-block; background: rgba(232,160,32,0.1); color: var(--gold); border: 1px solid var(--border-gold); padding: 3px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; margin-top: 16px; letter-spacing: 0.3px; }
-
-    /* ─── PORTFOLIO ─── */
-    .portfolio { padding: 100px 32px; background: var(--black-2); }
-    .portfolio-header { margin-bottom: 56px; }
-    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .portfolio-card {
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      overflow: hidden; text-decoration: none; color: inherit;
-      transition: all 0.2s; display: block; position: relative;
-    }
-    .portfolio-card:hover { border-color: var(--border-gold); transform: translateY(-4px); }
-    .portfolio-preview {
-      height: 200px; position: relative;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-    }
-    .portfolio-preview-badge {
-      position: absolute; top: 14px; right: 14px;
-      background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);
-      color: rgba(255,255,255,0.8); padding: 3px 10px;
-      border-radius: 100px; font-size: 0.7rem; font-weight: 700;
-      border: 1px solid rgba(255,255,255,0.1); letter-spacing: 0.3px; text-transform: uppercase;
-    }
-    .portfolio-preview-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-    .portfolio-preview-icon svg { width: 24px; height: 24px; }
-    .portfolio-preview-title { font-weight: 800; font-size: 1rem; color: white; }
-    .portfolio-preview-sub { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
-    .portfolio-info { padding: 18px 20px; background: var(--black-3); display: flex; align-items: center; justify-content: space-between; }
-    .portfolio-info-left h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
-    .portfolio-info-left p { font-size: 0.78rem; color: var(--text-muted); }
-    .portfolio-arrow {
-      width: 32px; height: 32px; border: 1px solid var(--border);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      color: var(--text-muted); transition: all 0.15s; flex-shrink: 0;
-    }
-    .portfolio-card:hover .portfolio-arrow { border-color: var(--gold); color: var(--gold); }
-
-    /* ─── PROCESS ─── */
-    .process { padding: 100px 32px; background: var(--black); }
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 56px; }
-    .process-step { padding: 36px 28px; border-right: 1px solid var(--border); background: var(--black-2); position: relative; }
-    .process-step:last-child { border-right: none; }
-    .process-step-num {
-      font-family: 'Anton', sans-serif; font-size: 3rem; color: rgba(232,160,32,0.1);
-      line-height: 1; margin-bottom: 16px; letter-spacing: 0.02em;
-    }
-    .process-step h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 10px; }
-    .process-step p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
-    .process-step-tag {
-      display: inline-block; background: rgba(232,160,32,0.1); color: var(--gold);
-      padding: 3px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;
-      margin-top: 14px; letter-spacing: 0.3px;
-    }
-
-    /* ─── TARIFS ─── */
-    .tarifs { padding: 100px 32px; background: var(--black-2); }
-    .tarifs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
-    .tarif-card {
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      padding: 36px 28px; background: var(--black-3); transition: all 0.2s; position: relative;
-    }
-    .tarif-card:hover { border-color: var(--border-gold); }
-    .tarif-card.featured { border-color: var(--gold); background: linear-gradient(160deg, rgba(232,160,32,0.06) 0%, var(--black-3) 100%); }
-    .tarif-featured-badge {
-      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--gold); color: var(--black); padding: 4px 16px;
-      border-radius: 100px; font-size: 0.72rem; font-weight: 800; white-space: nowrap;
-    }
-    .tarif-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
-    .tarif-price { font-family: 'Anton', sans-serif; font-size: 3rem; color: var(--white); line-height: 1; letter-spacing: 0.02em; margin-bottom: 4px; }
-    .tarif-price span { font-family: 'Epilogue', sans-serif; font-size: 1.1rem; font-weight: 400; color: var(--text-muted); }
-    .tarif-desc { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 28px; }
-    .tarif-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
-    .tarif-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-    .tarif-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.86rem; color: rgba(255,255,255,0.8); }
-    .tarif-check { width: 16px; height: 16px; background: rgba(232,160,32,0.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; color: var(--gold); }
-    .tarif-btn {
-      width: 100%; padding: 13px; border-radius: var(--radius);
-      font-family: 'Epilogue', sans-serif; font-size: 0.9rem; font-weight: 700;
-      cursor: pointer; transition: all 0.15s; text-align: center; text-decoration: none; display: block;
-      border: 1px solid var(--border); background: transparent; color: var(--white);
-    }
-    .tarif-btn:hover { border-color: var(--gold); color: var(--gold); }
-    .tarif-card.featured .tarif-btn { background: var(--gold); color: var(--black); border-color: var(--gold); }
-    .tarif-card.featured .tarif-btn:hover { background: var(--gold-dark); }
-
-    /* ─── MAINTENANCE ─── */
-    .maintenance-strip {
-      margin-top: 16px; border: 1px solid var(--border); border-radius: var(--radius-lg);
-      padding: 28px 32px; background: var(--black-3);
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
-    }
-    .maintenance-strip-left { display: flex; align-items: center; gap: 16px; }
-    .maintenance-icon { width: 44px; height: 44px; border: 1px solid var(--border-gold); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; }
-    .maintenance-strip-left h4 { font-weight: 800; font-size: 0.95rem; margin-bottom: 2px; }
-    .maintenance-strip-left p { font-size: 0.82rem; color: var(--text-muted); }
-    .maintenance-price { font-family: 'Anton', sans-serif; font-size: 1.6rem; color: var(--gold); letter-spacing: 0.02em; text-align: right; }
-    .maintenance-price span { font-family: 'Epilogue', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--text-muted); display: block; }
-
-    /* ─── POURQUOI ─── */
-    .pourquoi { padding: 100px 32px; background: var(--black); }
-    .pourquoi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .pourquoi-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .pourquoi-block {
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      padding: 28px 22px; background: var(--black-2); transition: border-color 0.2s;
-    }
-    .pourquoi-block:hover { border-color: var(--border-gold); }
-    .pourquoi-block.wide { grid-column: 1 / -1; display: flex; align-items: center; gap: 18px; }
-    .pourquoi-block-icon { width: 40px; height: 40px; background: rgba(232,160,32,0.1); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; }
-    .pourquoi-block-val { font-family: 'Anton', sans-serif; font-size: 1.8rem; color: var(--gold); line-height: 1; }
-    .pourquoi-block-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
-    .pourquoi-text h2 { font-family: 'Anton', sans-serif; font-size: clamp(2rem, 4vw, 3rem); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.05; margin-bottom: 20px; }
-    .pourquoi-text p { color: var(--text-muted); margin-bottom: 18px; line-height: 1.7; }
-    .pourquoi-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 24px 0 32px; }
-    .pourquoi-list li { display: flex; gap: 12px; font-size: 0.9rem; color: rgba(255,255,255,0.85); align-items: flex-start; }
-    .pourquoi-check { width: 20px; height: 20px; background: rgba(232,160,32,0.12); border: 1px solid var(--border-gold); border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; color: var(--gold); }
-
-    /* ─── CONTACT ─── */
-    .contact { padding: 100px 32px; background: var(--black-2); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: start; }
-    .contact-info h2 { font-family: 'Anton', sans-serif; font-size: clamp(2rem, 4vw, 3rem); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.05; margin-bottom: 18px; }
-    .contact-info p { color: var(--text-muted); line-height: 1.7; margin-bottom: 32px; }
-    .contact-links { display: flex; flex-direction: column; gap: 14px; }
-    .contact-link {
-      display: flex; align-items: center; gap: 14px;
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      padding: 16px 20px; text-decoration: none; color: inherit; transition: all 0.15s;
-    }
-    .contact-link:hover { border-color: var(--border-gold); background: rgba(232,160,32,0.04); }
-    .contact-link-icon { width: 38px; height: 38px; background: rgba(232,160,32,0.1); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; }
-    .contact-link-text strong { display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 2px; }
-    .contact-link-text span { font-size: 0.8rem; color: var(--text-muted); }
-
-    .contact-form { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; background: var(--black-3); }
-    .contact-form h3 { font-family: 'Anton', sans-serif; font-size: 1.5rem; text-transform: uppercase; margin-bottom: 24px; letter-spacing: 0.03em; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.4px; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 12px 14px;
-      border: 1px solid var(--border); border-radius: var(--radius);
-      font-family: 'Epilogue', sans-serif; font-size: 0.875rem;
-      color: var(--white); background: var(--black-2);
-      transition: border-color 0.15s; outline: none;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
-    .form-group select option { background: var(--black-2); }
-    .form-group textarea { resize: vertical; min-height: 90px; }
-    .form-submit {
-      width: 100%; padding: 14px; background: var(--gold); color: var(--black);
-      border: none; border-radius: var(--radius); font-family: 'Epilogue', sans-serif;
-      font-size: 0.95rem; font-weight: 800; cursor: pointer; transition: all 0.15s; margin-top: 6px;
-    }
-    .form-submit:hover { background: var(--gold-dark); }
-    .form-note { font-size: 0.75rem; color: var(--text-dim); text-align: center; margin-top: 10px; }
-
-    /* ─── FOOTER ─── */
-    footer { padding: 56px 32px 28px; border-top: 1px solid var(--border); background: var(--black); }
-    .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
-    .footer-brand-name { font-family: 'Anton', sans-serif; font-size: 1.6rem; letter-spacing: 0.05em; margin-bottom: 12px; }
-    .footer-brand-name span { color: var(--gold); }
-    .footer-brand p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
-    .footer-brand-links { display: flex; flex-direction: column; gap: 6px; }
-    .footer-brand-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; transition: color 0.15s; }
-    .footer-brand-links a:hover { color: var(--white); }
-    .footer-col h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .footer-col ul li a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.15s; }
-    .footer-col ul li a:hover { color: var(--white); }
-    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-bottom p { font-size: 0.78rem; color: var(--text-dim); }
-    .footer-made { font-size: 0.78rem; color: var(--text-dim); display: flex; align-items: center; gap: 6px; }
-    .footer-made span { color: var(--gold); }
-
-    /* ─── REVEAL ─── */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      .nav-links, .nav-tel { display: none; }
-      .nav-hamburger { display: block; }
-      .hero h1 { font-size: clamp(2.8rem, 8vw, 5rem); }
-      .hero-bottom { grid-template-columns: 1fr; gap: 32px; }
-      .services-header { grid-template-columns: 1fr; gap: 16px; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .portfolio-grid { grid-template-columns: 1fr 1fr; }
-      .process-grid { grid-template-columns: 1fr 1fr; }
-      .process-step { border-right: none; border-bottom: 1px solid var(--border); }
-      .process-step:nth-child(2n) { border-right: none; }
-      .tarifs-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
-      .pourquoi-grid { grid-template-columns: 1fr; gap: 48px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .footer-top { grid-template-columns: 1fr; gap: 32px; }
-    }
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 2.8rem; }
-      .services-grid { grid-template-columns: 1fr; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr; }
-      .pourquoi-visual { grid-template-columns: 1fr; }
-      .pourquoi-block.wide { flex-direction: column; align-items: flex-start; }
-      .hero-stats { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .nav-inner { padding: 0 20px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <span class="nav-logo-ms">MS&nbsp;</span>
-      <span class="nav-logo-agency">Agency</span>
-    </a>
+  <div class="nav-pill" id="navPill">
+    <a href="index.html" class="nav-logo"><span class="ms">MS</span><span class="agency">&nbsp;Agency</span></a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="nav-right">
-      <a href="tel:0600000000" class="nav-tel">06 00 00 00 00</a>
-      <a href="#contact" class="nav-cta">Devis gratuit</a>
-    </div>
-    <button class="nav-hamburger" aria-label="Menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <a href="contact.html" class="nav-cta">Devis gratuit</a>
+    <button id="navBurger" class="nav-burger" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
 </nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="tarifs.html">Tarifs</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="nav-mobile-cta">Devis gratuit</a>
+</div>
 
 <!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
+<section class="hero">
+  <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-tag"><span class="hero-tag-dot"></span>Agence web — Paris &amp; Ile-de-France</div>
+    <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Agence web — Paris &amp; Ile-de-France</div>
     <h1>
       Votre commerce<br>
-      <span class="gold">merite</span> un<br>
-      <span class="outline">vrai site</span>
+      <span class="hero-gradient-text">merite mieux</span><br>
+      <span class="hero-dim-text">qu'une absence en ligne</span>
     </h1>
-    <div class="hero-bottom">
-      <div>
-        <p class="hero-sub">On cree des sites internet professionnels pour les commerces parisiens. Livraison en 48h, design sur mesure, a partir de 490€. Simohamed vient vous voir, on s'occupe du reste.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-gold">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Devis gratuit
-          </a>
-          <a href="#portfolio" class="btn-outline-white">Voir nos sites</a>
-        </div>
+    <p class="hero-sub">On cree des sites internet qui attirent de vrais clients. Design sur mesure, livraison en 48h. Simohamed passe vous voir, on s'occupe du reste.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Devis gratuit
+      </a>
+      <a href="portfolio.html" class="btn-secondary">Voir nos sites</a>
+    </div>
+    <div class="hero-proof">
+      <div class="hero-proof-item">
+        <div class="hero-proof-val">48H</div>
+        <div class="hero-proof-label">Livraison garantie</div>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-val">48H</div>
-          <div class="hero-stat-label">Delai de livraison</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-val">490€</div>
-          <div class="hero-stat-label">A partir de</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-val">5</div>
-          <div class="hero-stat-label">Secteurs couverts</div>
-        </div>
+      <div class="hero-proof-sep"></div>
+      <div class="hero-proof-item">
+        <div class="hero-proof-val">490€</div>
+        <div class="hero-proof-label">A partir de</div>
+      </div>
+      <div class="hero-proof-sep"></div>
+      <div class="hero-proof-item">
+        <div class="hero-proof-val">5+</div>
+        <div class="hero-proof-label">Secteurs couverts</div>
+      </div>
+      <div class="hero-proof-sep"></div>
+      <div class="hero-proof-item">
+        <div class="hero-proof-val">100%</div>
+        <div class="hero-proof-label">Sur mesure</div>
       </div>
     </div>
   </div>
@@ -444,509 +80,168 @@
 <!-- MARQUEE -->
 <div class="marquee">
   <div class="marquee-track">
-    <span class="marquee-item">Restaurant <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Garage <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Cabinet dentaire <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Artisan plombier <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Auto ecole <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Salon de coiffure <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Boucherie <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Pressing <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Restaurant <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Garage <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Cabinet dentaire <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Artisan plombier <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Auto ecole <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Salon de coiffure <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Boucherie <span class="marquee-sep">+</span></span>
-    <span class="marquee-item">Pressing <span class="marquee-sep">+</span></span>
+    <span class="marquee-item">Restaurant<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Garage automobile<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Cabinet dentaire<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Artisan plombier<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Auto ecole<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Salon de coiffure<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Boucherie halal<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pressing<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Opticien<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Restaurant<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Garage automobile<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Cabinet dentaire<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Artisan plombier<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Auto ecole<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Salon de coiffure<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Boucherie halal<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pressing<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Opticien<span class="marquee-dot"></span></span>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="services" id="services">
+<!-- SERVICES TEASER -->
+<section class="services-teaser">
   <div class="container">
-    <div class="services-header">
+    <div class="services-teaser-header">
       <div>
-        <div class="section-label">Nos services</div>
-        <h2 class="section-title">Ce qu'on<br>fait pour vous</h2>
+        <div class="label">Ce qu'on fait</div>
+        <h2 class="title">Tout ce dont vous<br>avez besoin</h2>
       </div>
-      <p class="section-sub">On ne vend pas juste un site. On vous donne une presence en ligne qui attire des clients et vous distingue de vos concurrents.</p>
+      <p class="sub">On ne vend pas juste un site. On vous donne une presence en ligne complete qui convertit les visiteurs en clients. Design, hebergement, SEO — tout compris.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-num">01</div>
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-        </div>
-        <h3>Site vitrine professionnel</h3>
-        <p>Design sur mesure adapte a votre secteur. Mobile, rapide, moderne. Votre commerce mis en valeur comme il le merite.</p>
-        <span class="service-tag">Livraison 48h</span>
+    <div class="highlights">
+      <div class="hl-card reveal">
+        <div class="hl-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Site vitrine en 48h</h3>
+        <p>Design sur mesure adapte a votre secteur. Mobile-first, rapide, moderne. Vous voyez votre futur site avant de signer.</p>
       </div>
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-num">02</div>
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        </div>
-        <h3>Referencement Google</h3>
-        <p>On optimise votre site pour apparaitre quand vos clients vous cherchent. SEO local, Google Maps, schema.org inclus.</p>
-        <span class="service-tag">SEO local</span>
+      <div class="hl-card reveal d1">
+        <div class="hl-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h3>SEO local Google</h3>
+        <p>Optimisation pour apparaitre en tete quand vos clients cherchent votre commerce dans leur quartier.</p>
       </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-num">03</div>
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <h3>Formulaires et prise de RDV</h3>
-        <p>Formulaire de contact, demande de devis, inscription en ligne. Vos clients vous contactent directement depuis le site.</p>
-        <span class="service-tag">Convertit</span>
+      <div class="hl-card reveal d2">
+        <div class="hl-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Hebergement + maintenance</h3>
+        <p>HTTPS, sauvegardes auto, disponibilite 99.9%. La 1ere annee est incluse. Maintenance optionnelle a 49€/mois.</p>
       </div>
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-num">04</div>
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Hebergement securise</h3>
-        <p>Hebergement inclus la premiere annee. HTTPS, sauvegarde automatique, disponibilite 99.9%. Pas de prise de tete.</p>
-        <span class="service-tag">1 an inclus</span>
-      </div>
-      <div class="service-card reveal reveal-delay-4">
-        <div class="service-num">05</div>
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <h3>Maintenance et mises a jour</h3>
-        <p>Vous voulez changer votre menu, vos horaires, vos prix ? On le fait pour vous. Contrat maintenance disponible.</p>
-        <span class="service-tag">Sur demande</span>
-      </div>
-      <div class="service-card reveal reveal-delay-5">
-        <div class="service-num">06</div>
-        <div class="service-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Mockup personnalise avant visite</h3>
-        <p>On cree un apercu de votre futur site avant de vous rencontrer. Vous arrivez avec quelque chose de concret a montrer.</p>
-        <span class="service-tag">Notre methode</span>
-      </div>
+    </div>
+    <div class="services-teaser-footer">
+      <p>+ Formulaires de contact, prise de RDV, galerie photos, et plus.</p>
+      <a href="services.html" class="btn-secondary">
+        Tous nos services
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="portfolio" id="portfolio">
+<!-- PORTFOLIO TEASER -->
+<section class="portfolio-section">
   <div class="container">
     <div class="portfolio-header">
-      <div class="section-label">Portfolio</div>
-      <h2 class="section-title reveal">Nos realisations</h2>
-      <p class="section-sub reveal reveal-delay-1">Des sites crees pour de vrais commerces. Cliquez pour les voir en direct.</p>
+      <div>
+        <div class="label">Portfolio</div>
+        <h2 class="title">Nos realisations</h2>
+      </div>
+      <a href="portfolio.html" class="btn-secondary">
+        Tout voir
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
     <div class="portfolio-grid">
 
-      <!-- Restaurant -->
-      <a href="../templates/restaurant-italien/" target="_blank" class="portfolio-card reveal">
-        <div class="portfolio-preview" style="background: linear-gradient(135deg, #1a0a00 0%, #3d1500 50%, #1a0a00 100%);">
-          <span class="portfolio-preview-badge">Restaurant</span>
-          <div class="portfolio-preview-icon" style="background: rgba(200,100,20,0.2); border: 1px solid rgba(200,100,20,0.4);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#E07820" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-          </div>
-          <div class="portfolio-preview-title">Le Comptoir</div>
-          <div class="portfolio-preview-sub">Restaurant traditionnel — Paris</div>
+      <a href="../templates/restaurant-italien/" target="_blank" class="p-card reveal">
+        <div class="p-preview" style="background:linear-gradient(135deg,#180800,#3d1200,#180800)">
+          <span class="p-badge">Restaurant</span>
+          <div class="p-icon" style="background:rgba(200,100,20,.18);border:1px solid rgba(200,100,20,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07820" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <div class="p-name">Le Comptoir</div>
+          <div class="p-sub">Restaurant traditionnel — Paris</div>
         </div>
-        <div class="portfolio-info">
-          <div class="portfolio-info-left">
-            <h4>Le Comptoir</h4>
-            <p>Menu en ligne · Reservation · Photos</p>
-          </div>
-          <div class="portfolio-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
+        <div class="p-footer">
+          <div class="p-footer-left"><h4>Le Comptoir</h4><p>Menu · Reservation · Photos</p></div>
+          <div class="p-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         </div>
       </a>
 
-      <!-- Dentiste -->
-      <a href="../templates/cabinet-dentaire/" target="_blank" class="portfolio-card reveal reveal-delay-1">
-        <div class="portfolio-preview" style="background: linear-gradient(135deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);">
-          <span class="portfolio-preview-badge">Sante</span>
-          <div class="portfolio-preview-icon" style="background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 2 .8 3.8 2 5l5 8 5-8c1.2-1.2 2-3 2-5 0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          </div>
-          <div class="portfolio-preview-title">Dr. Moreau</div>
-          <div class="portfolio-preview-sub">Cabinet dentaire — Paris 11e</div>
+      <a href="../templates/cabinet-dentaire/" target="_blank" class="p-card reveal d1">
+        <div class="p-preview" style="background:linear-gradient(135deg,#040e1e,#0a1e3a,#040e1e)">
+          <span class="p-badge">Sante</span>
+          <div class="p-icon" style="background:rgba(37,99,235,.18);border:1px solid rgba(37,99,235,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 2 .8 3.8 2 5l5 8 5-8c1.2-1.2 2-3 2-5 0-4-3-7-7-7z"/></svg></div>
+          <div class="p-name">Dr. Moreau</div>
+          <div class="p-sub">Cabinet dentaire — Paris 11e</div>
         </div>
-        <div class="portfolio-info">
-          <div class="portfolio-info-left">
-            <h4>Cabinet Dr. Moreau</h4>
-            <p>Prise de RDV · Services · Equipe</p>
-          </div>
-          <div class="portfolio-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
+        <div class="p-footer">
+          <div class="p-footer-left"><h4>Cabinet Dr. Moreau</h4><p>RDV · Services · Equipe</p></div>
+          <div class="p-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         </div>
       </a>
 
-      <!-- Garage -->
-      <a href="../templates/garage/" target="_blank" class="portfolio-card reveal reveal-delay-2">
-        <div class="portfolio-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1c1c1c 50%, #0a0a0a 100%);">
-          <span class="portfolio-preview-badge">Automobile</span>
-          <div class="portfolio-preview-icon" style="background: rgba(224,49,49,0.15); border: 1px solid rgba(224,49,49,0.3);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#E03131" stroke-width="1.5"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-4h12l2 4h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/></svg>
-          </div>
-          <div class="portfolio-preview-title">Garage Auto Renfort</div>
-          <div class="portfolio-preview-sub">Mecanique &amp; Carrosserie</div>
+      <a href="../templates/garage/" target="_blank" class="p-card reveal d2">
+        <div class="p-preview" style="background:linear-gradient(135deg,#080808,#181818,#080808)">
+          <span class="p-badge">Automobile</span>
+          <div class="p-icon" style="background:rgba(224,49,49,.15);border:1px solid rgba(224,49,49,.3)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E03131" stroke-width="1.5"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-4h12l2 4h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/></svg></div>
+          <div class="p-name">Garage Auto Renfort</div>
+          <div class="p-sub">Mecanique &amp; Carrosserie</div>
         </div>
-        <div class="portfolio-info">
-          <div class="portfolio-info-left">
-            <h4>Garage Auto Renfort</h4>
-            <p>Services · Tarifs · Devis rapide</p>
-          </div>
-          <div class="portfolio-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
+        <div class="p-footer">
+          <div class="p-footer-left"><h4>Garage Auto Renfort</h4><p>Services · Tarifs · Devis</p></div>
+          <div class="p-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         </div>
       </a>
-
-      <!-- Artisan -->
-      <a href="../templates/artisan-plombier/" target="_blank" class="portfolio-card reveal reveal-delay-3">
-        <div class="portfolio-preview" style="background: linear-gradient(135deg, #050c18 0%, #0f1f2e 50%, #050c18 100%);">
-          <span class="portfolio-preview-badge">Artisan</span>
-          <div class="portfolio-preview-icon" style="background: rgba(234,88,12,0.15); border: 1px solid rgba(234,88,12,0.3);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <div class="portfolio-preview-title">Plomberie Benali</div>
-          <div class="portfolio-preview-sub">Artisan — Paris &amp; Ile-de-France</div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-info-left">
-            <h4>Plomberie Benali</h4>
-            <p>Devis · Zones · Urgence 24h</p>
-          </div>
-          <div class="portfolio-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <!-- Auto ecole -->
-      <a href="../templates/auto-ecole/" target="_blank" class="portfolio-card reveal reveal-delay-4">
-        <div class="portfolio-preview" style="background: linear-gradient(135deg, #021a0a 0%, #03280f 50%, #021a0a 100%);">
-          <span class="portfolio-preview-badge">Auto ecole</span>
-          <div class="portfolio-preview-icon" style="background: rgba(0,200,83,0.12); border: 1px solid rgba(0,200,83,0.3);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00C853" stroke-width="1.5"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-4h12l2 4h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/><path d="M7.5 14.5h9"/></svg>
-          </div>
-          <div class="portfolio-preview-title">Auto Ecole Drive</div>
-          <div class="portfolio-preview-sub">Permis B — Argenteuil</div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-info-left">
-            <h4>Auto Ecole Drive</h4>
-            <p>Formules · Inscription · Moniteurs</p>
-          </div>
-          <div class="portfolio-arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <!-- CTA card -->
-      <div class="portfolio-card reveal reveal-delay-5" style="border-style: dashed; cursor: default; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 260px; gap: 14px; text-align: center; padding: 32px;">
-        <div style="width:48px;height:48px;border:1px solid var(--border-gold);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--gold);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </div>
-        <div>
-          <div style="font-weight:800;font-size:0.95rem;margin-bottom:6px;">Votre commerce ici</div>
-          <div style="font-size:0.82rem;color:var(--text-muted);">On cree votre site<br>sur mesure en 48h</div>
-        </div>
-        <a href="#contact" class="btn-gold" style="font-size:0.82rem;padding:10px 20px;">Demander un devis</a>
-      </div>
 
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process" id="process">
+<!-- STATS BAND -->
+<div class="stats-band">
   <div class="container">
-    <div class="section-label">Notre methode</div>
-    <h2 class="section-title reveal">Simple. Rapide.<br>Efficace.</h2>
-    <p class="section-sub reveal reveal-delay-1">Pas de jargon, pas de delais interminables. On s'adapte a vous — pas l'inverse.</p>
-    <div class="process-grid">
-      <div class="process-step reveal">
-        <div class="process-step-num">01</div>
-        <h3>On scrape votre zone</h3>
-        <p>On identifie les commerces sans site dans votre secteur via Google Maps. On prepare un mockup personnalise avant meme de sonner a la porte.</p>
-        <span class="process-step-tag">Notre outil propriétaire</span>
-      </div>
-      <div class="process-step reveal reveal-delay-1">
-        <div class="process-step-num">02</div>
-        <h3>Simohamed vous rend visite</h3>
-        <p>Il vous montre un apercu de votre futur site en live. Pas d'argumentaire generique — juste votre site, vos couleurs, votre nom.</p>
-        <span class="process-step-tag">Approche sur mesure</span>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="process-step-num">03</div>
-        <h3>On developpe en 48h</h3>
-        <p>Vous signez, on cree. Design final, textes, photos, formulaires. Tout est pret en 48 heures chrono. Vous validez avant mise en ligne.</p>
-        <span class="process-step-tag">Livraison garantie</span>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="process-step-num">04</div>
-        <h3>Mise en ligne et suivi</h3>
-        <p>On deploie votre site, on regle le SEO local, on vous forme en 10 minutes. Et on reste disponibles si vous avez besoin de nous.</p>
-        <span class="process-step-tag">SAV inclus</span>
-      </div>
+    <div class="stat-item reveal">
+      <div class="stat-val">48H</div>
+      <div class="stat-label">Livraison garantie</div>
+    </div>
+    <div class="stat-item reveal d1">
+      <div class="stat-val">490€</div>
+      <div class="stat-label">A partir de</div>
+    </div>
+    <div class="stat-item reveal d2">
+      <div class="stat-val">5+</div>
+      <div class="stat-label">Secteurs couverts</div>
+    </div>
+    <div class="stat-item reveal d3">
+      <div class="stat-val">100%</div>
+      <div class="stat-label">Sites sur mesure</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- TARIFS -->
-<section class="tarifs" id="tarifs">
-  <div class="container">
-    <div class="section-label">Tarifs</div>
-    <h2 class="section-title reveal">Des prix clairs,<br>sans surprise</h2>
-    <p class="section-sub reveal reveal-delay-1">Tout inclus. Pas de frais caches, pas d'abonnement force. Votre site vous appartient.</p>
-    <div class="tarifs-grid">
-
-      <div class="tarif-card reveal">
-        <div class="tarif-name">Starter</div>
-        <div class="tarif-price">490 <span>€ HT</span></div>
-        <div class="tarif-desc">L'essentiel pour exister en ligne. Ideal pour un premier site rapide et propre.</div>
-        <div class="tarif-divider"></div>
-        <ul class="tarif-features">
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Site 1 page (One-Page)</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Design personnalise</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Mobile optimise</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Formulaire de contact</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Hebergement 1 an inclus</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Livraison en 48h</li>
-        </ul>
-        <a href="#contact" class="tarif-btn">Choisir Starter</a>
-      </div>
-
-      <div class="tarif-card featured reveal reveal-delay-2">
-        <div class="tarif-featured-badge">Le plus demande</div>
-        <div class="tarif-name">Pro</div>
-        <div class="tarif-price">790 <span>€ HT</span></div>
-        <div class="tarif-desc">Le site complet qui convert vos visiteurs en clients. Notre recommandation.</div>
-        <div class="tarif-divider"></div>
-        <ul class="tarif-features">
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Site multi-pages (jusqu'a 5)</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Design premium sur mesure</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Galerie photos / menu en ligne</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Integration Google Maps + Avis</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>SEO local optimise</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Formulaire de devis / RDV</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Hebergement 1 an inclus</li>
-        </ul>
-        <a href="#contact" class="tarif-btn">Choisir Pro</a>
-      </div>
-
-      <div class="tarif-card reveal reveal-delay-4">
-        <div class="tarif-name">Premium</div>
-        <div class="tarif-price">1 290 <span>€ HT</span></div>
-        <div class="tarif-desc">Pour les commerces qui veulent se demarquer et dominer leur marche local.</div>
-        <div class="tarif-divider"></div>
-        <ul class="tarif-features">
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Tout du pack Pro</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Animations premium</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Prise de RDV en ligne</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Chatbot de contact</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Suivi Analytics mensuel</li>
-          <li><div class="tarif-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>3 mois de maintenance offerts</li>
-        </ul>
-        <a href="#contact" class="tarif-btn">Choisir Premium</a>
-      </div>
-
-    </div>
-
-    <div class="maintenance-strip reveal">
-      <div class="maintenance-strip-left">
-        <div class="maintenance-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <div>
-          <h4>Contrat de maintenance mensuel</h4>
-          <p>Mises a jour de contenu, corrections, sauvegardes. On gere tout, vous vous concentrez sur votre metier.</p>
-        </div>
-      </div>
-      <div>
-        <div class="maintenance-price">49 €<span>/mois — sans engagement</span></div>
-      </div>
-    </div>
-
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2 class="reveal">Pret a vous lancer ?</h2>
+  <p class="reveal d1">Simohamed se deplace chez vous avec votre site deja pret. Devis gratuit, sans engagement.</p>
+  <div class="cta-strip-btns reveal d2">
+    <a href="contact.html" class="btn-primary">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Devis gratuit
+    </a>
+    <a href="tarifs.html" class="btn-secondary">Voir les tarifs</a>
   </div>
-</section>
-
-<!-- POURQUOI -->
-<section class="pourquoi" id="pourquoi">
-  <div class="container">
-    <div class="pourquoi-grid">
-      <div class="pourquoi-visual reveal">
-        <div class="pourquoi-block">
-          <div class="pourquoi-block-val">48H</div>
-          <div class="pourquoi-block-label">Delai de livraison garanti</div>
-        </div>
-        <div class="pourquoi-block">
-          <div class="pourquoi-block-val">100%</div>
-          <div class="pourquoi-block-label">Sites faits sur mesure</div>
-        </div>
-        <div class="pourquoi-block wide">
-          <div class="pourquoi-block-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-          </div>
-          <div>
-            <div class="pourquoi-block-val">Simohamed</div>
-            <div class="pourquoi-block-label">Se deplace chez vous. Pas d'appel video, pas d'email. Du vrai contact humain.</div>
-          </div>
-        </div>
-        <div class="pourquoi-block">
-          <div class="pourquoi-block-val">490€</div>
-          <div class="pourquoi-block-label">Tarif d'entree accessible</div>
-        </div>
-        <div class="pourquoi-block">
-          <div class="pourquoi-block-val">5+</div>
-          <div class="pourquoi-block-label">Secteurs d'activite</div>
-        </div>
-      </div>
-      <div class="pourquoi-text reveal reveal-delay-2">
-        <div class="section-label">Pourquoi MS Agency</div>
-        <h2>On n'est pas une agence comme les autres</h2>
-        <p>Les grandes agences vous font payer 5 000€ et vous livrent dans 3 mois. Nous, on vous livre en 48h pour moins de 800€, et on se deplace chez vous pour vous montrer le resultat en temps reel.</p>
-        <ul class="pourquoi-list">
-          <li>
-            <div class="pourquoi-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span><strong>Mockup avant la visite</strong> — Simohamed arrive avec votre site deja cree. Vous voyez le resultat avant de signer.</span>
-          </li>
-          <li>
-            <div class="pourquoi-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span><strong>Prix transparent</strong> — ce que vous voyez est ce que vous payez. Pas d'abonnement cache, pas de surprise.</span>
-          </li>
-          <li>
-            <div class="pourquoi-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span><strong>Design adapte a votre secteur</strong> — pas de template generique. Chaque site est concu pour votre type d'activite.</span>
-          </li>
-          <li>
-            <div class="pourquoi-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span><strong>Votre site vous appartient</strong> — pas de dependance a une plateforme. Code propre, hebergement libre.</span>
-          </li>
-        </ul>
-        <a href="#contact" class="btn-gold">Commencer maintenant</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <div class="section-label">Contact</div>
-        <h2>Parlons de votre projet</h2>
-        <p>Remplissez le formulaire ou contactez Simohamed directement. On vous rappelle dans la journee et on commence des que vous etes pret.</p>
-        <div class="contact-links">
-          <a href="tel:0600000000" class="contact-link">
-            <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="contact-link-text">
-              <strong>06 00 00 00 00</strong>
-              <span>Appel direct — Simohamed</span>
-            </div>
-          </a>
-          <a href="mailto:contact@ms-agency.fr" class="contact-link">
-            <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="contact-link-text">
-              <strong>contact@ms-agency.fr</strong>
-              <span>Reponse sous 24h</span>
-            </div>
-          </a>
-          <a href="#" class="contact-link">
-            <div class="contact-link-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="contact-link-text">
-              <strong>Paris &amp; Ile-de-France</strong>
-              <span>On se deplace chez vous gratuitement</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <h3>Devis gratuit</h3>
-        <form onsubmit="handleContact(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Prenom</label>
-              <input type="text" placeholder="Mohamed" required>
-            </div>
-            <div class="form-group">
-              <label>Nom</label>
-              <input type="text" placeholder="Benali" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Telephone</label>
-              <input type="tel" placeholder="06 00 00 00 00" required>
-            </div>
-            <div class="form-group">
-              <label>Type de commerce</label>
-              <select required>
-                <option value="">Choisissez...</option>
-                <option>Restaurant / Snack</option>
-                <option>Garage / Mecanique</option>
-                <option>Cabinet medical / dentaire</option>
-                <option>Artisan (plombier, electricien...)</option>
-                <option>Auto ecole</option>
-                <option>Salon de coiffure / beaute</option>
-                <option>Boucherie / Commerce alimentaire</option>
-                <option>Autre commerce</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Formule souhaitee</label>
-            <select>
-              <option>Starter — 490€</option>
-              <option>Pro — 790€ (recommande)</option>
-              <option>Premium — 1 290€</option>
-              <option>Je ne sais pas encore</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Votre message (facultatif)</label>
-            <textarea placeholder="Decrivez votre commerce et ce que vous recherchez..."></textarea>
-          </div>
-          <button type="submit" class="form-submit">Envoyer ma demande</button>
-          <p class="form-note">Reponse garantie sous 24h. Devis 100% gratuit et sans engagement.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-brand-name">MS <span>Agency</span></div>
-        <p>Agence web parisienne specialisee dans la creation de sites internet pour commerces locaux. Design sur mesure, livraison en 48h, a partir de 490€.</p>
+        <div class="footer-logo">MS <span>Agency</span></div>
+        <p>Agence web parisienne specialisee dans la creation de sites internet pour commerces locaux. Design sur mesure, livraison 48h, a partir de 490€.</p>
         <div class="footer-brand-links">
-          <a href="tel:0600000000">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>
-            06 00 00 00 00
-          </a>
-          <a href="mailto:contact@ms-agency.fr">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/></svg>
-            contact@ms-agency.fr
-          </a>
-          <a href="#">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/></svg>
-            Paris &amp; Ile-de-France
-          </a>
+          <a href="tel:0600000000"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>06 00 00 00 00</a>
+          <a href="mailto:contact@ms-agency.fr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/></svg>contact@ms-agency.fr</a>
+          <a href="#"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/></svg>Paris &amp; Ile-de-France</a>
         </div>
       </div>
       <div class="footer-col">
@@ -962,48 +257,21 @@
       <div class="footer-col">
         <h4>Agence</h4>
         <ul>
-          <li><a href="#services">Nos services</a></li>
-          <li><a href="#process">Notre methode</a></li>
-          <li><a href="#tarifs">Tarifs</a></li>
-          <li><a href="#pourquoi">Pourquoi nous</a></li>
-          <li><a href="#contact">Devis gratuit</a></li>
+          <li><a href="services.html">Nos services</a></li>
+          <li><a href="services.html">Notre methode</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="tarifs.html">Pourquoi nous</a></li>
+          <li><a href="contact.html">Devis gratuit</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 MS Agency — Tous droits reserves</p>
-      <div class="footer-made">Fait avec <span>soin</span> a Paris par M &amp; S</div>
+      <p>Fait avec soin a Paris par M &amp; S</p>
     </div>
   </div>
 </footer>
 
-<script>
-  // Scroll reveal
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Nav scroll
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    nav.style.borderBottomColor = window.scrollY > 60 ? 'rgba(232,160,32,0.15)' : 'rgba(255,255,255,0.08)';
-  });
-
-  // Form
-  function handleContact(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Demande envoyee — On vous rappelle !';
-    btn.style.background = '#16A34A';
-    btn.disabled = true;
-    e.target.reset();
-    setTimeout(() => {
-      btn.textContent = 'Envoyer ma demande';
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 5000);
-  }
-</script>
+<script src="script.js"></script>
 </body>
 </html>

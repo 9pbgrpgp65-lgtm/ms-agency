@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MS Agency — Contactez-nous pour un devis gratuit. Simohamed se deplace chez vous. Reponse garantie sous 24h.">
+  <title>Contact — MS Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-page { background: var(--black); min-height: 100vh; display: flex; flex-direction: column; }
+    .contact-page-inner { flex: 1; padding: 110px 24px 80px; }
+    .contact-page-header { max-width: 1080px; margin: 0 auto 48px; }
+    .contact-page-header h1 { font-size: 3rem; font-weight: 900; letter-spacing: -0.05em; line-height: 1.05; margin-bottom: 12px; }
+    .contact-page-header p { font-size: 1rem; color: var(--white-60); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-pill" id="navPill">
+    <a href="index.html" class="nav-logo"><span class="ms">MS</span><span class="agency">&nbsp;Agency</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Devis gratuit</a>
+    <button id="navBurger" class="nav-burger" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="tarifs.html">Tarifs</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="nav-mobile-cta">Devis gratuit</a>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-page">
+  <div class="contact-page-inner">
+    <div class="contact-page-header">
+      <div class="label">Contact</div>
+      <h1>Parlons de<br>votre projet</h1>
+      <p>Devis gratuit, sans engagement. On vous rappelle dans la journee.</p>
+    </div>
+    <div class="container">
+      <div class="contact-wrap reveal">
+        <div class="contact-left">
+          <div>
+            <h2>On vous rappelle<br>dans la journee</h2>
+            <p>Remplissez le formulaire ou contactez Simohamed directement. Devis gratuit, sans engagement. On commence des que vous etes pret.</p>
+          </div>
+          <div class="contact-links">
+            <a href="tel:0600000000" class="c-link">
+              <div class="c-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div><strong>06 00 00 00 00</strong><span>Simohamed — appel direct</span></div>
+            </a>
+            <a href="mailto:contact@ms-agency.fr" class="c-link">
+              <div class="c-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><strong>contact@ms-agency.fr</strong><span>Reponse sous 24h</span></div>
+            </a>
+            <a href="#" class="c-link">
+              <div class="c-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><strong>Paris &amp; Ile-de-France</strong><span>On se deplace gratuitement</span></div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-right">
+          <h3>Devis gratuit — sans engagement</h3>
+          <form onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group"><label>Prenom</label><input type="text" placeholder="Mohamed" required></div>
+              <div class="form-group"><label>Nom</label><input type="text" placeholder="Benali" required></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Telephone</label><input type="tel" placeholder="06 00 00 00 00" required></div>
+              <div class="form-group">
+                <label>Type de commerce</label>
+                <select required>
+                  <option value="">Choisissez...</option>
+                  <option>Restaurant / Snack</option>
+                  <option>Garage / Mecanique</option>
+                  <option>Cabinet medical / dentaire</option>
+                  <option>Artisan (plombier, electricien...)</option>
+                  <option>Auto ecole</option>
+                  <option>Salon de coiffure / beaute</option>
+                  <option>Boucherie / Commerce alimentaire</option>
+                  <option>Autre commerce</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Formule souhaitee</label>
+              <select>
+                <option>Starter — 490€</option>
+                <option>Pro — 790€ (recommande)</option>
+                <option>Premium — 1 290€</option>
+                <option>Je ne sais pas encore</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Message (facultatif)</label><textarea placeholder="Decrivez votre commerce et ce que vous recherchez..."></textarea></div>
+            <button type="submit" class="form-submit">Envoyer ma demande</button>
+            <p class="form-note">Reponse garantie sous 24h. Devis 100% gratuit et sans engagement.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">MS <span>Agency</span></div>
+        <p>Agence web parisienne specialisee dans la creation de sites internet pour commerces locaux. Design sur mesure, livraison 48h, a partir de 490€.</p>
+        <div class="footer-brand-links">
+          <a href="tel:0600000000"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>06 00 00 00 00</a>
+          <a href="mailto:contact@ms-agency.fr"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/></svg>contact@ms-agency.fr</a>
+          <a href="#"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/></svg>Paris &amp; Ile-de-France</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Portfolio</h4>
+        <ul>
+          <li><a href="../templates/restaurant-italien/">Restaurant — Le Comptoir</a></li>
+          <li><a href="../templates/cabinet-dentaire/">Cabinet — Dr. Moreau</a></li>
+          <li><a href="../templates/garage/">Garage — Auto Renfort</a></li>
+          <li><a href="../templates/artisan-plombier/">Artisan — Plomberie Benali</a></li>
+          <li><a href="../templates/auto-ecole/">Auto Ecole — Drive</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Agence</h4>
+        <ul>
+          <li><a href="services.html">Nos services</a></li>
+          <li><a href="services.html">Notre methode</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="tarifs.html">Pourquoi nous</a></li>
+          <li><a href="contact.html">Devis gratuit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 MS Agency — Tous droits reserves</p>
+      <p>Fait avec soin a Paris par M &amp; S</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
