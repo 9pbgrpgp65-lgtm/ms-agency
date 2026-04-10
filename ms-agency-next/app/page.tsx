@@ -4,8 +4,6 @@ import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FAQ from "@/components/FAQ";
-import RotatingText from "@/components/RotatingText";
-import PhoneMockup from "@/components/PhoneMockup";
 
 export const metadata: Metadata = {
   title: "MS Agency — Agence web pour commerces locaux",
@@ -54,43 +52,55 @@ export default function HomePage() {
     <>
       {/* ===================== HERO ===================== */}
       <section className="hero">
-        <div className="hero-layout">
-          {/* Left — text */}
-          <div className="hero-inner">
-            <div className="hero-eyebrow">
-              <span className="hero-eyebrow-dot" />
-              Agence web — France
-            </div>
-
-            <h1>
-              Le site web de votre<br />
-              <RotatingText /><br />
-              <span className="hero-gradient-text">livré en 48h</span>
-            </h1>
-
-            <p className="hero-sub">
-              Des sites web professionnels optimisés pour le SEO local
-              et conçus pour convertir. Dès 990€, tout inclus.
-            </p>
-
-            <div className="hero-actions">
-              <Link href="/contact" className="btn-primary">
-                Devis gratuit →
-              </Link>
-              <Link href="/portfolio" className="btn-secondary">
-                Voir nos sites
-              </Link>
-            </div>
-
-            <div className="hero-guarantee">
-              <span className="hero-guarantee-dot" />
-              Livré en 48h garanti — ou remboursé
-            </div>
+        <div className="hero-inner">
+          <div className="hero-eyebrow">
+            <span className="hero-eyebrow-dot" />
+            Agence web — France
           </div>
 
-          {/* Right — phone mockup */}
-          <div className="hero-visual">
-            <PhoneMockup />
+          <h1>
+            Votre commerce local{" "}
+            <span className="hero-dim-text">mérite</span>
+            <br />
+            <span className="hero-gradient-text">mieux qu&apos;un site moyen</span>
+          </h1>
+
+          <p className="hero-sub">
+            Des sites web professionnels livrés en 48h, optimisés pour le SEO local
+            et conçus pour convertir. Dès 990€, tout inclus.
+          </p>
+
+          <div className="hero-actions">
+            <Link href="/contact" className="btn-primary">
+              Devis gratuit →
+            </Link>
+            <Link href="/portfolio" className="btn-secondary">
+              Voir nos sites
+            </Link>
+          </div>
+
+          <div className="hero-guarantee">
+            <span className="hero-guarantee-dot" />
+            Livré en 48h garanti — ou remboursé
+          </div>
+
+          <div className="hero-proof">
+            <div className="hero-proof-item">
+              <div className="hero-proof-val blue">48H</div>
+              <div className="hero-proof-label">Délai livraison</div>
+            </div>
+            <div className="hero-proof-item">
+              <div className="hero-proof-val">990€</div>
+              <div className="hero-proof-label">À partir de</div>
+            </div>
+            <div className="hero-proof-item">
+              <div className="hero-proof-val">5+</div>
+              <div className="hero-proof-label">Secteurs couverts</div>
+            </div>
+            <div className="hero-proof-item">
+              <div className="hero-proof-val blue">100%</div>
+              <div className="hero-proof-label">Clients satisfaits</div>
+            </div>
           </div>
         </div>
       </section>
