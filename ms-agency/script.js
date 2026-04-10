@@ -62,6 +62,42 @@ if (burger && mobileNav) {
   });
 }
 
+// Price calculator
+const calcPacks = {
+  starter: { name: 'Starter', price: '490', ht: '€ HT', desc: 'L\'essentiel pour exister en ligne. Site 1 page, design personnalise, livraison 48h.' },
+  pro:     { name: 'Pro',     price: '790', ht: '€ HT', desc: 'Le site complet qui transforme vos visiteurs en clients. Multi-pages, SEO local, formulaires.' },
+  premium: { name: 'Premium', price: '1 290', ht: '€ HT', desc: 'Pour dominer votre marche local. Animations premium, RDV en ligne, suivi analytics.' }
+};
+const sectorIsPro = ['garage','sante','artisan','autoecole'];
+
+function updateCalc() {
+  const sector = document.querySelector('.calc-btn.active')?.dataset.sector || 'restaurant';
+  const needs  = document.querySelectorAll('.calc-need-item.checked').length;
+  let pack;
+  if (needs >= 3) pack = 'premium';
+  else if (needs >= 1 || sectorIsPro.includes(sector)) pack = 'pro';
+  else pack = 'starter';
+  const d = calcPacks[pack];
+  const el = id => document.getElementById(id);
+  if (el('calcPack'))  el('calcPack').textContent  = d.name;
+  if (el('calcPrice')) el('calcPrice').textContent = d.price;
+  if (el('calcHt'))    el('calcHt').textContent    = d.ht;
+  if (el('calcDesc'))  el('calcDesc').textContent  = d.desc;
+}
+document.querySelectorAll('.calc-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.calc-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateCalc();
+  });
+});
+document.querySelectorAll('.calc-need-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('checked');
+    updateCalc();
+  });
+});
+
 // Contact form
 function handleForm(e) {
   e.preventDefault();
