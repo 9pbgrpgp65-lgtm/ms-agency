@@ -4,6 +4,7 @@ import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FAQ from "@/components/FAQ";
+import TemplatePreview from "@/components/TemplatePreview";
 
 export const metadata: Metadata = {
   title: "MS Agency — Agence web pour commerces locaux",
@@ -28,22 +29,25 @@ const marqueeSectors = [
 
 const portfolioItems = [
   {
-    sector: "Restaurant",
-    name: "Le Comptoir",
-    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
-    tag: "Site vitrine",
+    sector: "Artisan plombier",
+    name: "Plomberie Benali",
+    img: "",
+    tpl: "/templates/artisan-plombier/index.html",
+    tag: "Urgence 24h/24",
   },
   {
-    sector: "Cabinet dentaire",
-    name: "Dr. Moreau",
-    img: "https://images.unsplash.com/photo-1588776814546-1ffdd8b4c1e7?auto=format&fit=crop&w=600&q=80",
-    tag: "Prise de RDV",
-  },
-  {
-    sector: "Garage",
-    name: "Auto Renfort",
-    img: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80",
+    sector: "Garage automobile",
+    name: "Garage Moretti",
+    img: "",
+    tpl: "/templates/garage/index.html",
     tag: "SEO local",
+  },
+  {
+    sector: "Restaurant",
+    name: "La Trattoria di Roma",
+    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
+    tpl: "",
+    tag: "Réservation en ligne",
   },
 ];
 
@@ -201,13 +205,17 @@ export default function HomePage() {
               <RevealOnScroll key={item.name} delay={i + 1}>
                 <Link href="/portfolio" className="p-card">
                   <div className="p-preview">
-                    <Image
-                      src={item.img}
-                      alt={`${item.sector} — ${item.name}`}
-                      width={600}
-                      height={450}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
+                    {item.tpl ? (
+                      <TemplatePreview src={item.tpl} label={item.name} />
+                    ) : (
+                      <Image
+                        src={item.img}
+                        alt={`${item.sector} — ${item.name}`}
+                        width={600}
+                        height={450}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    )}
                     <div className="p-overlay">
                       <span className="p-overlay-tag">{item.tag}</span>
                     </div>

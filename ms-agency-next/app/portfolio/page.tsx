@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import TemplatePreview from "@/components/TemplatePreview";
 
 export const metadata: Metadata = {
   title: "Portfolio — Nos réalisations",
@@ -100,13 +101,17 @@ export default function PortfolioPage() {
                   style={{ textDecoration: "none", cursor: item.href === "#" ? "default" : "pointer" }}
                 >
                   <div className="p-preview">
-                    <Image
-                      src={item.img}
-                      alt={`${item.sector} — ${item.name}, ${item.city}`}
-                      width={600}
-                      height={450}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
+                    {item.href !== "#" ? (
+                      <TemplatePreview src={item.href} label={item.name} />
+                    ) : (
+                      <Image
+                        src={item.img}
+                        alt={`${item.sector} — ${item.name}, ${item.city}`}
+                        width={600}
+                        height={450}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    )}
                     <div className="p-overlay">
                       <span className="p-overlay-tag">{item.sector}</span>
                     </div>

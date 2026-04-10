@@ -873,6 +873,50 @@ section {
 }
 .p-card:hover .p-preview img { transform: scale(1.06); }
 
+/* Template live preview */
+.tpl-clip {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+
+.tpl-inner {
+  transform-origin: top left;
+  will-change: transform;
+  transition: translate 0s;
+}
+
+.tpl-inner iframe {
+  width: 390px;
+  height: 1100px;
+  border: none;
+  pointer-events: none;
+  display: block;
+}
+
+/* Scroll animation on hover */
+@keyframes tpl-scroll {
+  0%   { translate: 0 0; }
+  15%  { translate: 0 0; }
+  85%  { translate: 0 -340px; }
+  100% { translate: 0 -340px; }
+}
+.p-card:hover .tpl-inner {
+  animation: tpl-scroll 7s ease-in-out forwards;
+}
+
+/* Gradient fade at bottom */
+.tpl-fade-bottom {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, rgba(10,10,10,0.85));
+  pointer-events: none;
+  z-index: 2;
+}
+
 .p-overlay {
   position: absolute;
   inset: 0;
