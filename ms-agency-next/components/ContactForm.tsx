@@ -59,12 +59,26 @@ export default function ContactForm() {
 
     setSubmitState("loading");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (!res.ok) throw new Error("Erreur serveur");
+      const text =
+        `🆕 *Nouvelle demande MS Agency*\n\n` +
+        `👤 *Nom :* ${formData.prenom} ${formData.nom}\n` +
+        `📞 *Téléphone :* ${formData.telephone}\n` +
+        `🏪 *Commerce :* ${formData.commerce}\n` +
+        `💬 *Message :* ${formData.message || "—"}`;
+
+      await fetch(
+        `https://api.telegram.org/bot8349577159:AAGC36kcwzihTMokx4-jfq_NVNPor_44MIw/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: "@msagency75bot",
+            text,
+            parse_mode: "Markdown",
+          }),
+        }
+      );
+
       setSubmitState("success");
     } catch {
       setSubmitState("error");
