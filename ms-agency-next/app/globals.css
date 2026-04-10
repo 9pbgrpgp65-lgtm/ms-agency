@@ -899,6 +899,9 @@ section {
 .p-info {
   padding: 20px 24px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .p-sector {
@@ -915,7 +918,50 @@ section {
   font-weight: 800;
   color: var(--white);
   letter-spacing: -0.02em;
+  margin-bottom: 4px;
 }
+
+.p-city {
+  font-size: 13px;
+  color: var(--white-30);
+  margin-bottom: 14px;
+}
+
+.p-desc {
+  font-size: 13px;
+  color: var(--white-50);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.p-deliverables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.p-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--white-50);
+  background: var(--black-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+}
+
+.p-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  transition: gap 0.2s;
+}
+.p-card:hover .p-link { gap: 10px; }
 
 /* CTA card in portfolio grid */
 .p-card-cta {
@@ -1311,7 +1357,7 @@ section {
   position: relative;
 }
 .t-card.featured::before {
-  content: 'Recommande';
+  content: 'Recommandé';
   position: absolute;
   top: -12px;
   left: 50%;

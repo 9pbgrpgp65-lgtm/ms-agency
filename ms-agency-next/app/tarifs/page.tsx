@@ -4,21 +4,35 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
 export const metadata: Metadata = {
-  title: "Tarifs — Site vitrine 500€, tout inclus",
+  title: "Tarifs — Site vitrine à partir de 990€ tout inclus",
   description:
-    "Un prix clair, fixe, sans surprise. Site vitrine professionnel à 500€ tout inclus, livré en 48h. Maintenance optionnelle à 50€/mois.",
+    "Tarifs clairs et sans surprise. Site vitrine 990€, Pack visibilité 1 490€, maintenance 50€/mois. Livraison en 48h garantie.",
 };
 
-const included = [
-  "Design sur mesure adapté à votre secteur",
-  "Mobile-first, rapide, moderne",
-  "3 à 5 pages (accueil, services, contact...)",
+const vitrineFeatures = [
+  "5 pages (accueil, services, contact…)",
+  "Design mobile-first, rapide, moderne",
+  "SEO local (balises, mots-clés, schema.org)",
   "Formulaire de contact",
   "Carte Google Maps intégrée",
-  "SEO local de base (balises, mots-clés)",
   "Certificat SSL (HTTPS)",
   "Hébergement 1 an inclus",
   "Livraison garantie en 48h",
+];
+
+const packFeatures = [
+  "Tout le contenu du site vitrine",
+  "Google My Business optimisé",
+  "5 fiches annuaires locaux",
+  "Rapport de visibilité inclus",
+];
+
+const maintenanceFeatures = [
+  "Nom de domaine inclus",
+  "Sécurité & sauvegardes",
+  "Mises à jour du contenu",
+  "Modifications incluses",
+  "Support — réponse sous 24h",
 ];
 
 export default function TarifsPage() {
@@ -32,66 +46,91 @@ export default function TarifsPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
             <h1 className="title" style={{ marginTop: "12px", marginBottom: "16px" }}>
-              Un prix. Tout inclus.
+              Des tarifs clairs. Aucune surprise.
             </h1>
           </RevealOnScroll>
           <RevealOnScroll delay={2}>
             <p className="sub">
-              Pas de paliers, pas de surprise. Un seul tarif clair pour votre site vitrine professionnel, livré en 48h.
+              Paiement unique, prix fixe, livraison en 48h. Choisissez l&apos;offre adaptée à vos besoins.
             </p>
           </RevealOnScroll>
         </div>
       </div>
 
-      {/* Main offer */}
+      {/* Pricing grid */}
       <section className="tarifs-section">
         <div className="container">
-          <div style={{ maxWidth: "640px", margin: "0 auto" }}>
-            <RevealOnScroll>
-              <div className="t-card featured" style={{ textAlign: "center" }}>
-                <div className="t-card-name">Site vitrine professionnel</div>
+          <div className="tarifs-grid">
 
-                <div className="t-card-price" style={{ justifyContent: "center", margin: "24px 0" }}>
-                  <span className="t-card-amount">500</span>
+            {/* Site vitrine */}
+            <RevealOnScroll delay={1}>
+              <div className="t-card">
+                <div className="t-card-name">Site vitrine</div>
+                <div className="t-card-price">
+                  <span className="t-card-amount">990</span>
                   <span className="t-card-currency">€</span>
                 </div>
-
-                <p className="t-card-desc" style={{ marginBottom: "28px" }}>
-                  Paiement unique. Prix fixe. Aucun frais caché.
-                </p>
-
-                <div className="t-features" style={{ textAlign: "left", marginBottom: "32px" }}>
-                  {included.map((f) => (
+                <p className="t-card-desc">Paiement unique. Prix fixe. Aucun frais caché.</p>
+                <div className="t-features">
+                  {vitrineFeatures.map((f) => (
                     <div key={f} className="t-feature">
                       <div className="t-feature-check">✓</div>
                       <span>{f}</span>
                     </div>
                   ))}
                 </div>
-
-                <Link href="/contact" className="btn-primary" style={{ width: "100%", justifyContent: "center" }}>
-                  Demander mon site →
+                <Link href="/contact" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
+                  Démarrer →
                 </Link>
               </div>
             </RevealOnScroll>
 
-            {/* Maintenance add-on */}
-            <RevealOnScroll delay={1}>
-              <div className="maintenance-strip" style={{ marginTop: "24px" }}>
-                <div className="maintenance-strip-left">
-                  <h3>Maintenance mensuelle</h3>
-                  <p>
-                    Mises à jour de contenu, sauvegardes, surveillance de sécurité, support technique. Sans engagement.
-                  </p>
+            {/* Pack visibilité */}
+            <RevealOnScroll delay={2}>
+              <div className="t-card featured">
+                <div className="t-card-name">Pack visibilité</div>
+                <div className="t-card-price">
+                  <span className="t-card-amount">1 490</span>
+                  <span className="t-card-currency">€</span>
                 </div>
-                <div>
-                  <div className="maintenance-price">50€<span style={{ fontSize: "16px", color: "var(--white-50)" }}>/mois</span></div>
+                <p className="t-card-desc">Site + présence locale complète sur Google.</p>
+                <div className="t-features">
+                  {packFeatures.map((f) => (
+                    <div key={f} className="t-feature">
+                      <div className="t-feature-check">✓</div>
+                      <span>{f}</span>
+                    </div>
+                  ))}
                 </div>
-                <Link href="/contact" className="btn-secondary">
-                  En savoir plus
+                <Link href="/contact" className="btn-primary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
+                  Démarrer →
                 </Link>
               </div>
             </RevealOnScroll>
+
+            {/* Maintenance */}
+            <RevealOnScroll delay={3}>
+              <div className="t-card">
+                <div className="t-card-name">Maintenance</div>
+                <div className="t-card-price">
+                  <span className="t-card-amount">50</span>
+                  <span className="t-card-currency">€<span style={{ fontSize: "16px", fontWeight: 400, color: "var(--white-50)" }}>/mois</span></span>
+                </div>
+                <p className="t-card-desc">Sans engagement. Annulable à tout moment.</p>
+                <div className="t-features">
+                  {maintenanceFeatures.map((f) => (
+                    <div key={f} className="t-feature">
+                      <div className="t-feature-check">✓</div>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/contact" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
+                  En savoir plus →
+                </Link>
+              </div>
+            </RevealOnScroll>
+
           </div>
         </div>
       </section>
@@ -116,9 +155,9 @@ export default function TarifsPage() {
                 </div>
                 <div className="pourquoi-stat">
                   <div className="pourquoi-stat-val">
-                    <AnimatedCounter to={500} suffix="€" />
+                    <AnimatedCounter to={990} suffix="€" />
                   </div>
-                  <div className="pourquoi-stat-label">Prix unique</div>
+                  <div className="pourquoi-stat-label">À partir de</div>
                 </div>
                 <div className="pourquoi-stat">
                   <div className="pourquoi-stat-val">
