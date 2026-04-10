@@ -1,1286 +1,635 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garage Auto Renfort — Mécanique & Carrosserie Paris 15e</title>
-    <meta name="description" content="Garage Auto Renfort à Paris 15e. Mécanique générale, carrosserie, révision, contrôle technique. Devis gratuit en 24h. Appelez le 01 45 00 00 00.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --rouge: #E03131;
-            --rouge-dark: #B91C1C;
-            --jaune: #F59F00;
-            --noir: #111111;
-            --noir-soft: #1C1C1C;
-            --gris-dark: #2A2A2A;
-            --gris: #4A4A4A;
-            --gris-light: #8A8A8A;
-            --bg: #F8F8F8;
-            --white: #FFFFFF;
-            --border: #E5E5E5;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garage Auto Express — Votre garagiste à [VILLE]</title>
+  <meta name="description" content="Garage automobile à [VILLE]. Révision, contrôle technique, carrosserie, pneus, climatisation. Devis gratuit. Toutes marques.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Barlow', sans-serif;
-            color: var(--noir);
-            background: var(--bg);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        a { text-decoration: none; color: inherit; }
+    :root {
+      --red:       #E63000;
+      --red-dark:  #C42800;
+      --black:     #0F0F0F;
+      --charcoal:  #1A1A1A;
+      --white:     #FFFFFF;
+      --bg:        #F5F5F0;
+      --text:      #0F0F0F;
+      --text-mid:  #444444;
+      --text-muted:#888888;
+      --border:    #D1D1D1;
+      --yellow:    #EFDF00;
+    }
 
-        /* === NAV === */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        nav.scrolled {
-            background: var(--noir);
-            padding: 0.7rem 5%;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.4);
-        }
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .nav-logo-icon {
-            width: 42px; height: 42px;
-            background: var(--rouge);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
-        }
-        .nav-logo-text {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: var(--white);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .nav-logo-text span {
-            display: block;
-            font-size: 0.65rem;
-            font-weight: 400;
-            color: var(--gris-light);
-            letter-spacing: 2px;
-        }
-        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        .nav-links a {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.8);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--rouge); }
-        .nav-cta {
-            padding: 0.6rem 1.5rem;
-            background: var(--rouge);
-            color: white !important;
-            font-weight: 700 !important;
-            clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-        }
-        .nav-cta:hover { background: var(--rouge-dark) !important; }
-        .nav-burger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-        .nav-burger span {
-            width: 25px; height: 2px;
-            background: white;
-            transition: all 0.3s;
-        }
-        .nav-burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .nav-burger.active span:nth-child(2) { opacity: 0; }
-        .nav-burger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        /* === MOBILE MENU === */
-        .mobile-menu {
-            position: fixed;
-            top: 0; right: -100%;
-            width: 100%; height: 100%;
-            background: var(--noir);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            z-index: 999;
-            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .mobile-menu.open { right: 0; }
-        .mobile-menu a {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .mobile-menu a:hover { color: var(--rouge); }
+    /* ── BUTTONS — zero radius, Renault DNA ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red); color: var(--white);
+      padding: 13px 28px; border-radius: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase;
+      border: 2px solid var(--red); cursor: pointer; transition: background 0.15s;
+      white-space: nowrap; min-height: 46px;
+    }
+    .btn-primary:hover { background: var(--red-dark); border-color: var(--red-dark); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--white);
+      padding: 13px 28px; border-radius: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase;
+      border: 2px solid var(--white); cursor: pointer;
+      transition: background 0.15s, color 0.15s; white-space: nowrap; min-height: 46px;
+    }
+    .btn-ghost:hover { background: var(--white); color: var(--black); }
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--black); color: var(--white);
+      padding: 13px 28px; border-radius: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase;
+      border: 2px solid var(--black); cursor: pointer; transition: background 0.15s;
+      white-space: nowrap; min-height: 46px;
+    }
+    .btn-dark:hover { background: #333; border-color: #333; }
 
-        /* === HERO === */
-        .hero {
-            min-height: 100vh;
-            background: var(--noir);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 0 5%;
-        }
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background:
-                linear-gradient(135deg, rgba(224,49,49,0.08) 0%, transparent 50%),
-                repeating-linear-gradient(
-                    -45deg,
-                    transparent,
-                    transparent 40px,
-                    rgba(255,255,255,0.015) 40px,
-                    rgba(255,255,255,0.015) 41px
-                );
-        }
-        .hero-accent {
-            position: absolute;
-            top: 0; right: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 30%, rgba(224,49,49,0.05) 100%);
-            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-        }
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-        }
-        .hero-eyebrow .line {
-            width: 40px; height: 2px;
-            background: var(--rouge);
-        }
-        .hero-eyebrow span {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--rouge);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-        .hero h1 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 5.5rem;
-            font-weight: 900;
-            color: white;
-            line-height: 0.95;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-        .hero h1 .highlight { color: var(--rouge); }
-        .hero h1 .outline {
-            -webkit-text-stroke: 2px rgba(255,255,255,0.3);
-            color: transparent;
-        }
-        .hero-desc {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.7;
-            max-width: 480px;
-            margin-bottom: 2.5rem;
-        }
-        .hero-btns {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-        .btn-rouge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: var(--rouge);
-            color: white;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-            transition: all 0.3s;
-        }
-        .btn-rouge:hover { background: var(--rouge-dark); transform: translateX(3px); }
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-        .btn-outline:hover { border-color: var(--rouge); color: var(--rouge); }
-        .hero-badges {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .hero-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.82rem;
-            color: rgba(255,255,255,0.5);
-        }
-        .hero-badge .dot {
-            width: 6px; height: 6px;
-            background: var(--rouge);
-            border-radius: 50%;
-        }
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--black); border-bottom: 3px solid var(--red);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 66px; gap: 24px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-logo-mark {
+      width: 36px; height: 36px; background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+    .nav-logo-text { display: flex; flex-direction: column; gap: 1px; }
+    .nav-logo-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 800; color: var(--white);
+      text-transform: uppercase; letter-spacing: 0.05em; line-height: 1;
+    }
+    .nav-logo-sub { font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; }
+    .nav-links { display: flex; align-items: center; }
+    .nav-links a {
+      padding: 8px 16px; font-size: 13px; font-weight: 600;
+      color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.05em;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+    .nav-tel {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px; font-weight: 700; color: var(--red); letter-spacing: 0.02em;
+    }
+    .nav-burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-burger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 1px; transition: transform 0.2s, opacity 0.2s; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-drawer {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--charcoal); border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 16px 24px; gap: 4px;
+      opacity: 0; pointer-events: none; transform: translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .nav-drawer.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-drawer a { padding: 12px 0; color: rgba(255,255,255,0.75); font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-drawer .btn-primary { margin-top: 8px; justify-content: center; }
 
-        /* === BANDEAU === */
-        .bandeau {
-            background: var(--rouge);
-            padding: 1rem 5%;
-            overflow: hidden;
-        }
-        .bandeau-inner {
-            display: flex;
-            gap: 3rem;
-            animation: scroll-left 20s linear infinite;
-            white-space: nowrap;
-        }
-        .bandeau-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: white;
-            flex-shrink: 0;
-        }
-        .bandeau-sep { color: rgba(255,255,255,0.4); }
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+    /* ── HERO ── */
+    .hero {
+      position: relative; background: var(--black);
+      min-height: 88vh; display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1632823471565-1ecdf5c6da4c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover; background-position: center; opacity: 0.35;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.88) 40%, rgba(0,0,0,0.15) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto; padding: 80px 24px; width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.15em; color: var(--red); margin-bottom: 20px;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 2px; background: var(--red); }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 72px; font-weight: 800; line-height: 0.95;
+      color: var(--white); text-transform: uppercase;
+      letter-spacing: -0.5px; margin-bottom: 24px; max-width: 680px;
+    }
+    .hero h1 span { color: var(--red); }
+    .hero-sub {
+      font-size: 18px; color: rgba(255,255,255,0.72);
+      margin-bottom: 40px; max-width: 480px; line-height: 1.65;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 56px; }
+    .hero-trust { display: flex; gap: 32px; flex-wrap: wrap; }
+    .hero-trust-item {
+      font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.55);
+    }
+    .hero-trust-item strong { color: var(--white); display: block; font-size: 16px; }
 
-        /* === SECTIONS === */
-        section { padding: 6rem 5%; }
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
-        }
-        .section-label .line {
-            width: 30px; height: 2px;
-            background: var(--rouge);
-        }
-        .section-label span {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--rouge);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-        h2 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 3rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
+    /* ── SECTION LABEL ── */
+    .label {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--red); margin-bottom: 10px;
+    }
+    .section-head { margin-bottom: 56px; }
+    .section-head h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px; font-weight: 800; text-transform: uppercase;
+      line-height: 0.95; color: var(--black); letter-spacing: -0.5px; margin-bottom: 14px;
+    }
+    .section-head p { font-size: 17px; color: var(--text-mid); max-width: 520px; line-height: 1.65; }
 
-        /* === REVEAL === */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* ── SERVICES ── */
+    .services { padding: 88px 0; background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .service-card {
+      background: var(--bg); padding: 32px 28px;
+      border-left: 3px solid transparent;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .service-card:hover { border-left-color: var(--red); background: var(--white); }
+    .service-icon { font-size: 36px; margin-bottom: 16px; }
+    .service-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.03em; color: var(--black); margin-bottom: 8px;
+    }
+    .service-card p { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
 
-        /* === SERVICES === */
-        .services { background: var(--white); }
-        .services-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5px;
-            background: var(--border);
-        }
-        .service-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 3px;
-            background: var(--rouge);
-            transition: width 0.4s ease;
-        }
-        .service-card:hover {
-            background: var(--noir);
-        }
-        .service-card:hover::after { width: 100%; }
-        .service-card:hover h3 { color: white; }
-        .service-card:hover p { color: rgba(255,255,255,0.5); }
-        .service-num {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--border);
-            line-height: 1;
-            margin-bottom: 1rem;
-            transition: color 0.3s;
-        }
-        .service-card:hover .service-num { color: rgba(224,49,49,0.2); }
-        .service-icon { font-size: 2rem; margin-bottom: 1rem; }
-        .service-card h3 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 0.7rem;
-            transition: color 0.3s;
-        }
-        .service-card p {
-            font-size: 0.88rem;
-            color: var(--gris-light);
-            line-height: 1.6;
-            transition: color 0.3s;
-        }
+    /* ── POURQUOI NOUS ── */
+    .pourquoi { padding: 88px 0; background: var(--black); }
+    .pourquoi .section-head h2 { color: var(--white); }
+    .pourquoi .section-head p { color: rgba(255,255,255,0.55); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .trust-item { padding: 40px 32px; border-top: 3px solid rgba(255,255,255,0.08); }
+    .trust-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 64px; font-weight: 800; line-height: 1;
+      color: var(--red); margin-bottom: 8px; letter-spacing: -1px;
+    }
+    .trust-item h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 700; text-transform: uppercase;
+      color: var(--white); margin-bottom: 10px; letter-spacing: 0.03em;
+    }
+    .trust-item p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.65; }
 
-        /* === ABOUT === */
-        .about { background: var(--bg); }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .about-image {
-            position: relative;
-        }
-        .about-img-main {
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: linear-gradient(135deg, var(--gris-dark), var(--noir));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-        }
-        .about-badge {
-            position: absolute;
-            bottom: -1.5rem;
-            right: -1.5rem;
-            width: 140px; height: 140px;
-            background: var(--rouge);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-        .about-badge .num {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: white;
-            line-height: 1;
-        }
-        .about-badge .label {
-            font-size: 0.65rem;
-            color: rgba(255,255,255,0.8);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-        .about-content h2 { margin-bottom: 1.5rem; }
-        .about-content p {
-            color: var(--gris);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        .about-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 2rem;
-        }
-        .about-tag {
-            padding: 0.4rem 1rem;
-            background: var(--noir);
-            color: white;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
-        }
+    /* ── DEVIS ── */
+    .devis { padding: 88px 0; background: var(--bg); }
+    .devis-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .devis h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px; font-weight: 800; text-transform: uppercase;
+      line-height: 0.95; color: var(--black); letter-spacing: -0.5px; margin-bottom: 16px;
+    }
+    .devis-sub { font-size: 17px; color: var(--text-mid); line-height: 1.65; margin-bottom: 32px; }
+    .devis-points { display: flex; flex-direction: column; gap: 12px; }
+    .devis-point {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 15px; font-weight: 500; color: var(--text);
+    }
+    .devis-point::before { content: ''; width: 6px; height: 6px; background: var(--red); flex-shrink: 0; }
+    .devis-form { background: var(--white); padding: 40px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
+    .devis-form h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.03em; color: var(--black); margin-bottom: 24px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-muted); margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%; padding: 12px 16px;
+      background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 0; font-family: 'Inter', sans-serif; font-size: 15px;
+      color: var(--text); outline: none; transition: border-color 0.15s;
+    }
+    .form-group input:focus,
+    .form-group select:focus { border-color: var(--red); }
+    .form-group select { appearance: none; cursor: pointer; }
 
-        /* === COUNTER === */
-        .counter-section {
-            background: var(--noir);
-            padding: 4rem 5%;
-        }
-        .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .counter-item {
-            text-align: center;
-            padding: 2rem;
-            border-right: 1px solid rgba(255,255,255,0.06);
-            position: relative;
-        }
-        .counter-item:last-child { border-right: none; }
-        .counter-item .number {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--rouge);
-            line-height: 1;
-        }
-        .counter-item .label {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.4);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 0.5rem;
-        }
+    /* ── AVIS ── */
+    .avis { padding: 88px 0; background: var(--white); }
+    .avis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .avis-card {
+      background: var(--bg); padding: 32px;
+      border-top: 3px solid transparent; transition: border-color 0.2s;
+    }
+    .avis-card:hover { border-top-color: var(--red); }
+    .avis-stars { color: var(--yellow); font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+    .avis-text { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .avis-sep { width: 32px; height: 2px; background: var(--red); margin-bottom: 16px; }
+    .avis-name { font-size: 14px; font-weight: 700; color: var(--black); }
+    .avis-loc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .google-badge {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      margin-top: 48px; padding: 16px;
+      border: 1px solid var(--border); background: var(--bg);
+      font-size: 14px; color: var(--text-mid);
+    }
+    .google-badge strong { color: var(--black); font-size: 15px; }
 
-        /* === AVIS === */
-        .avis { background: var(--white); }
-        .avis-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5px;
-            background: var(--border);
-            margin-top: 3rem;
-        }
-        .avis-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            transition: background 0.3s;
-        }
-        .avis-card:hover { background: var(--bg); }
-        .avis-stars { color: var(--jaune); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem; }
-        .avis-text {
-            font-size: 0.92rem;
-            color: var(--gris);
-            line-height: 1.8;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-        .avis-author {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .avis-avatar {
-            width: 42px; height: 42px;
-            background: var(--noir);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 1rem;
-            clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
-        }
-        .avis-name { font-weight: 700; font-size: 0.9rem; }
-        .avis-source { font-size: 0.75rem; color: var(--gris-light); }
+    /* ── FOOTER ── */
+    footer { background: var(--black); color: rgba(255,255,255,0.55); }
+    .footer-top { padding: 64px 0 48px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+    .footer-brand-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 800; color: var(--white);
+      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;
+    }
+    .footer-brand-name span { color: var(--red); }
+    .footer-brand-desc { font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+    .footer-tel {
+      display: inline-block; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 700; color: var(--red); letter-spacing: 0.02em;
+    }
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--white);
+      margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li { font-size: 14px; line-height: 1.5; }
+    .footer-col ul li a { color: rgba(255,255,255,0.5); transition: color 0.15s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .maps-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--red); font-size: 13px; font-weight: 600; margin-top: 12px;
+      transition: opacity 0.15s;
+    }
+    .maps-link:hover { opacity: 0.8; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 0; }
+    .footer-bottom-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; flex-wrap: wrap; gap: 8px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.35); transition: color 0.15s; }
+    .footer-bottom a:hover { color: var(--white); }
 
-        /* === TARIFS === */
-        .tarifs { background: var(--bg); }
-        .tarifs-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5px;
-            background: var(--border);
-            margin-top: 3rem;
-        }
-        .tarif-card {
-            background: var(--white);
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s;
-        }
-        .tarif-card.featured {
-            background: var(--noir);
-        }
-        .tarif-card:hover:not(.featured) { background: var(--bg); }
-        .tarif-icon { font-size: 2rem; margin-bottom: 1rem; }
-        .tarif-card h3 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        .tarif-card.featured h3 { color: white; }
-        .tarif-price {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--rouge);
-            line-height: 1;
-            margin: 1rem 0;
-        }
-        .tarif-price span { font-size: 1rem; font-weight: 400; color: var(--gris-light); }
-        .tarif-card p {
-            font-size: 0.85rem;
-            color: var(--gris-light);
-            line-height: 1.6;
-        }
-        .tarif-card.featured p { color: rgba(255,255,255,0.5); }
-        .tarif-tag {
-            display: inline-block;
-            padding: 0.2rem 0.8rem;
-            background: var(--rouge);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        /* === DEVIS URGENCE === */
-        .urgence {
-            background: var(--rouge);
-            padding: 3rem 5%;
-            text-align: center;
-        }
-        .urgence h3 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: white;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        .urgence p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
-        .urgence-phone {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 2.5rem;
-            background: white;
-            color: var(--rouge);
-            font-weight: 800;
-            font-size: 1.3rem;
-            clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
-            transition: all 0.3s;
-        }
-        .urgence-phone:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
-
-        /* === INFOS === */
-        .infos { background: var(--noir); }
-        .infos h2 { color: white; margin-bottom: 3rem; }
-        .infos-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .horaire-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.9rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            font-size: 0.92rem;
-        }
-        .horaire-row:last-child { border-bottom: none; }
-        .horaire-row .day { color: rgba(255,255,255,0.7); font-weight: 500; }
-        .horaire-row .time { color: rgba(255,255,255,0.4); }
-        .horaire-row .ferme { color: var(--rouge); font-weight: 600; }
-        .info-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            align-items: flex-start;
-        }
-        .info-item:last-child { border-bottom: none; }
-        .info-icon {
-            font-size: 1.3rem;
-            margin-top: 0.1rem;
-        }
-        .info-item strong {
-            display: block;
-            color: rgba(255,255,255,0.9);
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.2rem;
-        }
-        .info-item span {
-            color: rgba(255,255,255,0.4);
-            font-size: 0.88rem;
-        }
-
-        /* === DEVIS FORM === */
-        .devis { background: var(--bg); }
-        .devis-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1100px;
-            margin: 0 auto;
-            align-items: start;
-        }
-        .devis-text h2 { margin-bottom: 1rem; }
-        .devis-text p {
-            color: var(--gris);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-        .devis-avantages { list-style: none; }
-        .devis-avantages li {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.6rem 0;
-            font-size: 0.92rem;
-            font-weight: 500;
-        }
-        .devis-avantages li::before {
-            content: '→';
-            color: var(--rouge);
-            font-weight: 800;
-        }
-        .devis-form {
-            background: var(--white);
-            padding: 2.5rem;
-            border-top: 4px solid var(--rouge);
-        }
-        .devis-form h3 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-        .form-group { margin-bottom: 1rem; }
-        .form-group label {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gris);
-            margin-bottom: 0.4rem;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            border: 1.5px solid var(--border);
-            background: var(--bg);
-            font-family: 'Barlow', sans-serif;
-            font-size: 0.9rem;
-            color: var(--noir);
-            transition: all 0.2s;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--rouge);
-            background: white;
-        }
-        .form-group textarea { resize: vertical; min-height: 90px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .form-submit {
-            width: 100%;
-            padding: 1rem;
-            background: var(--rouge);
-            color: white;
-            border: none;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-            transition: all 0.3s;
-            margin-top: 0.5rem;
-        }
-        .form-submit:hover { background: var(--rouge-dark); }
-
-        /* === FOOTER === */
-        footer {
-            background: #0A0A0A;
-            padding: 3rem 5% 2rem;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .footer-logo-text {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 1.5rem;
-            color: white;
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
-        }
-        .footer-logo-text span { color: var(--rouge); }
-        .footer-brand p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.35);
-            line-height: 1.7;
-        }
-        .footer-col h4 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-        .footer-col a {
-            display: block;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.35);
-            padding: 0.3rem 0;
-            transition: color 0.2s;
-        }
-        .footer-col a:hover { color: var(--rouge); }
-        .footer-copy {
-            text-align: center;
-            padding-top: 1.5rem;
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.2);
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* === RESPONSIVE === */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 4rem; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .tarifs-grid { grid-template-columns: repeat(2, 1fr); }
-            .counter-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .nav-burger { display: flex; }
-            .hero h1 { font-size: 3rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .about-badge { right: 1rem; }
-            .avis-grid { grid-template-columns: 1fr; }
-            .infos-grid { grid-template-columns: 1fr; }
-            .devis-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            section { padding: 4rem 5%; }
-            h2 { font-size: 2.2rem; }
-        }
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2.5rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .tarifs-grid { grid-template-columns: 1fr; }
-            .counter-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-    </style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .devis-inner { grid-template-columns: 1fr; gap: 40px; }
+      .avis-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .nav-links, .nav-tel, .nav-right .btn-dark { display: none; }
+      .nav-burger { display: flex; }
+      .hero h1 { font-size: 48px; }
+      .section-head h2 { font-size: 36px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-ghost { justify-content: center; }
+      .hero-trust { gap: 20px; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Nav -->
-    <nav>
-        <div class="nav-logo">
-            <div class="nav-logo-icon"></div>
-            <div class="nav-logo-text">
-                Garage Renfort
-                <span>Mécanique & Carrosserie</span>
-            </div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#tarifs">Tarifs</a></li>
-            <li><a href="#avis">Avis</a></li>
-            <li><a href="#infos">Horaires</a></li>
-            <li><a href="#devis" class="nav-cta">Devis Gratuit</a></li>
-        </ul>
-        <div class="nav-burger" onclick="toggleMobile()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#services" onclick="closeMobile()">Services</a>
-        <a href="#tarifs" onclick="closeMobile()">Tarifs</a>
-        <a href="#avis" onclick="closeMobile()">Avis</a>
-        <a href="#infos" onclick="closeMobile()">Horaires</a>
-        <a href="#devis" onclick="closeMobile()">Devis Gratuit</a>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">G</div>
+      <div class="nav-logo-text">
+        <div class="nav-logo-name">Garage Auto Express</div>
+        <div class="nav-logo-sub">[VILLE] — Toutes marques</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#devis">Devis</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+33600000000" class="nav-tel">📞 06 00 00 00 00</a>
+      <a href="#devis" class="btn-dark">Prendre RDV</a>
     </div>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-accent"></div>
-        <div class="hero-content">
-            <div class="hero-eyebrow">
-                <div class="line"></div>
-                <span>Paris 15e — Depuis 2009</span>
-            </div>
-            <h1>
-                Garage<br>
-                <span class="highlight">Auto</span><br>
-                <span class="outline">Renfort</span>
-            </h1>
-            <p class="hero-desc">
-                Votre garagiste de confiance à Paris 15e. Mécanique générale, carrosserie, révision et entretien. Devis gratuit en moins de 24h.
-            </p>
-            <div class="hero-btns">
-                <a href="#devis" class="btn-rouge"> Devis gratuit</a>
-                <a href="tel:0145000000" class="btn-outline">— 01 45 00 00 00</a>
-            </div>
-            <div class="hero-badges">
-                <span class="hero-badge"><span class="dot"></span> Toutes marques</span>
-                <span class="hero-badge"><span class="dot"></span> Devis gratuit 24h</span>
-                <span class="hero-badge"><span class="dot"></span> Véhicule de prêt</span>
-                <span class="hero-badge"><span class="dot"></span> Garantie 12 mois</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bandeau défilant -->
-    <div class="bandeau">
-        <div class="bandeau-inner">
-            <span class="bandeau-item"> Mécanique Générale <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Carrosserie & Peinture <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Révision & Entretien <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Diagnostic Électronique <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Pneus & Pneumatiques <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Climatisation <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Mécanique Générale <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Carrosserie & Peinture <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Révision & Entretien <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Diagnostic Électronique <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Pneus & Pneumatiques <span class="bandeau-sep">—</span></span>
-            <span class="bandeau-item"> Climatisation <span class="bandeau-sep">—</span></span>
-        </div>
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-drawer" id="drawer">
+      <a href="#services">Services</a>
+      <a href="#devis">Devis gratuit</a>
+      <a href="#avis">Avis clients</a>
+      <a href="#contact">Contact & horaires</a>
+      <a href="tel:+33600000000" class="btn-primary">📞 Appeler maintenant</a>
     </div>
+  </div>
+</nav>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="services-header">
-            <div>
-                <div class="section-label reveal"><div class="line"></div><span>Nos services</span></div>
-                <h2 class="reveal">Ce qu'on fait<br>mieux que personne</h2>
-            </div>
-            <a href="#devis" class="btn-rouge reveal">Devis gratuit →</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Garage automobile — [VILLE]</div>
+    <h1>Votre voiture<br>entre de bonnes<br><span>mains</span></h1>
+    <p class="hero-sub">Révision, réparation, contrôle technique. Devis gratuit en 2h. Toutes marques, prix transparents.</p>
+    <div class="hero-actions">
+      <a href="#devis" class="btn-primary">Devis gratuit →</a>
+      <a href="tel:+33600000000" class="btn-ghost">📞 Appeler</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item"><strong>20 ans</strong>d'expérience</div>
+      <div class="hero-trust-item"><strong>Toutes</strong>marques</div>
+      <div class="hero-trust-item"><strong>Devis</strong>gratuit</div>
+      <div class="hero-trust-item"><strong>Lun–Sam</strong>8h–19h</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Nos prestations</span>
+      <h2>Ce qu'on fait<br>pour vous</h2>
+      <p>Interventions rapides et soignées sur tous types de véhicules. Diagnostic précis, pièces d'origine ou équivalentes.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Révision & entretien</h3>
+        <p>Vidange, filtres, bougies, courroie de distribution. Entretien constructeur respecté pour toutes marques.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✅</div>
+        <h3>Contrôle technique</h3>
+        <p>Centre agréé. Passage CT et contre-visite. Résultat immédiat, rapport détaillé remis à la main.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Carrosserie</h3>
+        <p>Débosselage, peinture, remplacement de pièces. Devis gratuit, travaux garantis. Prise en charge assurance.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Pneus</h3>
+        <p>Montage, équilibrage, géométrie. Toutes marques disponibles. Stockage hiver/été possible.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>Climatisation</h3>
+        <p>Recharge, nettoyage du circuit, remplacement filtre habitacle. Diagnostic offert.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Diagnostic électronique</h3>
+        <p>Lecture de codes défauts, reset voyant moteur. Valise multimarques, résultat immédiat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI NOUS -->
+<section class="pourquoi">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Pourquoi nous</span>
+      <h2 style="color:var(--white)">Un garage<br>de confiance</h2>
+      <p style="color:rgba(255,255,255,0.55)">Transparence, réactivité, qualité. Trois piliers de notre engagement envers chaque client depuis 20 ans.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-num">20+</div>
+        <h3>Ans d'expérience</h3>
+        <p>Fondé en 2004, notre garage a vu défiler des milliers de véhicules. L'expérience, ça ne s'invente pas.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">100%</div>
+        <h3>Devis gratuit</h3>
+        <p>Aucun frais de diagnostic caché. Vous recevez un devis détaillé avant chaque intervention, sans engagement.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">∞</div>
+        <h3>Toutes marques</h3>
+        <p>Renault, Peugeot, Citroën, VW, Toyota, Ford… Nos techniciens sont formés sur toutes les gammes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVIS -->
+<section class="devis" id="devis">
+  <div class="container">
+    <div class="devis-inner">
+      <div>
+        <span class="label">Devis rapide</span>
+        <h2>Réponse<br>en 2h</h2>
+        <p class="devis-sub">Remplissez le formulaire, on vous rappelle dans les 2 heures avec un devis clair et sans surprise.</p>
+        <div class="devis-points">
+          <div class="devis-point">Devis entièrement gratuit</div>
+          <div class="devis-point">Réponse sous 2h en semaine</div>
+          <div class="devis-point">Aucun engagement</div>
+          <div class="devis-point">Prix ferme, pas de mauvaise surprise</div>
         </div>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-num">01</div>
-                <div class="service-icon"></div>
-                <h3>Mécanique Générale</h3>
-                <p>Révision complète, freins, amortisseurs, embrayage, distribution. Toutes marques, tous modèles.</p>
+      </div>
+      <div class="devis-form">
+        <h3>Votre demande</h3>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="marque">Marque</label>
+              <input type="text" id="marque" name="marque" placeholder="Ex : Renault" required>
             </div>
-            <div class="service-card reveal">
-                <div class="service-num">02</div>
-                <div class="service-icon"></div>
-                <h3>Carrosserie & Peinture</h3>
-                <p>Débosselage, remplacement de pièces, peinture teintée à l'identique. Résultat garanti.</p>
+            <div class="form-group">
+              <label for="modele">Modèle</label>
+              <input type="text" id="modele" name="modele" placeholder="Ex : Clio 5" required>
             </div>
-            <div class="service-card reveal">
-                <div class="service-num">03</div>
-                <div class="service-icon"></div>
-                <h3>Diagnostic Électronique</h3>
-                <p>Lecture et effacement de codes défauts, diagnostic complet des systèmes électroniques du véhicule.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-num">04</div>
-                <div class="service-icon"></div>
-                <h3>Pneus & Jantes</h3>
-                <p>Montage, équilibrage, géométrie. Large stock de pneus toutes marques aux meilleurs prix.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-num">05</div>
-                <div class="service-icon"></div>
-                <h3>Climatisation</h3>
-                <p>Recharge de climatisation, détection de fuites, remplacement de compresseur et de filtre habitacle.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-num">06</div>
-                <div class="service-icon"></div>
-                <h3>Contrôle Technique</h3>
-                <p>Préparation au contrôle technique, contre-visite prise en charge. Rendez-vous rapide garanti.</p>
-            </div>
+          </div>
+          <div class="form-group">
+            <label for="prestation">Prestation souhaitée</label>
+            <select id="prestation" name="prestation" required>
+              <option value="">Choisir une prestation...</option>
+              <option>Révision / Entretien</option>
+              <option>Contrôle technique</option>
+              <option>Carrosserie</option>
+              <option>Pneus</option>
+              <option>Climatisation</option>
+              <option>Diagnostic électronique</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" placeholder="06 00 00 00 00" required>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center">
+            Envoyer ma demande →
+          </button>
+          <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:10px">Réponse sous 2h · Gratuit · Sans engagement</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="avis" id="avis">
+  <div class="container">
+    <div class="section-head">
+      <span class="label">Avis clients</span>
+      <h2>Ils nous font<br>confiance</h2>
+      <p>Plus de 300 clients satisfaits. Nos avis Google parlent pour nous.</p>
+    </div>
+    <div class="avis-grid">
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« Rapide, honnête et efficace. J'ai amené ma Golf pour un voyant allumé, diagnostic en 30 min, réparation le lendemain. Tarif vraiment raisonnable. »</p>
+        <div class="avis-sep"></div>
+        <div class="avis-name">Thomas R.</div>
+        <div class="avis-loc">[VILLE] · il y a 2 semaines</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« Devis gratuit reçu en 1h, prise en charge le surlendemain. La carrosserie est impeccable. Je recommande sans hésiter à tout mon entourage. »</p>
+        <div class="avis-sep"></div>
+        <div class="avis-name">Amina K.</div>
+        <div class="avis-loc">[VILLE] · il y a 1 mois</div>
+      </div>
+      <div class="avis-card">
+        <div class="avis-stars">★★★★★</div>
+        <p class="avis-text">« CT réussi du premier coup grâce aux conseils donnés avant le passage. Équipe sympa et transparente sur les prix. Mon garage de référence depuis 5 ans. »</p>
+        <div class="avis-sep"></div>
+        <div class="avis-name">Marc-Antoine D.</div>
+        <div class="avis-loc">[VILLE] · il y a 3 semaines</div>
+      </div>
+    </div>
+    <div class="google-badge">
+      ⭐ <strong>4.9 / 5</strong> · 127 avis sur Google ·
+      <a href="#" style="color:var(--red);font-weight:600;margin-left:4px">Voir tous les avis →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">Garage <span>Auto</span> Express</div>
+          <p class="footer-brand-desc">Garagiste de confiance à [VILLE] depuis 2004. Toutes marques, toutes prestations. Devis gratuit, tarifs transparents.</p>
+          <a href="tel:+33600000000" class="footer-tel">📞 06 00 00 00 00</a>
         </div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-        <div class="about-grid">
-            <div class="about-image reveal">
-                <div class="about-img-main"></div>
-                <div class="about-badge">
-                    <div class="num">15</div>
-                    <div class="label">ans<br>d'expérience</div>
-                </div>
-            </div>
-            <div class="about-content reveal">
-                <div class="section-label"><div class="line"></div><span>Notre garage</span></div>
-                <h2>La mécanique,<br>c'est notre passion</h2>
-                <p>Fondé en 2009 par Karim Renfort, mécanicien depuis l'âge de 16 ans, notre garage s'est imposé comme une référence dans le 15e arrondissement. On vous parle vrai, on vous explique tout et on ne vous facture que ce dont vous avez besoin.</p>
-                <p>Notre équipe de 4 mécaniciens qualifiés intervient sur toutes marques avec des pièces d'origine ou équivalentes, toujours sous garantie 12 mois.</p>
-                <div class="about-tags">
-                    <span class="about-tag">Toutes marques</span>
-                    <span class="about-tag">Pièces garanties</span>
-                    <span class="about-tag">Devis transparent</span>
-                    <span class="about-tag">Véhicule de prêt</span>
-                    <span class="about-tag">Garanti 12 mois</span>
-                </div>
-            </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li>Révision & entretien</li>
+            <li>Contrôle technique</li>
+            <li>Carrosserie & peinture</li>
+            <li>Pneus & géométrie</li>
+            <li>Climatisation</li>
+            <li>Diagnostic</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Counter -->
-    <section class="counter-section">
-        <div class="counter-grid">
-            <div class="counter-item reveal">
-                <div class="number" data-target="15">0</div>
-                <div class="label">Années d'expérience</div>
-            </div>
-            <div class="counter-item reveal">
-                <div class="number" data-target="4500">0</div>
-                <div class="label">Véhicules réparés</div>
-            </div>
-            <div class="counter-item reveal">
-                <div class="number" data-target="4.8" data-decimals="1">0</div>
-                <div class="label">Note Google</div>
-            </div>
-            <div class="counter-item reveal">
-                <div class="number" data-target="4">0</div>
-                <div class="label">Mécaniciens experts</div>
-            </div>
+        <div class="footer-col">
+          <h4>Horaires</h4>
+          <ul>
+            <li>Lun–Jeu : 8h–19h</li>
+            <li>Vendredi : 8h–18h</li>
+            <li>Samedi : 8h–13h</li>
+            <li>Dimanche : Fermé</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Tarifs -->
-    <section class="tarifs" id="tarifs">
-        <div class="section-label reveal"><div class="line"></div><span>Tarifs indicatifs</span></div>
-        <h2 class="reveal">Des prix clairs,<br>sans mauvaises surprises</h2>
-        <div class="tarifs-grid">
-            <div class="tarif-card reveal">
-                <div class="tarif-icon"></div>
-                <h3>Révision simple</h3>
-                <div class="tarif-price">à partir de<br><span></span>79 €</div>
-                <p>Vidange huile, filtres air et habitacle, contrôle 20 points</p>
-            </div>
-            <div class="tarif-card featured reveal">
-                <div class="tarif-tag">⭐ Le plus demandé</div>
-                <div class="tarif-icon"></div>
-                <h3>Révision complète</h3>
-                <div class="tarif-price">à partir de<br><span></span>149 €</div>
-                <p style="color:rgba(255,255,255,0.4)">Révision simple + freins, pneumatiques, géométrie, diagnostic électronique</p>
-            </div>
-            <div class="tarif-card reveal">
-                <div class="tarif-icon"></div>
-                <h3>Pneus (x4)</h3>
-                <div class="tarif-price">à partir de<br><span></span>199 €</div>
-                <p>Montage et équilibrage inclus, pneus toutes marques disponibles</p>
-            </div>
-            <div class="tarif-card reveal">
-                <div class="tarif-icon"></div>
-                <h3>Devis carrosserie</h3>
-                <div class="tarif-price">Gratuit</div>
-                <p>Estimation gratuite sous 24h pour tous travaux de carrosserie et peinture</p>
-            </div>
+        <div class="footer-col">
+          <h4>Adresse</h4>
+          <ul>
+            <li>12 rue de l'Industrie</li>
+            <li>[CODE POSTAL] [VILLE]</li>
+            <li><a href="mailto:contact@garage-express.fr">contact@garage-express.fr</a></li>
+          </ul>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="maps-link">
+            📍 Voir sur Google Maps →
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <span>© 2025 Garage Auto Express. Tous droits réservés.</span>
+        <span><a href="#">Mentions légales</a> · Réalisé par <a href="https://ms-agency.fr">MS Agency</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <!-- Avis -->
-    <section class="avis" id="avis">
-        <div class="section-label reveal"><div class="line"></div><span>Avis clients</span></div>
-        <h2 class="reveal">Ils nous font confiance</h2>
-        <div class="avis-grid">
-            <div class="avis-card reveal">
-                <div class="avis-stars"></div>
-                <p class="avis-text">"Garage honnête et compétent. Karim m'a expliqué tout ce qui ne fonctionnait pas sans m'en mettre de trop. Prix très correct. Je recommande à tous mes collègues."</p>
-                <div class="avis-author">
-                    <div class="avis-avatar">M</div>
-                    <div>
-                        <div class="avis-name">Mohamed A.</div>
-                        <div class="avis-source">Google Reviews — il y a 2 semaines</div>
-                    </div>
-                </div>
-            </div>
-            <div class="avis-card reveal">
-                <div class="avis-stars"></div>
-                <p class="avis-text">"Ma voiture avait un problème que 3 autres garages n'avaient pas trouvé. Ici ils ont diagnostiqué en 30 minutes. Réparation rapide et pas chère. Vraiment top."</p>
-                <div class="avis-author">
-                    <div class="avis-avatar">S</div>
-                    <div>
-                        <div class="avis-name">Sophie L.</div>
-                        <div class="avis-source">Google Reviews — il y a 1 mois</div>
-                    </div>
-                </div>
-            </div>
-            <div class="avis-card reveal">
-                <div class="avis-stars"></div>
-                <p class="avis-text">"Accueil super sympa, devis clair, délai respecté et véhicule de prêt fourni. Ce qu'on attend d'un bon garage. Je n'irai plus nulle part ailleurs."</p>
-                <div class="avis-author">
-                    <div class="avis-avatar">T</div>
-                    <div>
-                        <div class="avis-name">Thomas B.</div>
-                        <div class="avis-source">Google Reviews — il y a 3 mois</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+  // Burger menu
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('drawer');
+  burger.addEventListener('click', () => {
+    const open = drawer.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
 
-    <!-- Urgence -->
-    <section class="urgence">
-        <h3>! Panne ou urgence ?</h3>
-        <p>On vous dépanne rapidement. Appelez-nous maintenant, on s'occupe de tout.</p>
-        <a href="tel:0145000000" class="urgence-phone">— 01 45 00 00 00</a>
-    </section>
-
-    <!-- Infos -->
-    <section class="infos" id="infos">
-        <div class="section-label"><div class="line"></div><span>Pratique</span></div>
-        <h2>Horaires & Contact</h2>
-        <div class="infos-grid">
-            <div class="reveal">
-                <div class="horaire-row"><span class="day">Lundi — Vendredi</span><span class="time">8h00 — 19h00</span></div>
-                <div class="horaire-row"><span class="day">Samedi</span><span class="time">8h00 — 17h00</span></div>
-                <div class="horaire-row"><span class="day">Dimanche</span><span class="ferme">Fermé</span></div>
-            </div>
-            <div class="reveal">
-                <div class="info-item">
-                    <span class="info-icon">—</span>
-                    <div><strong>Adresse</strong><span>12 Rue Lecourbe, 75015 Paris</span></div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">—</span>
-                    <div><strong>Téléphone</strong><span>01 45 00 00 00</span></div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">→</span>
-                    <div><strong>Accès</strong><span>Métro Cambronne (ligne 6) — Bus 39, 70</span></div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon"></span>
-                    <div><strong>Véhicule de prêt</strong><span>Disponible gratuitement sur réservation</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Devis -->
-    <section class="devis" id="devis">
-        <div class="devis-grid">
-            <div class="devis-text reveal">
-                <div class="section-label"><div class="line"></div><span>Devis gratuit</span></div>
-                <h2>Demandez votre devis en 2 minutes</h2>
-                <p>Décrivez-nous votre problème ou la prestation souhaitée. On vous rappelle sous 24h avec un devis détaillé et transparent — sans engagement.</p>
-                <ul class="devis-avantages">
-                    <li>Devis 100% gratuit et sans engagement</li>
-                    <li>Réponse sous 24h</li>
-                    <li>Prix fermes, pas de mauvaises surprises</li>
-                    <li>Garantie 12 mois pièces et main d'oeuvre</li>
-                </ul>
-            </div>
-            <div class="devis-form reveal">
-                <h3>Votre devis gratuit</h3>
-                <form onsubmit="handleDevis(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Nom</label>
-                            <input type="text" placeholder="Jean Dupont" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Téléphone</label>
-                            <input type="tel" placeholder="06 00 00 00 00" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Marque & Modèle du véhicule</label>
-                        <input type="text" placeholder="Ex: Renault Clio 2018" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Type de prestation</label>
-                        <select required>
-                            <option value="">Choisir...</option>
-                            <option>Révision / Entretien</option>
-                            <option>Freins</option>
-                            <option>Carrosserie / Peinture</option>
-                            <option>Pneus</option>
-                            <option>Climatisation</option>
-                            <option>Diagnostic / Panne</option>
-                            <option>Contrôle technique</option>
-                            <option>Autre</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Description du problème</label>
-                        <textarea placeholder="Décrivez le problème ou la prestation souhaitée..."></textarea>
-                    </div>
-                    <button type="submit" class="form-submit">Envoyer ma demande →</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="footer-logo-text">Garage <span>Auto</span> Renfort</div>
-                <p>Votre garagiste de confiance à Paris 15e depuis 2009. Mécanique générale, carrosserie, révision toutes marques. Devis gratuit sous 24h.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <a href="#services">Mécanique générale</a>
-                <a href="#services">Carrosserie</a>
-                <a href="#services">Diagnostic</a>
-                <a href="#services">Pneus</a>
-                <a href="#services">Climatisation</a>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <a href="tel:0145000000">01 45 00 00 00</a>
-                <a>12 Rue Lecourbe, 75015</a>
-                <a>Lun–Ven 8h–19h</a>
-                <a href="#devis">Devis gratuit</a>
-            </div>
-        </div>
-        <p class="footer-copy">&copy; 2024 Garage Auto Renfort — Tous droits réservés — SIRET : 000 000 000 00000</p>
-    </footer>
-
-    <script>
-        // Nav scroll
-        window.addEventListener('scroll', () => {
-            document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 60);
-        });
-
-        // Mobile
-        function toggleMobile() {
-            document.getElementById('mobileMenu').classList.toggle('open');
-            document.querySelector('.nav-burger').classList.toggle('active');
-        }
-        function closeMobile() {
-            document.getElementById('mobileMenu').classList.remove('open');
-            document.querySelector('.nav-burger').classList.remove('active');
-        }
-
-        // Reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Counter
-        const counterObs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelectorAll('.number[data-target]').forEach(num => {
-                        const target = parseFloat(num.dataset.target);
-                        const decimals = parseInt(num.dataset.decimals) || 0;
-                        const start = performance.now();
-                        function update(now) {
-                            const p = Math.min((now - start) / 2000, 1);
-                            const eased = 1 - Math.pow(1 - p, 3);
-                            const val = eased * target;
-                            if (decimals > 0) num.textContent = val.toFixed(decimals);
-                            else if (target >= 1000) num.textContent = Math.floor(val).toLocaleString('fr-FR') + '+';
-                            else num.textContent = Math.floor(val);
-                            if (p < 1) requestAnimationFrame(update);
-                        }
-                        requestAnimationFrame(update);
-                    });
-                    counterObs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('.counter-section').forEach(el => counterObs.observe(el));
-
-        // Devis form
-        function handleDevis(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('.form-submit');
-            btn.textContent = ' Demande envoyée — On vous rappelle sous 24h';
-            btn.style.background = '#16A34A';
-            setTimeout(() => {
-                btn.textContent = 'Envoyer ma demande →';
-                btn.style.background = '';
-                e.target.reset();
-            }, 4000);
-        }
-    </script>
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✅ Demande envoyée !';
+    btn.disabled = true;
+    btn.style.background = '#1a7a4a';
+    btn.style.borderColor = '#1a7a4a';
+  }
+</script>
 </body>
 </html>
