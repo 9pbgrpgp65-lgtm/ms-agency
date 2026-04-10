@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import TemplatePreview from "@/components/TemplatePreview";
+import SectorAnimation from "@/components/SectorAnimation";
 
 export const metadata: Metadata = {
   title: "Portfolio — Nos réalisations",
@@ -15,7 +16,8 @@ const projects = [
     sector: "Garage automobile",
     name: "Garage Moretti",
     city: "Lyon 6ème",
-    img: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80",
+    img: "",
+    anim: "garage" as const,
     desc: "Garage spécialisé multi-marques en difficulté de visibilité locale. Objectif : générer des appels entrants depuis Google Maps et dominer la recherche 'garage Lyon 6'.",
     deliverables: ["SEO local", "Google Maps", "Formulaire devis", "Page services"],
     id: "garage",
@@ -25,7 +27,8 @@ const projects = [
     sector: "Artisan plombier",
     name: "Plomberie Benali",
     city: "Bordeaux Centre",
-    img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80",
+    img: "",
+    anim: "plombier" as const,
     desc: "Plombier indépendant sans présence en ligne. Objectif : capturer les urgences 24h/24 et remplacer le bouche-à-oreille par un flux de leads constant.",
     deliverables: ["Appel urgence direct", "WhatsApp flottant", "SEO local", "Avis clients"],
     id: "artisan",
@@ -101,8 +104,8 @@ export default function PortfolioPage() {
                   style={{ textDecoration: "none", cursor: item.href === "#" ? "default" : "pointer" }}
                 >
                   <div className="p-preview">
-                    {item.href !== "#" ? (
-                      <TemplatePreview src={item.href} label={item.name} />
+                    {item.anim ? (
+                      <SectorAnimation sector={item.anim} />
                     ) : (
                       <Image
                         src={item.img}

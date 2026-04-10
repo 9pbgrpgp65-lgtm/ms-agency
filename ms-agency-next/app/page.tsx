@@ -4,7 +4,7 @@ import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FAQ from "@/components/FAQ";
-import TemplatePreview from "@/components/TemplatePreview";
+import SectorAnimation from "@/components/SectorAnimation";
 
 export const metadata: Metadata = {
   title: "MS Agency — Agence web pour commerces locaux",
@@ -32,21 +32,21 @@ const portfolioItems = [
     sector: "Artisan plombier",
     name: "Plomberie Benali",
     img: "",
-    tpl: "/templates/artisan-plombier/index.html",
+    anim: "plombier" as const,
     tag: "Urgence 24h/24",
   },
   {
     sector: "Garage automobile",
     name: "Garage Moretti",
     img: "",
-    tpl: "/templates/garage/index.html",
+    anim: "garage" as const,
     tag: "SEO local",
   },
   {
     sector: "Restaurant",
     name: "La Trattoria di Roma",
     img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
-    tpl: "",
+    anim: null,
     tag: "Réservation en ligne",
   },
 ];
@@ -205,8 +205,8 @@ export default function HomePage() {
               <RevealOnScroll key={item.name} delay={i + 1}>
                 <Link href="/portfolio" className="p-card">
                   <div className="p-preview">
-                    {item.tpl ? (
-                      <TemplatePreview src={item.tpl} label={item.name} />
+                    {item.anim ? (
+                      <SectorAnimation sector={item.anim} />
                     ) : (
                       <Image
                         src={item.img}

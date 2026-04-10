@@ -2092,3 +2092,220 @@ section {
   .hero-proof-item:last-child { border-bottom: none; }
 }
 
+/* ============================================================
+   SECTOR ANIMATIONS
+   ============================================================ */
+
+/* --- Shared --- */
+.sa-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sa-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+/* --- GARAGE --- */
+.sa-garage {
+  background: #0a0a0a;
+}
+
+.sa-garage-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(230,48,0,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230,48,0,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.sa-garage-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(230,48,0,0.2) 0%, transparent 70%);
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: glow-breathe 3s ease-in-out infinite;
+}
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.6; transform: translate(-50%,-50%) scale(1); }
+  50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.3); }
+}
+
+/* Gears */
+.sa-gear { position: absolute; }
+.sa-gear svg { display: block; }
+
+.sa-gear-big {
+  width: 110px;
+  height: 110px;
+  top: 8%;
+  left: -10px;
+  animation: spin-cw 18s linear infinite;
+}
+.sa-gear-small {
+  width: 60px;
+  height: 60px;
+  top: 5%;
+  right: 10px;
+  animation: spin-ccw 9s linear infinite;
+}
+@keyframes spin-cw  { to { transform: rotate(360deg); } }
+@keyframes spin-ccw { to { transform: rotate(-360deg); } }
+
+/* Car */
+.sa-car {
+  position: absolute;
+  width: 160px;
+  bottom: 20%;
+  animation: car-drive 5s linear infinite;
+}
+.sa-car svg { display: block; }
+@keyframes car-drive {
+  0%   { transform: translateX(-180px); }
+  100% { transform: translateX(calc(100vw + 180px)); }
+}
+
+/* Speed lines (move with car) */
+.sa-speed-lines {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  animation: car-drive 5s linear infinite;
+}
+.sa-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(230,48,0,0.5));
+  border-radius: 1px;
+}
+
+/* Wrench */
+.sa-wrench-icon {
+  position: absolute;
+  width: 44px;
+  bottom: 10%;
+  right: 16%;
+  animation: wrench-rock 2.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.sa-wrench-icon svg { display: block; }
+@keyframes wrench-rock {
+  0%, 100% { transform: rotate(-25deg); }
+  50%       { transform: rotate(25deg); }
+}
+
+.sa-badge-garage {
+  color: #E63000;
+  background: rgba(230,48,0,0.12);
+  border: 1px solid rgba(230,48,0,0.3);
+}
+
+/* --- PLOMBIER --- */
+.sa-plombier {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+}
+
+/* Pipes */
+.sa-pipes { position: absolute; inset: 0; }
+
+.sa-pipe {
+  position: absolute;
+  background: #1D3557;
+  border-radius: 5px;
+}
+.sa-pipe-h { height: 12px; }
+.sa-pipe-v { width: 12px; }
+
+.sa-elbow {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #1D3557;
+  border-radius: 50%;
+}
+
+/* Water drops */
+.sa-drop {
+  position: absolute;
+  width: 18px;
+  opacity: 0;
+  animation: drop-fall 2.2s ease-in infinite;
+}
+.sa-drop svg { display: block; }
+
+.sa-drop-0 { left: calc(68% + 0px); top: 66%; animation-delay: 0s; }
+.sa-drop-1 { left: calc(68% + 0px); top: 66%; animation-delay: 0.55s; }
+.sa-drop-2 { left: calc(68% + 0px); top: 66%; animation-delay: 1.1s; }
+.sa-drop-3 { left: calc(68% + 0px); top: 66%; animation-delay: 1.65s; }
+
+@keyframes drop-fall {
+  0%   { transform: translateY(0);    opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 0.8; }
+  100% { transform: translateY(70px); opacity: 0; }
+}
+
+/* Ripple */
+.sa-ripple {
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  border: 2px solid #1D9BF0;
+  border-radius: 50%;
+  left: calc(68% - 9px);
+  top: calc(66% + 70px);
+  opacity: 0;
+  animation: ripple 2.2s ease-out infinite;
+}
+@keyframes ripple {
+  0%   { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Faucet */
+.sa-faucet {
+  position: absolute;
+  width: 50px;
+  top: 8%;
+  left: 12%;
+  animation: faucet-drip 2.2s ease-in-out infinite;
+}
+.sa-faucet svg { display: block; }
+@keyframes faucet-drip {
+  0%, 90%, 100% { transform: rotate(0deg); }
+  45%            { transform: rotate(-8deg); }
+}
+
+/* Wrench plombier */
+.sa-wrench-p {
+  position: absolute;
+  width: 42px;
+  bottom: 12%;
+  right: 12%;
+  animation: wrench-rock 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.sa-wrench-p svg { display: block; }
+
+.sa-badge-plombier {
+  color: #1D3557;
+  background: rgba(29,53,87,0.1);
+  border: 1px solid rgba(29,53,87,0.25);
+}
+
