@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Dentaire Dr. Laurent Moreau — Paris 11e</title>
+    <meta name="description" content="Cabinet dentaire du Dr. Laurent Moreau, chirurgien-dentiste à Paris 11e. Implants, orthodontie, esthétique dentaire. Prenez rendez-vous en ligne.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --primary-light: #DBEAFE;
+            --accent: #F97316;
+            --accent-dark: #EA6C0A;
+            --bg: #F8FAFC;
+            --bg-white: #FFFFFF;
+            --text: #0F172A;
+            --text-muted: #64748B;
+            --text-light: #94A3B8;
+            --border: rgba(37, 99, 235, 0.12);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(37, 99, 235, 0.1), 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-lg: 0 20px 60px rgba(37, 99, 235, 0.15), 0 8px 24px rgba(0,0,0,0.08);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-lg: 24px;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+        /* ─── NAVBAR ─── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0 24px;
+            transition: all 0.3s ease;
+        }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 72px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 0 28px;
+            margin-top: 12px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px;
+            font-weight: 700; font-size: 1.05rem; color: var(--primary);
+            text-decoration: none;
+        }
+        .nav-logo-icon {
+            width: 36px; height: 36px; background: var(--primary);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+        }
+        .nav-logo-icon svg { color: white; }
+        .nav-links { display: flex; gap: 4px; list-style: none; }
+        .nav-links a {
+            text-decoration: none; color: var(--text-muted); font-size: 0.88rem; font-weight: 500;
+            padding: 8px 14px; border-radius: 8px; transition: all 0.2s;
+        }
+        .nav-links a:hover { color: var(--primary); background: var(--primary-light); }
+        .nav-cta {
+            background: var(--accent); color: white; padding: 10px 20px;
+            border-radius: var(--radius-sm); font-weight: 600; font-size: 0.88rem;
+            text-decoration: none; transition: all 0.2s; white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+        .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4); }
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 40%, #FFF7ED 100%);
+            padding: 120px 24px 80px;
+            position: relative; overflow: hidden;
+            display: flex; align-items: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: -200px; right: -200px;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute; bottom: -150px; left: -150px;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.06) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
+        .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--primary-light); color: var(--primary);
+            padding: 6px 14px; border-radius: 100px;
+            font-size: 0.8rem; font-weight: 600; margin-bottom: 20px;
+        }
+        .hero-badge span { width: 6px; height: 6px; background: var(--primary); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; color: var(--text); }
+        .hero h1 em { font-style: normal; color: var(--primary); }
+        .hero p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 32px; line-height: 1.7; max-width: 460px; }
+        .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--accent); color: white; padding: 14px 28px;
+            border-radius: var(--radius-sm); font-weight: 600; font-size: 0.95rem;
+            text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+        }
+        .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(249, 115, 22, 0.45); }
+        .btn-secondary {
+            background: white; color: var(--text); padding: 14px 28px;
+            border-radius: var(--radius-sm); font-weight: 600; font-size: 0.95rem;
+            text-decoration: none; transition: all 0.2s; border: 1.5px solid var(--border);
+            display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-secondary:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+        .hero-trust { margin-top: 36px; display: flex; align-items: center; gap: 16px; }
+        .hero-stars { color: #FBBF24; font-size: 1rem; letter-spacing: 2px; }
+        .hero-trust-text { font-size: 0.85rem; color: var(--text-muted); }
+        .hero-trust-text strong { color: var(--text); }
+
+        /* Hero right: glass card panel */
+        .hero-panel {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+            position: relative;
+        }
+        .hero-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .hero-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .hero-card.wide { grid-column: 1 / -1; }
+        .hero-card-icon {
+            width: 44px; height: 44px; background: var(--primary-light);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            margin-bottom: 12px; color: var(--primary);
+        }
+        .hero-card-icon.orange { background: #FFF7ED; color: var(--accent); }
+        .hero-card-value { font-size: 1.6rem; font-weight: 800; color: var(--text); line-height: 1; }
+        .hero-card-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+        .hero-card-wide-content { display: flex; align-items: center; gap: 16px; }
+        .hero-card-wide-img {
+            width: 52px; height: 52px; background: linear-gradient(135deg, var(--primary) 0%, #60A5FA 100%);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; font-size: 1.4rem; font-weight: 800; color: white;
+        }
+        .hero-card-wide-text { flex: 1; }
+        .hero-card-wide-name { font-weight: 700; font-size: 0.95rem; }
+        .hero-card-wide-sub { font-size: 0.8rem; color: var(--text-muted); }
+        .hero-card-wide-badge {
+            background: #DCFCE7; color: #16A34A; padding: 4px 10px;
+            border-radius: 100px; font-size: 0.75rem; font-weight: 600;
+        }
+        .hero-rating { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+        .hero-rating-stars { color: #FBBF24; font-size: 0.85rem; }
+        .hero-rating-text { font-size: 0.78rem; color: var(--text-muted); }
+
+        /* ─── SECTION WRAPPER ─── */
+        section { padding: 90px 24px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-tag {
+            display: inline-block; background: var(--primary-light); color: var(--primary);
+            padding: 5px 14px; border-radius: 100px; font-size: 0.78rem; font-weight: 600;
+            margin-bottom: 12px; letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 12px; }
+        .section-sub { color: var(--text-muted); max-width: 520px; margin-bottom: 48px; line-height: 1.7; }
+        .section-center { text-align: center; }
+        .section-center .section-sub { margin: 0 auto 48px; }
+
+        /* ─── SERVICES ─── */
+        .services { background: white; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .service-card {
+            background: var(--bg);
+            border: 1px solid rgba(37, 99, 235, 0.08);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            transition: all 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, #60A5FA 100%);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); background: white; border-color: transparent; }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon {
+            width: 52px; height: 52px; background: var(--primary-light);
+            border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            margin-bottom: 18px; color: var(--primary);
+        }
+        .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .service-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* ─── ABOUT ─── */
+        .about { background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        .about-visual {
+            position: relative;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-lg);
+        }
+        .about-visual-badge {
+            position: absolute; top: -16px; right: 24px;
+            background: var(--accent); color: white;
+            padding: 8px 18px; border-radius: 100px;
+            font-size: 0.8rem; font-weight: 700;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+        }
+        .about-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+        .about-list li {
+            display: flex; align-items: flex-start; gap: 12px;
+            font-size: 0.9rem; line-height: 1.5;
+        }
+        .about-check {
+            width: 22px; height: 22px; background: var(--primary); color: white;
+            border-radius: 6px; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 1px; font-size: 0.7rem; font-weight: 700;
+        }
+        .about-text h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; margin-bottom: 16px; }
+        .about-text p { color: var(--text-muted); margin-bottom: 24px; line-height: 1.7; }
+        .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+        .about-stat {
+            background: white; border-radius: var(--radius-sm); padding: 18px;
+            border: 1px solid var(--border); text-align: center;
+        }
+        .about-stat-value { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+        .about-stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+        /* ─── TEAM ─── */
+        .team { background: white; }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .team-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+        .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .team-avatar {
+            width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; font-weight: 800; color: white;
+        }
+        .team-avatar.blue { background: linear-gradient(135deg, var(--primary) 0%, #60A5FA 100%); }
+        .team-avatar.teal { background: linear-gradient(135deg, #0891B2 0%, #22D3EE 100%); }
+        .team-avatar.violet { background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%); }
+        .team-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .team-card .role { font-size: 0.82rem; color: var(--primary); font-weight: 600; margin-bottom: 12px; }
+        .team-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+        .team-badge {
+            display: inline-block; background: var(--primary-light); color: var(--primary);
+            padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 600;
+            margin-top: 14px;
+        }
+
+        /* ─── COUNTERS ─── */
+        .counters { background: linear-gradient(135deg, var(--primary) 0%, #1D4ED8 100%); padding: 60px 24px; }
+        .counters-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+        .counter-item { text-align: center; padding: 20px; border-right: 1px solid rgba(255,255,255,0.15); }
+        .counter-item:last-child { border-right: none; }
+        .counter-value { font-size: 2.4rem; font-weight: 800; color: white; line-height: 1; }
+        .counter-value span { color: rgba(255,255,255,0.7); font-size: 1.4rem; }
+        .counter-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 6px; }
+
+        /* ─── AVIS ─── */
+        .avis { background: var(--bg); }
+        .avis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .avis-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+        .avis-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .avis-stars { color: #FBBF24; font-size: 0.95rem; margin-bottom: 14px; }
+        .avis-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+        .avis-author { display: flex; align-items: center; gap: 12px; }
+        .avis-avatar {
+            width: 42px; height: 42px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.95rem; color: white; flex-shrink: 0;
+        }
+        .avis-author-info { flex: 1; }
+        .avis-author-name { font-size: 0.88rem; font-weight: 700; }
+        .avis-author-date { font-size: 0.78rem; color: var(--text-light); }
+
+        /* ─── URGENCE ─── */
+        .urgence {
+            background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+            border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent);
+            padding: 56px 24px;
+        }
+        .urgence-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+        .urgence-icon {
+            width: 64px; height: 64px; background: var(--accent); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; color: white;
+        }
+        .urgence h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 10px; }
+        .urgence p { color: var(--text-muted); margin-bottom: 28px; font-size: 1rem; }
+        .urgence-tel {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: var(--accent); color: white; padding: 16px 36px;
+            border-radius: var(--radius-sm); font-size: 1.3rem; font-weight: 800;
+            text-decoration: none; box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+            transition: all 0.2s;
+        }
+        .urgence-tel:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(249, 115, 22, 0.5); }
+
+        /* ─── HORAIRES ─── */
+        .horaires { background: white; }
+        .horaires-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+        .horaires-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            box-shadow: var(--shadow-sm);
+        }
+        .horaires-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; color: var(--primary); }
+        .horaires-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.875rem; }
+        .horaires-row:last-child { border-bottom: none; }
+        .horaires-row .jour { color: var(--text-muted); }
+        .horaires-row .heure { font-weight: 600; }
+        .horaires-row .ferme { color: var(--text-light); font-style: italic; font-weight: 400; }
+        .info-badge { display: flex; align-items: center; gap: 12px; padding: 12px 0; font-size: 0.875rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .info-badge:last-child { border-bottom: none; }
+        .info-badge-icon { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; }
+        .info-badge span { color: var(--text-muted); }
+        .info-badge strong { display: block; color: var(--text); font-weight: 600; }
+
+        /* ─── RDV FORM ─── */
+        .rdv { background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%); }
+        .rdv-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
+        .rdv-info h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 16px; }
+        .rdv-info p { color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; }
+        .rdv-feature { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+        .rdv-feature-icon { width: 38px; height: 38px; background: var(--primary-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; }
+        .rdv-feature h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
+        .rdv-feature p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+        .rdv-form-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-lg);
+        }
+        .rdv-form-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 24px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 11px 14px;
+            border: 1.5px solid rgba(37, 99, 235, 0.15); border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--text);
+            background: white; transition: all 0.2s; outline: none;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .form-submit {
+            width: 100%; padding: 14px; background: var(--accent); color: white;
+            border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif;
+            font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3); margin-top: 8px;
+        }
+        .form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4); }
+        .form-note { font-size: 0.78rem; color: var(--text-light); text-align: center; margin-top: 10px; }
+
+        /* ─── FOOTER ─── */
+        footer { background: var(--text); color: rgba(255,255,255,0.8); padding: 56px 24px 28px; }
+        .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+        .footer-brand h3 { color: white; font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px; }
+        .footer-contact { display: flex; flex-direction: column; gap: 8px; }
+        .footer-contact a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; display: flex; align-items: center; gap: 8px; }
+        .footer-contact a:hover { color: white; }
+        .footer-col h4 { color: white; font-size: 0.9rem; font-weight: 700; margin-bottom: 14px; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .footer-col ul li a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-col ul li a:hover { color: white; }
+        .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+        /* ─── SCROLL ANIMATIONS ─── */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .nav-links, .nav-cta { display: none; }
+            .nav-hamburger { display: block; }
+            .hero-inner, .about-grid, .rdv-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-panel { display: none; }
+            .services-grid, .team-grid, .counters-grid { grid-template-columns: 1fr 1fr; }
+            .avis-grid, .horaires-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .counter-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+            .counter-item:last-child { border-bottom: none; }
+        }
+        @media (max-width: 600px) {
+            .services-grid, .team-grid, .counters-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8 2 5 5 5 9c0 2 .8 3.8 2 5l5 8 5-8c1.2-1.2 2-3 2-5 0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            Dr. Moreau
+        </a>
+        <ul class="nav-links">
+            <li><a href="#services">Soins</a></li>
+            <li><a href="#equipe">Équipe</a></li>
+            <li><a href="#horaires">Horaires</a></li>
+            <li><a href="#avis">Avis</a></li>
+        </ul>
+        <a href="#rdv" class="nav-cta">Prendre rendez-vous</a>
+        <button class="nav-hamburger" aria-label="Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge"><span></span>Cabinet ouvert — Paris 11e</div>
+            <h1>Votre santé dentaire, <em>notre priorité</em></h1>
+            <p>Le Dr. Laurent Moreau et son équipe vous accueillent dans un cabinet moderne pour des soins de qualité, dans un environnement calme et rassurant.</p>
+            <div class="hero-actions">
+                <a href="#rdv" class="btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Prendre rendez-vous
+                </a>
+                <a href="#services" class="btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                    Nos soins
+                </a>
+            </div>
+            <div class="hero-trust">
+                <div class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="hero-trust-text"><strong>4.9/5</strong> — Plus de 320 avis patients</div>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <div class="hero-card wide">
+                <div class="hero-card-wide-content">
+                    <div class="hero-card-wide-img">LM</div>
+                    <div class="hero-card-wide-text">
+                        <div class="hero-card-wide-name">Dr. Laurent Moreau</div>
+                        <div class="hero-card-wide-sub">Chirurgien-Dentiste — 18 ans d'expérience</div>
+                        <div class="hero-rating">
+                            <div class="hero-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hero-rating-text">4.9 · 320 avis</div>
+                        </div>
+                    </div>
+                    <div class="hero-card-wide-badge">Disponible</div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="hero-card-value">2 400+</div>
+                <div class="hero-card-label">Patients suivis</div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-icon orange">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="hero-card-value">18 ans</div>
+                <div class="hero-card-label">D'expérience</div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="hero-card-value">J+2</div>
+                <div class="hero-card-label">Prochain créneau</div>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-icon orange">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="hero-card-value">100%</div>
+                <div class="hero-card-label">Secteur 1</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-center">
+            <span class="section-tag">Nos soins</span>
+            <h2 class="section-title">Des soins complets pour toute la famille</h2>
+            <p class="section-sub">Du bilan annuel aux traitements complexes, nous prenons en charge l'ensemble de vos besoins dentaires avec le matériel le plus moderne.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 2 .8 3.8 2 5l5 8 5-8c1.2-1.2 2-3 2-5 0-4-3-7-7-7z"/></svg>
+                </div>
+                <h3>Soins conservateurs</h3>
+                <p>Détartrage, traitement des caries, dévitalisation. Nous préservons vos dents naturelles avec des matériaux sans amalgame.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                </div>
+                <h3>Blanchiment dentaire</h3>
+                <p>Technique professionnelle par gouttières ou en cabinet. Résultats visibles dès la première séance, teinte garantie durable.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                </div>
+                <h3>Implantologie</h3>
+                <p>Remplacement d'une ou plusieurs dents manquantes par des implants en titane. Solution permanente, esthétique et fonctionnelle.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-3">
+                <div class="service-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </div>
+                <h3>Orthodontie adulte</h3>
+                <p>Aligneurs transparents Invisalign ou bagues céramiques discrètes. Correction des malocclusions sans contraintes esthétiques.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-4">
+                <div class="service-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Pédodontie</h3>
+                <p>Suivi bucco-dentaire des enfants dans une ambiance détendue. Prévention, scellement des sillons, premières consultations dès 3 ans.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-5">
+                <div class="service-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <h3>Prothèses dentaires</h3>
+                <p>Couronnes, facettes, bridges et prothèses amovibles. Des réhabilitations esthétiques sur mesure en collaboration avec nos prothésistes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="cabinet">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual reveal">
+                <div class="about-visual-badge">Cabinet certifié ISO</div>
+                <ul class="about-list">
+                    <li>
+                        <div class="about-check">&#10003;</div>
+                        <span><strong>Radiologie numérique basse dose</strong> — images précises, exposition réduite de 70%</span>
+                    </li>
+                    <li>
+                        <div class="about-check">&#10003;</div>
+                        <span><strong>Stérilisation en autoclave classe B</strong> — normes européennes les plus strictes</span>
+                    </li>
+                    <li>
+                        <div class="about-check">&#10003;</div>
+                        <span><strong>Anesthésie assistée par ordinateur</strong> — injection sans douleur pour tous les patients</span>
+                    </li>
+                    <li>
+                        <div class="about-check">&#10003;</div>
+                        <span><strong>Tiers payant intégral</strong> — 100% Santé pris en charge, zéro reste à charge</span>
+                    </li>
+                    <li>
+                        <div class="about-check">&#10003;</div>
+                        <span><strong>Accessibilité PMR</strong> — cabinet entièrement accessible aux personnes à mobilité réduite</span>
+                    </li>
+                </ul>
+                <div class="about-stats">
+                    <div class="about-stat"><div class="about-stat-value">18</div><div class="about-stat-label">Ans d'exercice</div></div>
+                    <div class="about-stat"><div class="about-stat-value">3</div><div class="about-stat-label">Praticiens</div></div>
+                    <div class="about-stat"><div class="about-stat-value">6</div><div class="about-stat-label">Spécialités</div></div>
+                    <div class="about-stat"><div class="about-stat-value">100%</div><div class="about-stat-label">Satisfaction</div></div>
+                </div>
+            </div>
+            <div class="about-text reveal reveal-delay-2">
+                <span class="section-tag">Notre cabinet</span>
+                <h2>Un environnement moderne pour des soins sans stress</h2>
+                <p>Situé en plein cœur du 11e arrondissement, notre cabinet allie technologies de pointe et approche humaine. Chaque patient bénéficie d'un plan de traitement personnalisé et d'un suivi rigoureux.</p>
+                <p>Nous croyons que des soins dentaires de qualité ne doivent pas être source d'anxiété. Notre équipe prend le temps d'expliquer chaque geste et d'adapter les traitements à vos besoins.</p>
+                <a href="#rdv" class="btn-primary" style="margin-top:8px; display:inline-flex; align-items:center; gap:8px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Prendre rendez-vous
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="equipe">
+    <div class="container">
+        <div class="section-center">
+            <span class="section-tag">L'équipe</span>
+            <h2 class="section-title">Des praticiens à votre écoute</h2>
+            <p class="section-sub">Une équipe soudée de chirurgiens-dentistes et d'assistants qualifiés, dévoués à votre santé bucco-dentaire.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card reveal">
+                <div class="team-avatar blue">LM</div>
+                <h3>Dr. Laurent Moreau</h3>
+                <div class="role">Chirurgien-Dentiste — Fondateur</div>
+                <p>Diplômé de la Faculté de Chirurgie Dentaire de Paris VII. Spécialiste en implantologie et esthétique dentaire depuis 18 ans.</p>
+                <span class="team-badge">Implantologie · Esthétique</span>
+            </div>
+            <div class="team-card reveal reveal-delay-2">
+                <div class="team-avatar teal">SC</div>
+                <h3>Dr. Sophie Clément</h3>
+                <div class="role">Chirurgien-Dentiste — Orthodontie</div>
+                <p>Spécialiste en orthodontie adulte et pédiatrique. Certifiée Invisalign Diamond Provider. Approche douce et personnalisée.</p>
+                <span class="team-badge">Orthodontie · Aligneurs</span>
+            </div>
+            <div class="team-card reveal reveal-delay-4">
+                <div class="team-avatar violet">TB</div>
+                <h3>Thomas Bernard</h3>
+                <div class="role">Assistant dentaire qualifié</div>
+                <p>Assistant qualifié niveau II, en charge de la stérilisation, de l'accueil des patients et de l'assistance au fauteuil.</p>
+                <span class="team-badge">Assistance · Accueil</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COUNTERS -->
+<div class="counters">
+    <div class="container">
+        <div class="counters-grid">
+            <div class="counter-item">
+                <div class="counter-value" data-target="2400">0<span>+</span></div>
+                <div class="counter-label">Patients suivis</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" data-target="18">0<span> ans</span></div>
+                <div class="counter-label">D'expérience</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" data-target="320">0<span>+</span></div>
+                <div class="counter-label">Avis patients</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" data-target="98">0<span>%</span></div>
+                <div class="counter-label">Taux de satisfaction</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AVIS -->
+<section class="avis" id="avis">
+    <div class="container">
+        <div class="section-center">
+            <span class="section-tag">Témoignages</span>
+            <h2 class="section-title">Ce que disent nos patients</h2>
+            <p class="section-sub">Plus de 320 patients nous ont fait confiance. Voici quelques témoignages authentiques.</p>
+        </div>
+        <div class="avis-grid">
+            <div class="avis-card reveal">
+                <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="avis-text">"Je suis phobique des dentistes depuis l'enfance. Le Dr. Moreau a su me mettre immédiatement à l'aise. L'anesthésie était indolore, je n'ai rien senti. Je recommande vivement ce cabinet."</p>
+                <div class="avis-author">
+                    <div class="avis-avatar" style="background: linear-gradient(135deg, #2563EB, #60A5FA);">C</div>
+                    <div class="avis-author-info">
+                        <div class="avis-author-name">Claire D.</div>
+                        <div class="avis-author-date">Il y a 2 semaines · Google</div>
+                    </div>
+                </div>
+            </div>
+            <div class="avis-card reveal reveal-delay-2">
+                <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="avis-text">"Cabinet moderne et équipe très professionnelle. J'ai fait mes facettes avec le Dr. Moreau, le résultat est bluffant. Naturel, lumineux, exactement ce que je voulais. Merci !"</p>
+                <div class="avis-author">
+                    <div class="avis-avatar" style="background: linear-gradient(135deg, #0891B2, #22D3EE);">M</div>
+                    <div class="avis-author-info">
+                        <div class="avis-author-name">Mélanie T.</div>
+                        <div class="avis-author-date">Il y a 1 mois · Google</div>
+                    </div>
+                </div>
+            </div>
+            <div class="avis-card reveal reveal-delay-4">
+                <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="avis-text">"Implant posé sans douleur, cicatrisation parfaite. Le Dr. Moreau m'a suivi à chaque étape, a répondu à toutes mes questions. Secteur 1 donc pas de dépassement, c'est appréciable."</p>
+                <div class="avis-author">
+                    <div class="avis-avatar" style="background: linear-gradient(135deg, #7C3AED, #A78BFA);">A</div>
+                    <div class="avis-author-info">
+                        <div class="avis-author-name">Antoine R.</div>
+                        <div class="avis-author-date">Il y a 3 mois · Google</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- URGENCE -->
+<div class="urgence" id="urgence">
+    <div class="urgence-inner">
+        <div class="urgence-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h2>Urgence dentaire ?</h2>
+        <p>Douleur aiguë, fracture, abcès — nous réservons des créneaux d'urgence chaque jour. Appelez-nous, nous vous prendrons en charge rapidement.</p>
+        <a href="tel:0142001234" class="urgence-tel">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            01 42 00 12 34
+        </a>
+    </div>
+</div>
+
+<!-- HORAIRES -->
+<section class="horaires" id="horaires">
+    <div class="container">
+        <div class="section-center">
+            <span class="section-tag">Infos pratiques</span>
+            <h2 class="section-title">Horaires et accès</h2>
+            <p class="section-sub">Le cabinet est ouvert 5 jours sur 7. Consultations sur rendez-vous uniquement, sauf urgences.</p>
+        </div>
+        <div class="horaires-grid">
+            <div class="horaires-card reveal">
+                <h3>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Horaires d'ouverture
+                </h3>
+                <div class="horaires-row"><span class="jour">Lundi</span><span class="heure">9h — 19h</span></div>
+                <div class="horaires-row"><span class="jour">Mardi</span><span class="heure">9h — 19h</span></div>
+                <div class="horaires-row"><span class="jour">Mercredi</span><span class="heure">9h — 17h</span></div>
+                <div class="horaires-row"><span class="jour">Jeudi</span><span class="heure">9h — 19h</span></div>
+                <div class="horaires-row"><span class="jour">Vendredi</span><span class="heure">9h — 18h</span></div>
+                <div class="horaires-row"><span class="jour">Samedi</span><span class="ferme">Fermé</span></div>
+                <div class="horaires-row"><span class="jour">Dimanche</span><span class="ferme">Fermé</span></div>
+            </div>
+            <div class="horaires-card reveal reveal-delay-2">
+                <h3>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Adresse et accès
+                </h3>
+                <div class="info-badge">
+                    <div class="info-badge-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/></svg>
+                    </div>
+                    <div><strong>14 rue de la Roquette, 75011 Paris</strong><span>3e étage, ascenseur disponible</span></div>
+                </div>
+                <div class="info-badge">
+                    <div class="info-badge-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div><strong>Métro Bastille ou Ledru-Rollin</strong><span>Lignes 1, 5, 8 — 3 min à pied</span></div>
+                </div>
+                <div class="info-badge">
+                    <div class="info-badge-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </div>
+                    <div><strong>Parking Bastille</strong><span>Tarif préférentiel sur présentation du ticket</span></div>
+                </div>
+                <div class="info-badge">
+                    <div class="info-badge-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12"/></svg>
+                    </div>
+                    <div><strong>01 42 00 12 34</strong><span>contact@cabinet-moreau.fr</span></div>
+                </div>
+            </div>
+            <div class="horaires-card reveal reveal-delay-4">
+                <h3>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Mutuelle et remboursements
+                </h3>
+                <div class="info-badge">
+                    <div class="info-badge-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div><strong>Secteur 1 — sans dépassement</strong><span>Tarifs conventionnés Sécurité Sociale</span></div>
+                </div>
+                <div class="info-badge">
+                    <div class="info-badge-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div><strong>100% Santé disponible</strong><span>Prothèses et appareils sans reste à charge</span></div>
+                </div>
+                <div class="info-badge">
+                    <div class="info-badge-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div><strong>Tiers payant accepté</strong><span>Toutes mutuelles et CMU-C</span></div>
+                </div>
+                <div class="info-badge">
+                    <div class="info-badge-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <div><strong>Paiement en 3 fois sans frais</strong><span>Pour les soins supérieurs à 300 €</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RDV FORM -->
+<section class="rdv" id="rdv">
+    <div class="container">
+        <div class="rdv-grid">
+            <div class="rdv-info reveal">
+                <span class="section-tag">Prendre rendez-vous</span>
+                <h2>Réservez votre consultation en ligne</h2>
+                <p>Choisissez le motif de votre visite et nous vous contacterons sous 24h pour confirmer votre créneau. Consultation initiale offerte pour les nouveaux patients.</p>
+                <div class="rdv-feature">
+                    <div class="rdv-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div>
+                        <h4>Réponse sous 24h</h4>
+                        <p>Nous confirmons votre rendez-vous rapidement par SMS ou email</p>
+                    </div>
+                </div>
+                <div class="rdv-feature">
+                    <div class="rdv-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <h4>Données sécurisées</h4>
+                        <p>Vos informations médicales sont protégées conformément au RGPD</p>
+                    </div>
+                </div>
+                <div class="rdv-feature">
+                    <div class="rdv-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <h4>Rappel automatique</h4>
+                        <p>SMS de rappel 48h avant votre consultation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rdv-form-card reveal reveal-delay-2">
+                <h3>Demande de rendez-vous</h3>
+                <form onsubmit="handleRdv(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Prénom</label>
+                            <input type="text" placeholder="Marie" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" placeholder="Dupont" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" placeholder="06 00 00 00 00" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="marie@email.fr" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Motif de consultation</label>
+                        <select required>
+                            <option value="">Choisissez un motif</option>
+                            <option>Bilan dentaire annuel</option>
+                            <option>Détartrage</option>
+                            <option>Traitement carie</option>
+                            <option>Blanchiment dentaire</option>
+                            <option>Implant dentaire</option>
+                            <option>Orthodontie / aligneurs</option>
+                            <option>Prothèse / couronne</option>
+                            <option>Urgence dentaire</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message (facultatif)</label>
+                        <textarea placeholder="Décrivez brièvement votre situation ou posez une question..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Envoyer ma demande</button>
+                    <p class="form-note">En soumettant ce formulaire, vous acceptez notre politique de confidentialité. Aucune donnée n'est partagée avec des tiers.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 2 .8 3.8 2 5l5 8 5-8c1.2-1.2 2-3 2-5 0-4-3-7-7-7z"/></svg>
+                Cabinet Dentaire Dr. Moreau
+            </h3>
+            <p>Cabinet dentaire moderne dans le 11e arrondissement de Paris. Soins pour toute la famille, secteur 1 sans dépassement d'honoraires.</p>
+            <div class="footer-contact">
+                <a href="tel:0142001234">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.24h3a2 2 0 0 1 2 1.72"/></svg>
+                    01 42 00 12 34
+                </a>
+                <a href="mailto:contact@cabinet-moreau.fr">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    contact@cabinet-moreau.fr
+                </a>
+                <a href="#">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    14 rue de la Roquette, 75011 Paris
+                </a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Nos soins</h4>
+            <ul>
+                <li><a href="#services">Soins conservateurs</a></li>
+                <li><a href="#services">Blanchiment</a></li>
+                <li><a href="#services">Implantologie</a></li>
+                <li><a href="#services">Orthodontie</a></li>
+                <li><a href="#services">Pédodontie</a></li>
+                <li><a href="#services">Prothèses</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Cabinet</h4>
+            <ul>
+                <li><a href="#cabinet">Notre cabinet</a></li>
+                <li><a href="#equipe">L'équipe</a></li>
+                <li><a href="#avis">Avis patients</a></li>
+                <li><a href="#horaires">Horaires</a></li>
+                <li><a href="#rdv">Prendre RDV</a></li>
+                <li><a href="#urgence">Urgence</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Cabinet Dentaire Dr. Laurent Moreau — Tous droits réservés</p>
+        <p>RPPS : 10003456789 — Ordre des Chirurgiens-Dentistes de Paris</p>
+    </div>
+</footer>
+
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Animated counters
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.target);
+        const suffix = el.querySelector('span') ? el.querySelector('span').textContent : '';
+        const duration = 1800;
+        const start = performance.now();
+        function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(ease * target);
+            el.innerHTML = current.toLocaleString('fr-FR') + '<span>' + suffix + '</span>';
+            if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+    }
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                animateCounter(e.target);
+                counterObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter-value[data-target]').forEach(el => counterObserver.observe(el));
+
+    // Navbar scroll
+    const navInner = document.querySelector('.nav-inner');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            navInner.style.background = 'rgba(255,255,255,0.92)';
+            navInner.style.boxShadow = '0 4px 24px rgba(37,99,235,0.15)';
+        } else {
+            navInner.style.background = 'rgba(255,255,255,0.7)';
+            navInner.style.boxShadow = '0 4px 16px rgba(37,99,235,0.1)';
+        }
+    });
+
+    // Form handler
+    function handleRdv(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.form-submit');
+        btn.textContent = 'Demande envoyée !';
+        btn.style.background = '#16A34A';
+        btn.style.boxShadow = '0 4px 16px rgba(22,163,74,0.3)';
+        btn.disabled = true;
+        e.target.reset();
+        setTimeout(() => {
+            btn.textContent = 'Envoyer ma demande';
+            btn.style.background = '';
+            btn.style.boxShadow = '';
+            btn.disabled = false;
+        }, 4000);
+    }
+</script>
+
+</body>
+</html>

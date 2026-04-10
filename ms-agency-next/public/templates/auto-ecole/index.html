@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto École Drive — Permis B à Argenteuil</title>
+    <meta name="description" content="Auto école à Argenteuil. Permis B, conduite accompagnée, code de la route. Moniteurs diplômés, taux de réussite élevé. Inscription en ligne.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #00C853;
+            --green-dark: #00A846;
+            --green-light: #E8FFF1;
+            --green-mid: #CCFCE1;
+            --blue: #2563EB;
+            --text: #0D1F12;
+            --text-muted: #4B5563;
+            --text-light: #9CA3AF;
+            --bg: #F9FAFB;
+            --white: #FFFFFF;
+            --border: #E5E7EB;
+            --border-green: rgba(0, 200, 83, 0.25);
+            --radius: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+            --shadow-green: 0 8px 32px rgba(0, 200, 83, 0.25);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+
+        /* ─── NAV ─── */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 68px;
+        }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo-mark {
+            width: 38px; height: 38px; background: var(--green); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; color: white;
+        }
+        .nav-logo-text { font-weight: 800; font-size: 1.1rem; color: var(--text); }
+        .nav-logo-text span { color: var(--green); }
+        .nav-links { display: flex; gap: 2px; list-style: none; }
+        .nav-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 0.875rem;
+            font-weight: 500; padding: 8px 14px; border-radius: 8px; transition: all 0.15s; cursor: pointer;
+        }
+        .nav-links a:hover { color: var(--text); background: var(--green-light); }
+        .nav-cta {
+            background: var(--green); color: white; padding: 10px 22px;
+            border-radius: 100px; font-weight: 700; font-size: 0.875rem;
+            text-decoration: none; transition: all 0.2s; cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,200,83,0.3);
+        }
+        .nav-cta:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: var(--shadow-green); }
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; }
+
+        /* ─── HERO ─── */
+        .hero { background: var(--white); padding: 72px 24px 80px; }
+        .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--green-light); color: var(--green-dark);
+            border: 1px solid var(--border-green);
+            padding: 6px 14px; border-radius: 100px;
+            font-size: 0.8rem; font-weight: 700; margin-bottom: 20px;
+        }
+        .hero-badge-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(1.5); } }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 900;
+            line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.02em;
+        }
+        .hero h1 em { font-style: normal; color: var(--green); }
+        .hero-sub { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 32px; line-height: 1.7; max-width: 460px; }
+
+        .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+        .btn-green {
+            background: var(--green); color: white; padding: 15px 30px;
+            border-radius: 100px; font-weight: 700; font-size: 1rem;
+            text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: 0 4px 16px rgba(0,200,83,0.3); cursor: pointer;
+        }
+        .btn-green:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: var(--shadow-green); }
+        .btn-ghost {
+            background: transparent; color: var(--text); padding: 15px 30px;
+            border-radius: 100px; font-weight: 600; font-size: 1rem;
+            text-decoration: none; transition: all 0.2s; border: 1.5px solid var(--border);
+            display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+        }
+        .btn-ghost:hover { border-color: var(--green); color: var(--green); background: var(--green-light); }
+
+        .hero-proof { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .hero-proof-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-muted); }
+        .hero-proof-item strong { color: var(--text); font-weight: 700; }
+        .hero-proof-sep { width: 4px; height: 4px; background: var(--border); border-radius: 50%; }
+
+        /* Hero right */
+        .hero-visual { position: relative; }
+        .hero-card-main {
+            background: var(--white); border: 1.5px solid var(--border);
+            border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-md);
+        }
+        .hero-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+        .hero-card-title { font-weight: 800; font-size: 1.1rem; }
+        .hero-card-badge { background: var(--green-light); color: var(--green-dark); padding: 4px 12px; border-radius: 100px; font-size: 0.78rem; font-weight: 700; }
+        .hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .hero-stat {
+            background: var(--bg); border-radius: var(--radius); padding: 16px;
+            border: 1px solid var(--border);
+        }
+        .hero-stat-val { font-size: 1.6rem; font-weight: 900; color: var(--green); line-height: 1; }
+        .hero-stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+        .hero-progress { margin-bottom: 20px; }
+        .hero-progress-label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 6px; }
+        .hero-progress-label span { color: var(--text-muted); }
+        .hero-progress-label strong { color: var(--text); }
+        .progress-bar { height: 8px; background: var(--green-mid); border-radius: 100px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--green); border-radius: 100px; width: 87%; }
+        .hero-card-cta {
+            width: 100%; padding: 14px; background: var(--green); color: white;
+            border: none; border-radius: 100px; font-family: 'Inter', sans-serif;
+            font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,200,83,0.3);
+        }
+        .hero-card-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+        .hero-float-card {
+            position: absolute; bottom: -20px; left: -30px;
+            background: white; border: 1.5px solid var(--border); border-radius: var(--radius-lg);
+            padding: 14px 18px; box-shadow: var(--shadow-md);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .hero-float-icon { width: 36px; height: 36px; background: var(--green-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--green-dark); flex-shrink: 0; }
+        .hero-float-text { font-size: 0.82rem; }
+        .hero-float-text strong { display: block; font-weight: 700; font-size: 0.88rem; }
+        .hero-float-text span { color: var(--text-muted); }
+
+        /* ─── FORMULES ─── */
+        .formules { padding: 88px 24px; background: var(--bg); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-tag {
+            display: inline-block; background: var(--green-light); color: var(--green-dark);
+            padding: 5px 14px; border-radius: 100px; font-size: 0.78rem; font-weight: 700;
+            margin-bottom: 12px; letter-spacing: 0.3px;
+        }
+        .section-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; margin-bottom: 10px; letter-spacing: -0.02em; }
+        .section-sub { color: var(--text-muted); max-width: 500px; margin-bottom: 48px; }
+        .section-center { text-align: center; }
+        .section-center .section-sub { margin: 0 auto 48px; }
+
+        .formules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .formule-card {
+            background: var(--white); border: 1.5px solid var(--border);
+            border-radius: var(--radius-xl); padding: 32px 28px;
+            transition: all 0.2s; position: relative; overflow: hidden;
+        }
+        .formule-card:hover { border-color: var(--green); box-shadow: 0 8px 32px rgba(0,200,83,0.12); transform: translateY(-4px); }
+        .formule-card.popular { border-color: var(--green); box-shadow: 0 8px 24px rgba(0,200,83,0.15); }
+        .formule-popular-badge {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--green); color: white; padding: 4px 12px;
+            border-radius: 100px; font-size: 0.72rem; font-weight: 800;
+        }
+        .formule-icon {
+            width: 52px; height: 52px; background: var(--green-light); border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--green-dark); margin-bottom: 18px;
+        }
+        .formule-card.popular .formule-icon { background: var(--green); color: white; }
+        .formule-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+        .formule-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+        .formule-price { margin-bottom: 24px; }
+        .formule-price-val { font-size: 2.2rem; font-weight: 900; color: var(--text); letter-spacing: -0.03em; line-height: 1; }
+        .formule-price-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+        .formule-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+        .formule-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.875rem; }
+        .formule-check { width: 18px; height: 18px; background: var(--green-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+        .formule-card.popular .formule-check { background: var(--green-mid); }
+        .formule-check svg { color: var(--green-dark); }
+        .formule-btn {
+            width: 100%; padding: 13px; border-radius: 100px; font-family: 'Inter', sans-serif;
+            font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+            text-decoration: none; display: block; text-align: center;
+            border: 1.5px solid var(--border); background: white; color: var(--text);
+        }
+        .formule-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-light); }
+        .formule-card.popular .formule-btn { background: var(--green); color: white; border-color: var(--green); box-shadow: 0 4px 12px rgba(0,200,83,0.3); }
+        .formule-card.popular .formule-btn:hover { background: var(--green-dark); }
+
+        /* ─── POURQUOI ─── */
+        .pourquoi { padding: 88px 24px; background: white; }
+        .pourquoi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+        .pourquoi-visual {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+        }
+        .pourquoi-stat-card {
+            background: var(--bg); border: 1.5px solid var(--border);
+            border-radius: var(--radius-lg); padding: 24px 20px;
+            transition: all 0.2s;
+        }
+        .pourquoi-stat-card:hover { border-color: var(--green); background: var(--green-light); }
+        .pourquoi-stat-card.full { grid-column: 1 / -1; display: flex; align-items: center; gap: 20px; }
+        .pourquoi-stat-icon { width: 48px; height: 48px; background: var(--green); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+        .pourquoi-stat-val { font-size: 2rem; font-weight: 900; color: var(--green); line-height: 1; margin-bottom: 4px; }
+        .pourquoi-stat-label { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+        .pourquoi-text h2 { font-size: clamp(1.8rem, 3vw, 2.3rem); font-weight: 900; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .pourquoi-text p { color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+        .pourquoi-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+        .pourquoi-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; }
+        .pourquoi-list-check { width: 22px; height: 22px; background: var(--green); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; color: white; }
+
+        /* ─── ETAPES ─── */
+        .etapes { padding: 88px 24px; background: var(--bg); }
+        .etapes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+        .etapes-grid::before {
+            content: ''; position: absolute; top: 32px; left: 10%; right: 10%;
+            height: 2px; background: linear-gradient(90deg, var(--green) 0%, var(--green-mid) 100%);
+            z-index: 0;
+        }
+        .etape-card { text-align: center; position: relative; z-index: 1; }
+        .etape-num {
+            width: 64px; height: 64px; background: var(--white); border: 2px solid var(--green);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px; font-size: 1.3rem; font-weight: 900; color: var(--green);
+            box-shadow: 0 4px 12px rgba(0,200,83,0.2);
+        }
+        .etape-card h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 8px; }
+        .etape-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* ─── MONITEURS ─── */
+        .moniteurs { padding: 88px 24px; background: white; }
+        .moniteurs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .moniteur-card {
+            border: 1.5px solid var(--border); border-radius: var(--radius-xl);
+            overflow: hidden; transition: all 0.2s;
+        }
+        .moniteur-card:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,200,83,0.1); }
+        .moniteur-img {
+            height: 180px; display: flex; align-items: center; justify-content: center;
+            font-size: 3rem; font-weight: 900; color: white;
+        }
+        .moniteur-body { padding: 22px; }
+        .moniteur-name { font-weight: 800; font-size: 1rem; margin-bottom: 2px; }
+        .moniteur-role { font-size: 0.8rem; color: var(--green-dark); font-weight: 600; margin-bottom: 10px; }
+        .moniteur-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+        .moniteur-badge {
+            display: inline-block; background: var(--green-light); color: var(--green-dark);
+            padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 700;
+        }
+
+        /* ─── AVIS ─── */
+        .avis { padding: 88px 24px; background: var(--bg); }
+        .avis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .avis-card {
+            background: var(--white); border: 1.5px solid var(--border);
+            border-radius: var(--radius-lg); padding: 26px;
+            transition: all 0.2s;
+        }
+        .avis-card:hover { border-color: var(--green); box-shadow: 0 4px 16px rgba(0,200,83,0.1); }
+        .avis-stars { color: #22C55E; font-size: 1rem; margin-bottom: 12px; letter-spacing: 2px; }
+        .avis-text { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+        .avis-author { display: flex; align-items: center; gap: 12px; }
+        .avis-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.9rem; color: white; flex-shrink: 0;
+        }
+        .avis-name { font-weight: 700; font-size: 0.875rem; }
+        .avis-meta { font-size: 0.75rem; color: var(--text-light); }
+
+        /* ─── INSCRIPTION ─── */
+        .inscription { padding: 88px 24px; background: white; }
+        .inscription-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start; }
+        .inscription-info h2 { font-size: clamp(1.8rem, 3vw, 2.3rem); font-weight: 900; margin-bottom: 14px; letter-spacing: -0.02em; }
+        .inscription-info p { color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; }
+        .inscription-feature { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+        .inscription-feature-icon { width: 36px; height: 36px; background: var(--green-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--green-dark); flex-shrink: 0; }
+        .inscription-feature h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
+        .inscription-feature p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+
+        .inscription-form {
+            background: var(--white); border: 1.5px solid var(--border);
+            border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-md);
+        }
+        .inscription-form h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 24px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px 14px;
+            border: 1.5px solid var(--border); border-radius: 10px;
+            font-family: 'Inter', sans-serif; font-size: 0.875rem; color: var(--text);
+            background: var(--bg); transition: all 0.15s; outline: none;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--green); background: white; box-shadow: 0 0 0 3px rgba(0,200,83,0.1);
+        }
+        .form-submit {
+            width: 100%; padding: 15px; background: var(--green); color: white;
+            border: none; border-radius: 100px; font-family: 'Inter', sans-serif;
+            font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,200,83,0.3); margin-top: 6px;
+        }
+        .form-submit:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: var(--shadow-green); }
+        .form-note { font-size: 0.75rem; color: var(--text-light); text-align: center; margin-top: 10px; }
+
+        /* ─── COUNTERS ─── */
+        .counters { padding: 64px 24px; background: var(--green); }
+        .counters-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .counter-item { text-align: center; padding: 20px; border-right: 1px solid rgba(255,255,255,0.2); }
+        .counter-item:last-child { border-right: none; }
+        .counter-value { font-size: 2.8rem; font-weight: 900; color: white; line-height: 1; letter-spacing: -0.03em; }
+        .counter-label { font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 6px; font-weight: 500; }
+
+        /* ─── FOOTER ─── */
+        footer { background: var(--text); color: rgba(255,255,255,0.75); padding: 56px 24px 24px; }
+        .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+        .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+        .footer-logo-mark { width: 32px; height: 32px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; }
+        .footer-logo-text { font-weight: 800; font-size: 1rem; color: white; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 18px; }
+        .footer-links { display: flex; flex-direction: column; gap: 8px; }
+        .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; transition: color 0.15s; }
+        .footer-links a:hover { color: white; }
+        .footer-col h4 { color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 14px; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.15s; }
+        .footer-col ul li a:hover { color: white; }
+        .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; align-items: center; }
+        .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+        .footer-agrément { display: flex; align-items: center; gap: 8px; background: rgba(0,200,83,0.1); border: 1px solid rgba(0,200,83,0.2); padding: 6px 14px; border-radius: 100px; font-size: 0.78rem; color: rgba(255,255,255,0.7); }
+        .footer-agrément-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
+
+        /* ─── REVEAL ─── */
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 960px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: block; }
+            .hero-inner, .pourquoi-grid, .inscription-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-visual { display: none; }
+            .formules-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+            .etapes-grid { grid-template-columns: 1fr 1fr; }
+            .etapes-grid::before { display: none; }
+            .moniteurs-grid, .avis-grid { grid-template-columns: 1fr 1fr; }
+            .counters-grid { grid-template-columns: 1fr 1fr; }
+            .counter-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+            .counter-item:last-child { border-bottom: none; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+        }
+        @media (max-width: 600px) {
+            .moniteurs-grid, .avis-grid { grid-template-columns: 1fr; }
+            .etapes-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .pourquoi-visual { grid-template-columns: 1fr; }
+            .pourquoi-stat-card.full { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-mark">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-4h12l2 4h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/></svg>
+            </div>
+            <span class="nav-logo-text">Auto École <span>Drive</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#formules">Formules</a></li>
+            <li><a href="#moniteurs">Moniteurs</a></li>
+            <li><a href="#etapes">Comment ca marche</a></li>
+            <li><a href="#avis">Avis</a></li>
+        </ul>
+        <a href="#inscription" class="nav-cta">S'inscrire</a>
+        <button class="nav-hamburger" aria-label="Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge"><span class="hero-badge-dot"></span>Inscriptions ouvertes — Argenteuil</div>
+            <h1>Obtenez votre permis au <em>premier essai</em></h1>
+            <p class="hero-sub">Auto École Drive vous accompagne de A à Z avec des moniteurs diplômés, un code en ligne, et des leçons à votre rythme. Taux de réussite de 87%.</p>
+            <div class="hero-actions">
+                <a href="#inscription" class="btn-green">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    S'inscrire maintenant
+                </a>
+                <a href="#formules" class="btn-ghost">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Voir les formules
+                </a>
+            </div>
+            <div class="hero-proof">
+                <div class="hero-proof-item"><strong>87%</strong> de réussite</div>
+                <div class="hero-proof-sep"></div>
+                <div class="hero-proof-item"><strong>450+</strong> élèves formés</div>
+                <div class="hero-proof-sep"></div>
+                <div class="hero-proof-item"><strong>4.9/5</strong> sur Google</div>
+                <div class="hero-proof-sep"></div>
+                <div class="hero-proof-item">Agréé <strong>DSCR</strong></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card-main">
+                <div class="hero-card-header">
+                    <div class="hero-card-title">Votre progression</div>
+                    <div class="hero-card-badge">En cours</div>
+                </div>
+                <div class="hero-stat-grid">
+                    <div class="hero-stat">
+                        <div class="hero-stat-val">87%</div>
+                        <div class="hero-stat-label">Taux de réussite permis B</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-val">20h</div>
+                        <div class="hero-stat-label">Heures de conduite incluses</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-val">J+7</div>
+                        <div class="hero-stat-label">Premiere lecon disponible</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-val">100%</div>
+                        <div class="hero-stat-label">Code en ligne inclus</div>
+                    </div>
+                </div>
+                <div class="hero-progress">
+                    <div class="hero-progress-label">
+                        <span>Places disponibles ce mois-ci</span>
+                        <strong>13 / 15</strong>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill"></div></div>
+                </div>
+                <button class="hero-card-cta" onclick="document.getElementById('inscription').scrollIntoView({behavior:'smooth'})">
+                    Reserver ma place
+                </button>
+            </div>
+            <div class="hero-float-card">
+                <div class="hero-float-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="hero-float-text">
+                    <strong>Karim M. vient d'obtenir son permis</strong>
+                    <span>Il y a 2 heures — 1er essai</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COUNTERS -->
+<div class="counters">
+    <div class="container">
+        <div class="counters-grid">
+            <div class="counter-item">
+                <div class="counter-value" data-target="450">0</div>
+                <div class="counter-label">Eleves formes</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" data-target="87">0</div>
+                <div class="counter-label">% de taux de reussite</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" data-target="12">0</div>
+                <div class="counter-label">Ans d'experience</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" data-target="3">0</div>
+                <div class="counter-label">Moniteurs diplomes</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FORMULES -->
+<section class="formules" id="formules">
+    <div class="container">
+        <div class="section-center">
+            <span class="section-tag">Nos formules</span>
+            <h2 class="section-title">Choisissez votre formule</h2>
+            <p class="section-sub">Code en ligne inclus dans toutes les formules. Heures supplementaires disponibles a tout moment.</p>
+        </div>
+        <div class="formules-grid">
+            <div class="formule-card reveal">
+                <div class="formule-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-4h12l2 4h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/></svg>
+                </div>
+                <div class="formule-name">Essentiel</div>
+                <div class="formule-desc">Pour les profils autonomes qui n'ont besoin que du minimum pour passer.</div>
+                <div class="formule-price">
+                    <div class="formule-price-val">990 €</div>
+                    <div class="formule-price-note">Code + 20h de conduite</div>
+                </div>
+                <ul class="formule-features">
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Acces code en ligne illimite</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>20 heures de conduite</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Bilan de conduite final</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Accompagnement examen</li>
+                </ul>
+                <a href="#inscription" class="formule-btn">Choisir cette formule</a>
+            </div>
+
+            <div class="formule-card popular reveal reveal-delay-2">
+                <div class="formule-popular-badge">Le plus choisi</div>
+                <div class="formule-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="formule-name">Confort</div>
+                <div class="formule-desc">La formule ideale pour passer sereinement du premier coup.</div>
+                <div class="formule-price">
+                    <div class="formule-price-val">1 290 €</div>
+                    <div class="formule-price-note">Code + 25h + suivi personnalise</div>
+                </div>
+                <ul class="formule-features">
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Tout du pack Essentiel</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>25 heures de conduite</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Moniteur attitré fixe</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Simulation d'examen blanc</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Compte-rendu apres chaque lecon</li>
+                </ul>
+                <a href="#inscription" class="formule-btn">Choisir cette formule</a>
+            </div>
+
+            <div class="formule-card reveal reveal-delay-4">
+                <div class="formule-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="formule-name">Conduite Accompagnee</div>
+                <div class="formule-desc">Des 15 ans pour maximiser la pratique avant l'examen.</div>
+                <div class="formule-price">
+                    <div class="formule-price-val">1 490 €</div>
+                    <div class="formule-price-note">AAC + suivi jusqu'au permis</div>
+                </div>
+                <ul class="formule-features">
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Acces des 15 ans</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Formation accompagnateur incluse</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Suivi jusqu'a l'obtention</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Bilan intermediaire inclus</li>
+                    <li><div class="formule-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>Examen blanc obligatoire</li>
+                </ul>
+                <a href="#inscription" class="formule-btn">Choisir cette formule</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- POURQUOI -->
+<section class="pourquoi" id="pourquoi">
+    <div class="container">
+        <div class="pourquoi-grid">
+            <div class="pourquoi-visual reveal">
+                <div class="pourquoi-stat-card">
+                    <div class="pourquoi-stat-val">87%</div>
+                    <div class="pourquoi-stat-label">Taux de reussite au premier essai</div>
+                </div>
+                <div class="pourquoi-stat-card">
+                    <div class="pourquoi-stat-val">4.9</div>
+                    <div class="pourquoi-stat-label">Note moyenne sur Google</div>
+                </div>
+                <div class="pourquoi-stat-card full">
+                    <div class="pourquoi-stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div>
+                        <div class="pourquoi-stat-val">450+</div>
+                        <div class="pourquoi-stat-label">Eleves formes depuis 2012 — a Argenteuil et Bezons</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pourquoi-text reveal reveal-delay-2">
+                <span class="section-tag">Pourquoi nous choisir</span>
+                <h2>Votre permis, notre priorite absolue</h2>
+                <p>Chez Auto École Drive, chaque eleve est suivi individuellement. Nous adaptons le rythme et la pedagogie a votre profil pour maximiser vos chances de succes.</p>
+                <ul class="pourquoi-list">
+                    <li>
+                        <div class="pourquoi-list-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <span><strong>Moniteurs diplomes d'Etat</strong> — BEPECASER ou Titre Pro minimum</span>
+                    </li>
+                    <li>
+                        <div class="pourquoi-list-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <span><strong>Vehicules recents et equipés</strong> — double commande, camera de recul</span>
+                    </li>
+                    <li>
+                        <div class="pourquoi-list-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <span><strong>Prise en charge CPF possible</strong> — jusqu'a 1 200 € pris en charge</span>
+                    </li>
+                    <li>
+                        <div class="pourquoi-list-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <span><strong>Horaires flexibles</strong> — matin, soir, week-end disponibles</span>
+                    </li>
+                </ul>
+                <a href="#inscription" class="btn-green">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Commencer maintenant
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ETAPES -->
+<section class="etapes" id="etapes">
+    <div class="container">
+        <div class="section-center">
+            <span class="section-tag">Comment ca marche</span>
+            <h2 class="section-title">4 etapes vers votre permis</h2>
+            <p class="section-sub">Un parcours clair et structure pour vous amener a l'examen dans les meilleures conditions.</p>
+        </div>
+        <div class="etapes-grid">
+            <div class="etape-card reveal">
+                <div class="etape-num">1</div>
+                <h3>Inscription en ligne</h3>
+                <p>Choisissez votre formule et inscrivez-vous en 5 minutes. Nous vous contactons sous 24h.</p>
+            </div>
+            <div class="etape-card reveal reveal-delay-1">
+                <div class="etape-num">2</div>
+                <h3>Code de la route</h3>
+                <p>Acces illimite a notre plateforme en ligne. Entrainez-vous a votre rythme, ou que vous soyez.</p>
+            </div>
+            <div class="etape-card reveal reveal-delay-2">
+                <div class="etape-num">3</div>
+                <h3>Lecons de conduite</h3>
+                <p>Un moniteur attitré vous accompagne. Chaque seance est suivi d'un bilan personnalise.</p>
+            </div>
+            <div class="etape-card reveal reveal-delay-3">
+                <div class="etape-num">4</div>
+                <h3>Examen et permis</h3>
+                <p>Nous vous presentons a l'examen quand vous etes pret. Objectif : reussir du premier coup.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MONITEURS -->
+<section class="moniteurs" id="moniteurs">
+    <div class="container">
+        <div class="section-center">
+            <span class="section-tag">Notre equipe</span>
+            <h2 class="section-title">Vos moniteurs</h2>
+            <p class="section-sub">Diplomés d'Etat, patients et pedagogues. Ils sont la pour vous faire progresser, pas juste pour conduire a vos cotes.</p>
+        </div>
+        <div class="moniteurs-grid">
+            <div class="moniteur-card reveal">
+                <div class="moniteur-img" style="background: linear-gradient(135deg, #00C853, #00A846);">YB</div>
+                <div class="moniteur-body">
+                    <div class="moniteur-name">Youssef Benali</div>
+                    <div class="moniteur-role">Directeur pedagogique — Fondateur</div>
+                    <p class="moniteur-desc">BEPECASER depuis 2012. Specialiste conduite en milieu urbain et interurbain. Pedagogue reconnu pour sa patience et sa clarte.</p>
+                    <span class="moniteur-badge">Permis B · AAC · Code</span>
+                </div>
+            </div>
+            <div class="moniteur-card reveal reveal-delay-2">
+                <div class="moniteur-img" style="background: linear-gradient(135deg, #22C55E, #16A34A);">SL</div>
+                <div class="moniteur-body">
+                    <div class="moniteur-name">Samira Lekhal</div>
+                    <div class="moniteur-role">Monitrice — Titre Pro ECSR</div>
+                    <p class="moniteur-desc">Specialiste conduite accompagnee (AAC). Approche douce et rassurante, ideale pour les eleves anxieux ou debutants.</p>
+                    <span class="moniteur-badge">Permis B · AAC · Anxieux</span>
+                </div>
+            </div>
+            <div class="moniteur-card reveal reveal-delay-4">
+                <div class="moniteur-img" style="background: linear-gradient(135deg, #4ADE80, #00C853);">KM</div>
+                <div class="moniteur-body">
+                    <div class="moniteur-name">Karim Messaoudi</div>
+                    <div class="moniteur-role">Moniteur — BEPECASER</div>
+                    <p class="moniteur-desc">Expert autoroute et conduite nocturne. Moniteur depuis 8 ans, il prepare ses eleves a toutes les situations rencontrees a l'examen.</p>
+                    <span class="moniteur-badge">Permis B · Autoroute · Nuit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AVIS -->
+<section class="avis" id="avis">
+    <div class="container">
+        <div class="section-center">
+            <span class="section-tag">Temoignages</span>
+            <h2 class="section-title">Ils ont eu leur permis</h2>
+            <p class="section-sub">Des vrais avis de vrais eleves. Pas de filtre, pas de selection.</p>
+        </div>
+        <div class="avis-grid">
+            <div class="avis-card reveal">
+                <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="avis-text">"Obtenu au premier essai avec 6 fautes seulement. Youssef est un excellent moniteur, il m'a mis en confiance des la premiere lecon. Je recommande a 100%."</p>
+                <div class="avis-author">
+                    <div class="avis-avatar" style="background: var(--green);">I</div>
+                    <div>
+                        <div class="avis-name">Ilyes D.</div>
+                        <div class="avis-meta">Il y a 3 semaines · Google</div>
+                    </div>
+                </div>
+            </div>
+            <div class="avis-card reveal reveal-delay-2">
+                <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="avis-text">"J'avais rate deux fois dans une autre auto ecole. Ici, Samira a identifie mes erreurs rapidement. A la troisieme tentative — premiere ici — j'ai reussi. Merci infiniment."</p>
+                <div class="avis-author">
+                    <div class="avis-avatar" style="background: #16A34A;">N</div>
+                    <div>
+                        <div class="avis-name">Nadia K.</div>
+                        <div class="avis-meta">Il y a 1 mois · Google</div>
+                    </div>
+                </div>
+            </div>
+            <div class="avis-card reveal reveal-delay-4">
+                <div class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="avis-text">"Super auto ecole. Formule AAC tres bien organisee, les bilans apres chaque lecon m'ont permis de progresser vite. Mon fils a eu son permis a 18 ans, tres fier de lui."</p>
+                <div class="avis-author">
+                    <div class="avis-avatar" style="background: #0D9488;">M</div>
+                    <div>
+                        <div class="avis-name">Malika B.</div>
+                        <div class="avis-meta">Il y a 2 mois · Google</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INSCRIPTION -->
+<section class="inscription" id="inscription">
+    <div class="container">
+        <div class="inscription-grid">
+            <div class="inscription-info reveal">
+                <span class="section-tag">Inscription</span>
+                <h2>Demarrez votre permis aujourd'hui</h2>
+                <p>Remplissez le formulaire, nous vous recontactons dans la journee pour finaliser votre inscription et planifier votre premiere lecon de conduite.</p>
+                <div class="inscription-feature">
+                    <div class="inscription-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div>
+                        <h4>Reponse sous 24h</h4>
+                        <p>On vous rappelle pour confirmer et planifier votre debut de formation</p>
+                    </div>
+                </div>
+                <div class="inscription-feature">
+                    <div class="inscription-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <h4>CPF accepte</h4>
+                        <p>Utilisez votre compte formation pour financer tout ou partie du permis</p>
+                    </div>
+                </div>
+                <div class="inscription-feature">
+                    <div class="inscription-feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <div>
+                        <h4>Paiement en plusieurs fois</h4>
+                        <p>Reglez en 3 ou 6 fois sans frais selon la formule choisie</p>
+                    </div>
+                </div>
+            </div>
+            <div class="inscription-form reveal reveal-delay-2">
+                <h3>Demande d'inscription</h3>
+                <form onsubmit="handleInscription(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Prenom</label>
+                            <input type="text" placeholder="Mohamed" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" placeholder="Dupont" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Telephone</label>
+                            <input type="tel" placeholder="06 00 00 00 00" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number" placeholder="18" min="15" max="99" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Formule souhaitee</label>
+                        <select required>
+                            <option value="">Choisissez une formule</option>
+                            <option>Essentiel — 990 €</option>
+                            <option>Confort — 1 290 € (le plus choisi)</option>
+                            <option>Conduite Accompagnee AAC — 1 490 €</option>
+                            <option>Heures supplementaires uniquement</option>
+                            <option>Je ne sais pas encore</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Avez-vous deja le code ?</label>
+                        <select>
+                            <option>Non, pas encore</option>
+                            <option>Oui, code obtenu</option>
+                            <option>En cours de preparation</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-submit">Envoyer ma demande</button>
+                    <p class="form-note">Reponse garantie sous 24h. Aucun engagement avant entretien.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <div class="footer-logo-mark">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-4h12l2 4h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/></svg>
+                </div>
+                <div class="footer-logo-text">Auto École Drive</div>
+            </div>
+            <p>Auto ecole agreee DSCR a Argenteuil depuis 2012. Permis B, conduite accompagnee, code de la route. Taux de reussite de 87%.</p>
+            <div class="footer-links">
+                <a href="tel:0139001234">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>
+                    01 39 00 12 34
+                </a>
+                <a href="mailto:contact@autoecole-drive.fr">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    contact@autoecole-drive.fr
+                </a>
+                <a href="#">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    12 rue de la Paix, 95100 Argenteuil
+                </a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Formations</h4>
+            <ul>
+                <li><a href="#formules">Permis B — Essentiel</a></li>
+                <li><a href="#formules">Permis B — Confort</a></li>
+                <li><a href="#formules">Conduite Accompagnee</a></li>
+                <li><a href="#formules">Heures supplementaires</a></li>
+                <li><a href="#formules">Code de la route</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Informations</h4>
+            <ul>
+                <li><a href="#moniteurs">Notre equipe</a></li>
+                <li><a href="#pourquoi">Pourquoi nous</a></li>
+                <li><a href="#avis">Avis eleves</a></li>
+                <li><a href="#etapes">Comment ca marche</a></li>
+                <li><a href="#inscription">S'inscrire</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Auto École Drive Argenteuil — SIRET 987 654 321 00034</p>
+        <div class="footer-agrément"><span class="footer-agrément-dot"></span>Agree DSCR — N° 095-00-0012</div>
+    </div>
+</footer>
+
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Counters
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.target);
+        const duration = 1600;
+        const start = performance.now();
+        function update(now) {
+            const p = Math.min((now - start) / duration, 1);
+            const ease = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(ease * target).toLocaleString('fr-FR');
+            if (p < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+    }
+    const cObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); cObs.unobserve(e.target); } });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter-value[data-target]').forEach(el => cObs.observe(el));
+
+    // Form
+    function handleInscription(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.form-submit');
+        btn.textContent = 'Demande envoyee — On vous rappelle !';
+        btn.style.background = '#16A34A';
+        btn.disabled = true;
+        e.target.reset();
+        setTimeout(() => {
+            btn.textContent = 'Envoyer ma demande';
+            btn.style.background = '';
+            btn.disabled = false;
+        }, 5000);
+    }
+</script>
+</body>
+</html>

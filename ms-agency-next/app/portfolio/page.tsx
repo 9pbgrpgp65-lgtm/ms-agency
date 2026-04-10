@@ -17,6 +17,7 @@ const projects = [
     img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
     tag: "Site vitrine",
     id: "restaurant",
+    href: "/templates/restaurant-italien/index.html",
   },
   {
     sector: "Cabinet dentaire",
@@ -25,6 +26,7 @@ const projects = [
     img: "https://images.unsplash.com/photo-1588776814546-1ffdd8b4c1e7?auto=format&fit=crop&w=600&q=80",
     tag: "Prise de RDV",
     id: "dentiste",
+    href: "/templates/cabinet-dentaire/index.html",
   },
   {
     sector: "Garage automobile",
@@ -33,6 +35,7 @@ const projects = [
     img: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80",
     tag: "SEO local",
     id: "garage",
+    href: "/templates/garage/index.html",
   },
   {
     sector: "Artisan",
@@ -41,6 +44,7 @@ const projects = [
     img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80",
     tag: "Site vitrine",
     id: "artisan",
+    href: "/templates/artisan-plombier/index.html",
   },
   {
     sector: "Auto école",
@@ -49,6 +53,7 @@ const projects = [
     img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80",
     tag: "Inscription en ligne",
     id: "autoecole",
+    href: "/templates/auto-ecole/index.html",
   },
 ];
 
@@ -81,7 +86,7 @@ export default function PortfolioPage() {
           <div className="portfolio-grid">
             {projects.map((item, i) => (
               <RevealOnScroll key={item.id} delay={(i % 3) + 1}>
-                <div className="p-card" id={item.id}>
+                <a href={item.href} target="_blank" rel="noopener noreferrer" className="p-card" id={item.id} style={{ textDecoration: "none" }}>
                   <div className="p-preview">
                     <Image
                       src={item.img}
@@ -92,6 +97,7 @@ export default function PortfolioPage() {
                     />
                     <div className="p-overlay">
                       <span className="p-overlay-tag">{item.tag}</span>
+                      <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)", marginTop: "8px", display: "block" }}>Voir le site →</span>
                     </div>
                   </div>
                   <div className="p-info">
@@ -103,7 +109,7 @@ export default function PortfolioPage() {
                       </span>
                     </h3>
                   </div>
-                </div>
+                </a>
               </RevealOnScroll>
             ))}
 

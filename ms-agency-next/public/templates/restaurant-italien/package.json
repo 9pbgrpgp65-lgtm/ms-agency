@@ -1,0 +1,9 @@
+{
+  "name": "la-trattoria-di-roma",
+  "version": "1.0.0",
+  "description": "Site web pour La Trattoria di Roma - Cuisine italienne authentique au coeur de Paris",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}
