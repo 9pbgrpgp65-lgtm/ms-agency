@@ -46,9 +46,9 @@ export default function ContactPage() {
                 </p>
 
                 <div className="contact-links">
-                  <a href="tel:+33600000000" className="contact-link">
+                  <a href="tel:+33783334543" className="contact-link">
                     <div className="contact-link-icon">📞</div>
-                    <span>+33 6 00 00 00 00</span>
+                    <span>+33 7 83 33 45 43</span>
                   </a>
                   <a href="mailto:contact@ms-agency.fr" className="contact-link">
                     <div className="contact-link-icon">✉️</div>

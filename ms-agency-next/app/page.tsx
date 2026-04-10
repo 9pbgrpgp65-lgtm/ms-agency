@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
   title: "MS Agency — Agence web pour commerces locaux",
@@ -294,6 +295,77 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
+      {/* ===================== TESTIMONIALS ===================== */}
+      <section className="testimonials-section">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-header-left">
+              <RevealOnScroll>
+                <span className="label">Témoignages</span>
+              </RevealOnScroll>
+              <RevealOnScroll delay={1}>
+                <h2 className="title">Ce que disent nos clients</h2>
+              </RevealOnScroll>
+            </div>
+          </div>
+
+          <div className="testimonials-grid">
+            {[
+              {
+                stars: 5,
+                quote: "En 48h j'avais un site professionnel en ligne. Depuis, mes appels ont doublé et je suis en top 3 sur Google pour 'garage Argenteuil'. Je recommande sans hésitation.",
+                name: "Karim B.",
+                role: "Gérant — Auto Renfort, Argenteuil",
+              },
+              {
+                stars: 5,
+                quote: "Je cherchais quelqu'un qui comprenne les besoins d'un cabinet dentaire. MS Agency a tout géré : le site, la prise de RDV en ligne, le référencement. Résultat top.",
+                name: "Dr. Moreau",
+                role: "Chirurgien-dentiste, Lyon",
+              },
+              {
+                stars: 5,
+                quote: "Prix clair, délai tenu, équipe réactive. Mon restaurant a maintenant une vraie présence en ligne et les réservations en ligne ont décollé dès la première semaine.",
+                name: "Leila S.",
+                role: "Restauratrice — Le Comptoir, Paris",
+              },
+            ].map((t, i) => (
+              <RevealOnScroll key={i} delay={i + 1}>
+                <div className="testimonial-card">
+                  <div className="testimonial-stars">
+                    {"★".repeat(t.stars)}
+                  </div>
+                  <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="testimonial-author">
+                    <span className="testimonial-name">{t.name}</span>
+                    <span className="testimonial-role">{t.role}</span>
+                  </div>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== FAQ ===================== */}
+      <section className="faq-section">
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "0" }}>
+            <RevealOnScroll>
+              <span className="label">FAQ</span>
+            </RevealOnScroll>
+            <RevealOnScroll delay={1}>
+              <h2 className="title" style={{ marginTop: "12px" }}>
+                Questions fréquentes
+              </h2>
+            </RevealOnScroll>
+          </div>
+          <RevealOnScroll delay={2}>
+            <FAQ />
           </RevealOnScroll>
         </div>
       </section>

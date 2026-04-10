@@ -1,0 +1,33 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ms-agency-next (Next.js)",
+      "cwd": "ms-agency-next",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["/Users/ma7boub/MS AGENCY/ms-agency-next/node_modules/.bin/next", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "ms-agency (site statique)",
+      "cwd": "ms-agency",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".", "-l", "3001"],
+      "port": 3001
+    },
+    {
+      "name": "la-trattoria-di-roma (template)",
+      "cwd": "templates/restaurant-italien",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".", "-l", "3002"],
+      "port": 3002
+    },
+    {
+      "name": "ms-layering (root Python server)",
+      "cwd": ".",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3003"],
+      "port": 3003
+    }
+  ]
+}

@@ -12,7 +12,10 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const BASE_URL = "https://ms-agency.fr";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "MS Agency — Agence web pour commerces locaux",
     template: "%s | MS Agency",
@@ -30,11 +33,46 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
+    url: BASE_URL,
     siteName: "MS Agency",
     title: "MS Agency — Agence web pour commerces locaux",
     description:
       "Site web professionnel livré en 48h dès 500€. Spécialiste des commerces de proximité.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "MS Agency — Agence web pour commerces locaux",
+    description: "Site web professionnel livré en 48h dès 500€.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: BASE_URL,
+  },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "MS Agency",
+  description:
+    "Agence web spécialisée pour les commerces locaux. Sites professionnels livrés en 48h, dès 500€.",
+  url: BASE_URL,
+  telephone: "+33783334543",
+  email: "contact@ms-agency.fr",
+  areaServed: "France",
+  priceRange: "€€",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+  ],
+  sameAs: [],
 };
 
 export default function RootLayout({
@@ -44,6 +82,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={inter.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body style={{ fontFamily: "var(--font-inter, 'Inter', sans-serif)" }}>
         <CursorGlow />
         <Nav />
