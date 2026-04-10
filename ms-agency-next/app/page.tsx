@@ -7,7 +7,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 export const metadata: Metadata = {
   title: "MS Agency — Agence web pour commerces locaux",
   description:
-    "Site web professionnel livré en 48h dès 490€. MS Agency spécialisée commerces de proximité : restaurants, garages, artisans, cabinets médicaux.",
+    "Site web professionnel livré en 48h dès 500€. MS Agency spécialisée commerces de proximité : restaurants, garages, artisans, cabinets médicaux.",
 };
 
 const marqueeSectors = [
@@ -66,7 +66,7 @@ export default function HomePage() {
 
           <p className="hero-sub">
             Des sites web professionnels livrés en 48h, optimisés pour le SEO local
-            et conçus pour convertir. Dès 490€, tout inclus.
+            et conçus pour convertir. Dès 500€, tout inclus.
           </p>
 
           <div className="hero-actions">
@@ -89,7 +89,7 @@ export default function HomePage() {
               <div className="hero-proof-label">Délai livraison</div>
             </div>
             <div className="hero-proof-item">
-              <div className="hero-proof-val">490€</div>
+              <div className="hero-proof-val">500€</div>
               <div className="hero-proof-label">À partir de</div>
             </div>
             <div className="hero-proof-item">
@@ -287,7 +287,7 @@ export default function HomePage() {
                       <div className="cs-stat-label">Google local</div>
                     </div>
                     <div className="cs-stat">
-                      <div className="cs-stat-val">790€</div>
+                      <div className="cs-stat-val">500€</div>
                       <div className="cs-stat-label">Investissement</div>
                     </div>
                   </div>
@@ -310,9 +310,9 @@ export default function HomePage() {
             </div>
             <div className="stat-item">
               <div className="stat-val">
-                <AnimatedCounter to={490} suffix="€" />
+                <AnimatedCounter to={500} suffix="€" />
               </div>
-              <div className="stat-label">À partir de</div>
+              <div className="stat-label">Prix unique</div>
             </div>
             <div className="stat-item">
               <div className="stat-val">

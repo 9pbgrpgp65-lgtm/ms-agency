@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | MS Agency",
   },
   description:
-    "MS Agency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 490€.",
+    "MS Agency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 500€.",
   keywords: [
     "agence web",
     "site web commerce local",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "MS Agency",
     title: "MS Agency — Agence web pour commerces locaux",
     description:
-      "Site web professionnel livré en 48h dès 490€. Spécialiste des commerces de proximité.",
+      "Site web professionnel livré en 48h dès 500€. Spécialiste des commerces de proximité.",
   },
 };
 

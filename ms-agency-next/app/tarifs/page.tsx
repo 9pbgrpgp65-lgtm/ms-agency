@@ -1,64 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import PriceCalculator from "@/components/PriceCalculator";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
 export const metadata: Metadata = {
-  title: "Tarifs — Prix clairs dès 490€",
+  title: "Tarifs — Site vitrine 500€, tout inclus",
   description:
-    "Des tarifs transparents sans surprise. Starter 490€, Pro 790€, Premium 1290€. Calculez votre budget en ligne.",
+    "Un prix clair, fixe, sans surprise. Site vitrine professionnel à 500€ tout inclus, livré en 48h. Maintenance optionnelle à 50€/mois.",
 };
 
-const plans = [
-  {
-    name: "Starter",
-    price: 490,
-    desc: "L'essentiel pour une présence professionnelle en ligne.",
-    features: [
-      "Site vitrine 3–5 pages",
-      "Design personnalisé",
-      "Mobile-first responsive",
-      "Formulaire de contact",
-      "Carte Google Maps",
-      "Hébergement 1 an inclus",
-      "Certificat SSL",
-    ],
-    cta: "Commencer",
-    featured: false,
-  },
-  {
-    name: "Pro",
-    price: 790,
-    desc: "La solution complète pour attirer plus de clients locaux.",
-    features: [
-      "Tout le Starter +",
-      "SEO local avancé",
-      "Google My Business optimisé",
-      "Prise de RDV ou galerie photos",
-      "Intégration avis Google",
-      "Rapport mensuel de positionnement",
-      "Support prioritaire",
-    ],
-    cta: "Choisir Pro",
-    featured: true,
-  },
-  {
-    name: "Premium",
-    price: 1290,
-    desc: "Accompagnement complet pour dominer votre marché local.",
-    features: [
-      "Tout le Pro +",
-      "Pages illimitées",
-      "Stratégie de contenu",
-      "Audit de performance mensuel",
-      "Campagne Google Ads locale",
-      "Formation à l'administration",
-      "Accompagnement personnalisé 6 mois",
-    ],
-    cta: "Choisir Premium",
-    featured: false,
-  },
+const included = [
+  "Design sur mesure adapté à votre secteur",
+  "Mobile-first, rapide, moderne",
+  "3 à 5 pages (accueil, services, contact...)",
+  "Formulaire de contact",
+  "Carte Google Maps intégrée",
+  "SEO local de base (balises, mots-clés)",
+  "Certificat SSL (HTTPS)",
+  "Hébergement 1 an inclus",
+  "Livraison garantie en 48h",
 ];
 
 export default function TarifsPage() {
@@ -72,96 +32,67 @@ export default function TarifsPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
             <h1 className="title" style={{ marginTop: "12px", marginBottom: "16px" }}>
-              Des prix clairs, sans surprise
+              Un prix. Tout inclus.
             </h1>
           </RevealOnScroll>
           <RevealOnScroll delay={2}>
             <p className="sub">
-              Paiement unique, pas d&apos;abonnement caché. Le prix affiché est le prix payé.
+              Pas de paliers, pas de surprise. Un seul tarif clair pour votre site vitrine professionnel, livré en 48h.
             </p>
           </RevealOnScroll>
         </div>
       </div>
 
-      {/* Calculator */}
-      <section className="calculator-section">
-        <div className="container">
-          <RevealOnScroll>
-            <div className="section-header" style={{ marginBottom: "32px" }}>
-              <div className="section-header-left">
-                <span className="label">Simulateur de prix</span>
-                <h2 className="title" style={{ fontSize: "clamp(26px, 3.5vw, 38px)", marginTop: "8px" }}>
-                  Trouvez la formule<br />qui vous correspond
-                </h2>
-              </div>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={1}>
-            <PriceCalculator />
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      {/* Pricing cards */}
+      {/* Main offer */}
       <section className="tarifs-section">
         <div className="container">
-          <RevealOnScroll>
-            <h2 className="title" style={{ textAlign: "center", marginBottom: "48px" }}>
-              Nos formules
-            </h2>
-          </RevealOnScroll>
+          <div style={{ maxWidth: "640px", margin: "0 auto" }}>
+            <RevealOnScroll>
+              <div className="t-card featured" style={{ textAlign: "center" }}>
+                <div className="t-card-name">Site vitrine professionnel</div>
 
-          <div className="tarifs-grid">
-            {plans.map((plan, i) => (
-              <RevealOnScroll key={plan.name} delay={i + 1}>
-                <div className={`t-card${plan.featured ? " featured" : ""}`}>
-                  <div className="t-card-name">{plan.name}</div>
-
-                  <div className="t-card-price">
-                    <span className="t-card-amount">{plan.price}</span>
-                    <span className="t-card-currency">€</span>
-                  </div>
-
-                  <p className="t-card-desc">{plan.desc}</p>
-
-                  <div className="t-features">
-                    {plan.features.map((f) => (
-                      <div key={f} className="t-feature">
-                        <div className="t-feature-check">✓</div>
-                        <span>{f}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link
-                    href="/contact"
-                    className={plan.featured ? "btn-primary" : "btn-secondary"}
-                  >
-                    {plan.cta}
-                  </Link>
+                <div className="t-card-price" style={{ justifyContent: "center", margin: "24px 0" }}>
+                  <span className="t-card-amount">500</span>
+                  <span className="t-card-currency">€</span>
                 </div>
-              </RevealOnScroll>
-            ))}
-          </div>
 
-          {/* Maintenance add-on */}
-          <RevealOnScroll delay={1}>
-            <div className="maintenance-strip">
-              <div className="maintenance-strip-left">
-                <h3>Maintenance mensuelle</h3>
-                <p>
-                  Mises à jour de contenu, sauvegardes, surveillance de sécurité et support
-                  technique inclus. Optionnel, sans engagement.
+                <p className="t-card-desc" style={{ marginBottom: "28px" }}>
+                  Paiement unique. Prix fixe. Aucun frais caché.
                 </p>
+
+                <div className="t-features" style={{ textAlign: "left", marginBottom: "32px" }}>
+                  {included.map((f) => (
+                    <div key={f} className="t-feature">
+                      <div className="t-feature-check">✓</div>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/contact" className="btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+                  Demander mon site →
+                </Link>
               </div>
-              <div>
-                <div className="maintenance-price">49€<span style={{ fontSize: "16px", color: "var(--white-50)" }}>/mois</span></div>
+            </RevealOnScroll>
+
+            {/* Maintenance add-on */}
+            <RevealOnScroll delay={1}>
+              <div className="maintenance-strip" style={{ marginTop: "24px" }}>
+                <div className="maintenance-strip-left">
+                  <h3>Maintenance mensuelle</h3>
+                  <p>
+                    Mises à jour de contenu, sauvegardes, surveillance de sécurité, support technique. Sans engagement.
+                  </p>
+                </div>
+                <div>
+                  <div className="maintenance-price">50€<span style={{ fontSize: "16px", color: "var(--white-50)" }}>/mois</span></div>
+                </div>
+                <Link href="/contact" className="btn-secondary">
+                  En savoir plus
+                </Link>
               </div>
-              <Link href="/contact" className="btn-secondary">
-                En savoir plus
-              </Link>
-            </div>
-          </RevealOnScroll>
+            </RevealOnScroll>
+          </div>
         </div>
       </section>
 
@@ -185,9 +116,9 @@ export default function TarifsPage() {
                 </div>
                 <div className="pourquoi-stat">
                   <div className="pourquoi-stat-val">
-                    <AnimatedCounter to={490} suffix="€" />
+                    <AnimatedCounter to={500} suffix="€" />
                   </div>
-                  <div className="pourquoi-stat-label">À partir de</div>
+                  <div className="pourquoi-stat-label">Prix unique</div>
                 </div>
                 <div className="pourquoi-stat">
                   <div className="pourquoi-stat-val">

@@ -11,7 +11,6 @@ export default function ContactForm() {
     nom: "",
     telephone: "",
     commerce: "",
-    formule: "",
     message: "",
   });
 
@@ -108,21 +107,6 @@ export default function ContactForm() {
           <option value="beaute">Salon de beauté / Coiffure</option>
           <option value="commerce">Commerce de détail</option>
           <option value="autre">Autre</option>
-        </select>
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="formule">Formule souhaitée</label>
-        <select
-          id="formule"
-          name="formule"
-          value={formData.formule}
-          onChange={handleChange}
-        >
-          <option value="">Je ne sais pas encore</option>
-          <option value="starter">Starter — 490€</option>
-          <option value="pro">Pro — 790€</option>
-          <option value="premium">Premium — 1290€</option>
         </select>
       </div>
 
