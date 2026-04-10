@@ -6,54 +6,59 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 export const metadata: Metadata = {
   title: "Portfolio — Nos réalisations",
   description:
-    "Découvrez nos créations web pour les commerces locaux : restaurants, cabinets dentaires, garages, artisans et auto écoles.",
+    "Découvrez nos créations web pour les commerces locaux : restaurants, cabinets dentaires, garages, artisans et auto-écoles.",
 };
 
 const projects = [
   {
-    sector: "Restaurant",
-    name: "Le Comptoir",
-    city: "Paris 11e",
-    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
-    tag: "Site vitrine",
-    id: "restaurant",
-    href: "/templates/restaurant-italien/index.html",
-  },
-  {
-    sector: "Cabinet dentaire",
-    name: "Dr. Moreau",
-    city: "Lyon",
-    img: "https://images.unsplash.com/photo-1588776814546-1ffdd8b4c1e7?auto=format&fit=crop&w=600&q=80",
-    tag: "Prise de RDV",
-    id: "dentiste",
-    href: "/templates/cabinet-dentaire/index.html",
-  },
-  {
     sector: "Garage automobile",
-    name: "Auto Renfort",
-    city: "Argenteuil",
+    name: "Garage Moretti",
+    city: "Lyon 6ème",
     img: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80",
-    tag: "SEO local",
+    desc: "Garage spécialisé multi-marques en difficulté de visibilité locale. Objectif : générer des appels entrants depuis Google Maps et dominer la recherche 'garage Lyon 6'.",
+    deliverables: ["SEO local", "Google Maps", "Formulaire devis", "Page services"],
     id: "garage",
     href: "/templates/garage/index.html",
   },
   {
-    sector: "Artisan",
-    name: "Plomberie Dubois",
-    city: "Bordeaux",
+    sector: "Artisan plombier",
+    name: "Plomberie Benali",
+    city: "Bordeaux Centre",
     img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80",
-    tag: "Site vitrine",
+    desc: "Plombier indépendant sans présence en ligne. Objectif : capturer les urgences 24h/24 et remplacer le bouche-à-oreille par un flux de leads constant.",
+    deliverables: ["Appel urgence direct", "WhatsApp flottant", "SEO local", "Avis clients"],
     id: "artisan",
     href: "/templates/artisan-plombier/index.html",
   },
   {
-    sector: "Auto école",
-    name: "Drive School",
-    city: "Marseille",
+    sector: "Restaurant",
+    name: "La Trattoria di Roma",
+    city: "Paris 11e",
+    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
+    desc: "Trattoria familiale sans site web, réservations uniquement par téléphone. Objectif : digitaliser les réservations et attirer de nouveaux clients via Google.",
+    deliverables: ["Réservation en ligne", "Menu digital", "Photos plats", "SEO local"],
+    id: "restaurant",
+    href: "#",
+  },
+  {
+    sector: "Cabinet dentaire",
+    name: "Cabinet Dr. Moreau",
+    city: "Lyon 3e",
+    img: "https://images.unsplash.com/photo-1588776814546-1ffdd8b4c1e7?auto=format&fit=crop&w=600&q=80",
+    desc: "Cabinet débordé par les appels de prise de RDV. Objectif : automatiser la prise de rendez-vous en ligne et réduire la charge administrative.",
+    deliverables: ["Prise de RDV", "Formulaire patient", "Horaires & urgences", "Confiance"],
+    id: "dentiste",
+    href: "#",
+  },
+  {
+    sector: "Auto-école",
+    name: "Auto-École Liberté",
+    city: "Nantes Centre",
     img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80",
-    tag: "Inscription en ligne",
+    desc: "Auto-école locale face à la concurrence des grandes franchises. Objectif : valoriser le suivi personnalisé et capter les inscriptions en ligne toute l'année.",
+    deliverables: ["Inscription en ligne", "Tarifs clairs", "Témoignages élèves", "SEO local"],
     id: "autoecole",
-    href: "/templates/auto-ecole/index.html",
+    href: "#",
   },
 ];
 
@@ -86,7 +91,14 @@ export default function PortfolioPage() {
           <div className="portfolio-grid">
             {projects.map((item, i) => (
               <RevealOnScroll key={item.id} delay={(i % 3) + 1}>
-                <a href={item.href} target="_blank" rel="noopener noreferrer" className="p-card" id={item.id} style={{ textDecoration: "none" }}>
+                <a
+                  href={item.href}
+                  target={item.href !== "#" ? "_blank" : undefined}
+                  rel={item.href !== "#" ? "noopener noreferrer" : undefined}
+                  className="p-card"
+                  id={item.id}
+                  style={{ textDecoration: "none", cursor: item.href === "#" ? "default" : "pointer" }}
+                >
                   <div className="p-preview">
                     <Image
                       src={item.img}
@@ -96,18 +108,24 @@ export default function PortfolioPage() {
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                     <div className="p-overlay">
-                      <span className="p-overlay-tag">{item.tag}</span>
-                      <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)", marginTop: "8px", display: "block" }}>Voir le site →</span>
+                      <span className="p-overlay-tag">{item.sector}</span>
                     </div>
                   </div>
                   <div className="p-info">
                     <div className="p-sector">{item.sector}</div>
-                    <h3>
-                      {item.name}
-                      <span style={{ fontWeight: 400, color: "var(--white-50)", marginLeft: "8px", fontSize: "14px" }}>
-                        {item.city}
+                    <h3 style={{ marginBottom: "4px" }}>{item.name}</h3>
+                    <div className="p-city">{item.city}</div>
+                    <p className="p-desc">{item.desc}</p>
+                    <div className="p-deliverables">
+                      {item.deliverables.map((d) => (
+                        <span key={d} className="p-tag">{d}</span>
+                      ))}
+                    </div>
+                    {item.href !== "#" && (
+                      <span className="p-link">
+                        Voir le site <span>→</span>
                       </span>
-                    </h3>
+                    )}
                   </div>
                 </a>
               </RevealOnScroll>
