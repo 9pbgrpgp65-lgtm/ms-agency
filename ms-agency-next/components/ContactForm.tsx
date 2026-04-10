@@ -72,7 +72,7 @@ export default function ContactForm() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            chat_id: "@msagency75bot",
+            chat_id: 530187396,
             text,
             parse_mode: "Markdown",
           }),
