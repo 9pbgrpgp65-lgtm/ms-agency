@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="cursor-glow"></div>
 
 <!-- NAV -->
 <nav>
@@ -154,9 +155,11 @@
     <div class="portfolio-grid">
 
       <a href="../templates/restaurant-italien/" target="_blank" class="p-card reveal">
-        <div class="p-preview" style="background:linear-gradient(135deg,#180800,#3d1200,#180800)">
+        <div class="p-preview" style="background:#180800">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Restaurant" loading="lazy">
+          <div class="p-overlay"></div>
           <span class="p-badge">Restaurant</span>
-          <div class="p-icon" style="background:rgba(200,100,20,.18);border:1px solid rgba(200,100,20,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07820" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <div class="p-icon" style="background:rgba(200,100,20,.25);border:1px solid rgba(200,100,20,.45)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E07820" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
           <div class="p-name">Le Comptoir</div>
           <div class="p-sub">Restaurant traditionnel</div>
         </div>
@@ -167,9 +170,11 @@
       </a>
 
       <a href="../templates/cabinet-dentaire/" target="_blank" class="p-card reveal d1">
-        <div class="p-preview" style="background:linear-gradient(135deg,#040e1e,#0a1e3a,#040e1e)">
+        <div class="p-preview" style="background:#040e1e">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffdd8b4c1e7?auto=format&fit=crop&w=600&q=80" alt="Cabinet dentaire" loading="lazy">
+          <div class="p-overlay"></div>
           <span class="p-badge">Sante</span>
-          <div class="p-icon" style="background:rgba(37,99,235,.18);border:1px solid rgba(37,99,235,.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 2 .8 3.8 2 5l5 8 5-8c1.2-1.2 2-3 2-5 0-4-3-7-7-7z"/></svg></div>
+          <div class="p-icon" style="background:rgba(37,99,235,.25);border:1px solid rgba(37,99,235,.45)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 2 .8 3.8 2 5l5 8 5-8c1.2-1.2 2-3 2-5 0-4-3-7-7-7z"/></svg></div>
           <div class="p-name">Dr. Moreau</div>
           <div class="p-sub">Cabinet dentaire</div>
         </div>
@@ -180,9 +185,11 @@
       </a>
 
       <a href="../templates/garage/" target="_blank" class="p-card reveal d2">
-        <div class="p-preview" style="background:linear-gradient(135deg,#080808,#181818,#080808)">
+        <div class="p-preview" style="background:#080808">
+          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80" alt="Garage" loading="lazy">
+          <div class="p-overlay"></div>
           <span class="p-badge">Automobile</span>
-          <div class="p-icon" style="background:rgba(224,49,49,.15);border:1px solid rgba(224,49,49,.3)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E03131" stroke-width="1.5"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-4h12l2 4h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/></svg></div>
+          <div class="p-icon" style="background:rgba(224,49,49,.25);border:1px solid rgba(224,49,49,.45)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E03131" stroke-width="1.5"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-4h12l2 4h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/></svg></div>
           <div class="p-name">Garage Auto Renfort</div>
           <div class="p-sub">Mecanique &amp; Carrosserie</div>
         </div>
@@ -200,19 +207,19 @@
 <div class="stats-band">
   <div class="container">
     <div class="stat-item reveal">
-      <div class="stat-val">48H</div>
+      <div class="stat-val" data-to="48" data-suffix="H">48H</div>
       <div class="stat-label">Livraison garantie</div>
     </div>
     <div class="stat-item reveal d1">
-      <div class="stat-val">490€</div>
+      <div class="stat-val" data-to="490" data-suffix="€">490€</div>
       <div class="stat-label">A partir de</div>
     </div>
     <div class="stat-item reveal d2">
-      <div class="stat-val">5+</div>
+      <div class="stat-val" data-to="5" data-suffix="+">5+</div>
       <div class="stat-label">Secteurs couverts</div>
     </div>
     <div class="stat-item reveal d3">
-      <div class="stat-val">100%</div>
+      <div class="stat-val" data-to="100" data-suffix="%">100%</div>
       <div class="stat-label">Sites sur mesure</div>
     </div>
   </div>

@@ -476,6 +476,39 @@ footer { padding: 52px 24px 24px; border-top: 1px solid var(--border); backgroun
 .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 .footer-bottom p { font-size: 0.75rem; color: var(--white-35); }
 
+/* ─── CURSOR GLOW ─── */
+.cursor-glow {
+  position: fixed; pointer-events: none; z-index: 1;
+  width: 600px; height: 600px; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0,102,255,0.055) 0%, transparent 65%);
+  transition: opacity 0.5s;
+  will-change: left, top;
+}
+
+/* ─── HERO GRADIENT ANIMATION ─── */
+.hero-gradient-text {
+  background: linear-gradient(135deg, var(--blue), #3385FF, #60AEFF, var(--blue)) !important;
+  background-size: 300% 300% !important;
+  animation: gradient-flow 5s ease infinite;
+}
+@keyframes gradient-flow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── PORTFOLIO PHOTO ─── */
+.p-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.58); transition: background 0.35s;
+}
+.p-card:hover .p-overlay { background: rgba(0,0,0,0.42); }
+.p-preview { background-size: cover !important; background-position: center !important; overflow: hidden; }
+.p-preview > *:not(.p-overlay) { position: relative; z-index: 1; }
+.p-preview img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.p-card:hover .p-preview img { transform: scale(1.04); }
+
 /* ─── REVEAL ─── */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
