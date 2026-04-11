@@ -1007,6 +1007,39 @@ section {
 }
 .p-card:hover .p-link { gap: 10px; }
 
+.p-actions { margin-top: auto; padding-top: 4px; }
+
+.p-btn-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--blue);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: background 0.2s, gap 0.2s;
+}
+.p-btn-live:hover { background: #0052cc; gap: 10px; }
+
+.p-btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white-70);
+  background: var(--black-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, gap 0.2s;
+}
+.p-btn-contact:hover { border-color: var(--white-30); color: var(--white); gap: 10px; }
+
 /* CTA card in portfolio grid */
 .p-card-cta {
   border-radius: var(--radius-lg);

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
-import TemplatePreview from "@/components/TemplatePreview";
-import SectorAnimation from "@/components/SectorAnimation";
 
 export const metadata: Metadata = {
   title: "Portfolio — Nos réalisations",
@@ -16,8 +14,7 @@ const projects = [
     sector: "Garage automobile",
     name: "Garage Moretti",
     city: "Lyon 6ème",
-    img: "",
-    anim: "garage" as const,
+    img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
     desc: "Garage spécialisé multi-marques en difficulté de visibilité locale. Objectif : générer des appels entrants depuis Google Maps et dominer la recherche 'garage Lyon 6'.",
     deliverables: ["SEO local", "Google Maps", "Formulaire devis", "Page services"],
     id: "garage",
@@ -27,8 +24,7 @@ const projects = [
     sector: "Artisan plombier",
     name: "Plomberie Benali",
     city: "Bordeaux Centre",
-    img: "",
-    anim: "plombier" as const,
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
     desc: "Plombier indépendant sans présence en ligne. Objectif : capturer les urgences 24h/24 et remplacer le bouche-à-oreille par un flux de leads constant.",
     deliverables: ["Appel urgence direct", "WhatsApp flottant", "SEO local", "Avis clients"],
     id: "artisan",
@@ -42,17 +38,17 @@ const projects = [
     desc: "Trattoria familiale sans site web, réservations uniquement par téléphone. Objectif : digitaliser les réservations et attirer de nouveaux clients via Google.",
     deliverables: ["Réservation en ligne", "Menu digital", "Photos plats", "SEO local"],
     id: "restaurant",
-    href: "#",
+    href: null,
   },
   {
     sector: "Cabinet dentaire",
     name: "Cabinet Dr. Moreau",
     city: "Lyon 3e",
-    img: "https://images.unsplash.com/photo-1588776814546-1ffdd8b4c1e7?auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?auto=format&fit=crop&w=600&q=80",
     desc: "Cabinet débordé par les appels de prise de RDV. Objectif : automatiser la prise de rendez-vous en ligne et réduire la charge administrative.",
     deliverables: ["Prise de RDV", "Formulaire patient", "Horaires & urgences", "Confiance"],
     id: "dentiste",
-    href: "#",
+    href: null,
   },
   {
     sector: "Auto-école",
@@ -62,7 +58,7 @@ const projects = [
     desc: "Auto-école locale face à la concurrence des grandes franchises. Objectif : valoriser le suivi personnalisé et capter les inscriptions en ligne toute l'année.",
     deliverables: ["Inscription en ligne", "Tarifs clairs", "Témoignages élèves", "SEO local"],
     id: "autoecole",
-    href: "#",
+    href: null,
   },
 ];
 
@@ -95,30 +91,22 @@ export default function PortfolioPage() {
           <div className="portfolio-grid">
             {projects.map((item, i) => (
               <RevealOnScroll key={item.id} delay={(i % 3) + 1}>
-                <a
-                  href={item.href}
-                  target={item.href !== "#" ? "_blank" : undefined}
-                  rel={item.href !== "#" ? "noopener noreferrer" : undefined}
-                  className="p-card"
-                  id={item.id}
-                  style={{ textDecoration: "none", cursor: item.href === "#" ? "default" : "pointer" }}
-                >
+                <div className="p-card" id={item.id}>
+                  {/* Image */}
                   <div className="p-preview">
-                    {item.anim ? (
-                      <SectorAnimation sector={item.anim} />
-                    ) : (
-                      <Image
-                        src={item.img}
-                        alt={`${item.sector} — ${item.name}, ${item.city}`}
-                        width={600}
-                        height={450}
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                      />
-                    )}
+                    <Image
+                      src={item.img}
+                      alt={`${item.sector} — ${item.name}, ${item.city}`}
+                      width={600}
+                      height={450}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
                     <div className="p-overlay">
                       <span className="p-overlay-tag">{item.sector}</span>
                     </div>
                   </div>
+
+                  {/* Info */}
                   <div className="p-info">
                     <div className="p-sector">{item.sector}</div>
                     <h3 style={{ marginBottom: "4px" }}>{item.name}</h3>
@@ -129,13 +117,26 @@ export default function PortfolioPage() {
                         <span key={d} className="p-tag">{d}</span>
                       ))}
                     </div>
-                    {item.href !== "#" && (
-                      <span className="p-link">
-                        Voir le site <span>→</span>
-                      </span>
-                    )}
+
+                    {/* CTA */}
+                    <div className="p-actions">
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-btn-live"
+                        >
+                          Voir le site →
+                        </a>
+                      ) : (
+                        <Link href="/contact" className="p-btn-contact">
+                          Projet similaire →
+                        </Link>
+                      )}
+                    </div>
                   </div>
-                </a>
+                </div>
               </RevealOnScroll>
             ))}
 

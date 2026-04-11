@@ -4,7 +4,6 @@ import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FAQ from "@/components/FAQ";
-import SectorAnimation from "@/components/SectorAnimation";
 
 export const metadata: Metadata = {
   title: "MS Agency — Agence web pour commerces locaux",
@@ -31,23 +30,23 @@ const portfolioItems = [
   {
     sector: "Artisan plombier",
     name: "Plomberie Benali",
-    img: "",
-    anim: "plombier" as const,
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
     tag: "Urgence 24h/24",
+    href: "/portfolio#artisan",
   },
   {
     sector: "Garage automobile",
     name: "Garage Moretti",
-    img: "",
-    anim: "garage" as const,
+    img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
     tag: "SEO local",
+    href: "/portfolio#garage",
   },
   {
     sector: "Restaurant",
     name: "La Trattoria di Roma",
     img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
-    anim: null,
     tag: "Réservation en ligne",
+    href: "/portfolio#restaurant",
   },
 ];
 
@@ -203,19 +202,15 @@ export default function HomePage() {
           <div className="portfolio-grid">
             {portfolioItems.map((item, i) => (
               <RevealOnScroll key={item.name} delay={i + 1}>
-                <Link href="/portfolio" className="p-card">
+                <Link href={item.href} className="p-card">
                   <div className="p-preview">
-                    {item.anim ? (
-                      <SectorAnimation sector={item.anim} />
-                    ) : (
-                      <Image
-                        src={item.img}
-                        alt={`${item.sector} — ${item.name}`}
-                        width={600}
-                        height={450}
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                      />
-                    )}
+                    <Image
+                      src={item.img}
+                      alt={`${item.sector} — ${item.name}`}
+                      width={600}
+                      height={450}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
                     <div className="p-overlay">
                       <span className="p-overlay-tag">{item.tag}</span>
                     </div>
