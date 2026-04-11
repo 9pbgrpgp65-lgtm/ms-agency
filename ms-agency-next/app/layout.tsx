@@ -91,14 +91,14 @@ export default function RootLayout({
         />
         {/* Google Analytics 4 */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-LKR2EH4900"
           strategy="afterInteractive"
         />
         <Script id="ga4-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX');
+          gtag('config', 'G-LKR2EH4900');
         `}</Script>
         {/* Calendly */}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
