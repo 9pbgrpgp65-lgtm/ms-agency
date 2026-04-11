@@ -941,11 +941,16 @@ section {
 }
 
 .p-info {
-  padding: 20px 24px;
+  padding: 20px 24px 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+
+.p-actions {
+  margin-top: auto;
+  padding-top: 16px;
 }
 
 .p-sector {

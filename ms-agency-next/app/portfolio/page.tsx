@@ -130,8 +130,8 @@ export default function PortfolioPage() {
                           Voir le site →
                         </a>
                       ) : (
-                        <Link href="/contact" className="p-btn-contact">
-                          Projet similaire →
+                        <Link href="/contact" className="p-btn-live">
+                          Voir le site →
                         </Link>
                       )}
                     </div>
