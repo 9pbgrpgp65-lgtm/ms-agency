@@ -44,7 +44,7 @@ const projects = [
     sector: "Cabinet dentaire",
     name: "Cabinet Dr. Moreau",
     city: "Lyon 3e",
-    img: "https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e66?auto=format&fit=crop&w=600&q=80",
     desc: "Cabinet débordé par les appels de prise de RDV. Objectif : automatiser la prise de rendez-vous en ligne et réduire la charge administrative.",
     deliverables: ["Prise de RDV", "Formulaire patient", "Horaires & urgences", "Confiance"],
     id: "dentiste",
@@ -92,19 +92,36 @@ export default function PortfolioPage() {
             {projects.map((item, i) => (
               <RevealOnScroll key={item.id} delay={(i % 3) + 1}>
                 <div className="p-card" id={item.id}>
-                  {/* Image */}
-                  <div className="p-preview">
-                    <Image
-                      src={item.img}
-                      alt={`${item.sector} — ${item.name}, ${item.city}`}
-                      width={600}
-                      height={450}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                    <div className="p-overlay">
-                      <span className="p-overlay-tag">{item.sector}</span>
-                    </div>
-                  </div>
+                  {/* Image — cliquable */}
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="p-preview p-preview-link">
+                      <Image
+                        src={item.img}
+                        alt={`${item.sector} — ${item.name}, ${item.city}`}
+                        width={600}
+                        height={450}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                      <div className="p-overlay">
+                        <span className="p-overlay-tag">{item.sector}</span>
+                        <span className="p-overlay-open">Ouvrir le site ↗</span>
+                      </div>
+                    </a>
+                  ) : (
+                    <Link href="/contact" className="p-preview p-preview-link">
+                      <Image
+                        src={item.img}
+                        alt={`${item.sector} — ${item.name}, ${item.city}`}
+                        width={600}
+                        height={450}
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                      <div className="p-overlay">
+                        <span className="p-overlay-tag">{item.sector}</span>
+                        <span className="p-overlay-open">Projet similaire ↗</span>
+                      </div>
+                    </Link>
+                  )}
 
                   {/* Info */}
                   <div className="p-info">

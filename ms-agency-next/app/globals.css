@@ -940,6 +940,23 @@ section {
   border-radius: var(--radius-pill);
 }
 
+.p-preview-link { display: block; text-decoration: none; }
+
+.p-overlay-open {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.p-preview-link:hover .p-overlay-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+.p-preview-link:hover img { transform: scale(1.06); }
+
 .p-info {
   padding: 20px 24px 24px;
   flex: 1;
