@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";
+import FloatingButtons from "@/components/FloatingButtons";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -87,12 +89,30 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        `}</Script>
+        {/* Calendly */}
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
       </head>
       <body style={{ fontFamily: "var(--font-inter, 'Inter', sans-serif)" }}>
         <CursorGlow />
         <Nav />
         <main>{children}</main>
         <Footer />
+        <FloatingButtons />
       </body>
     </html>
   );
