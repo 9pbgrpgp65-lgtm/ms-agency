@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.premiercap.fr",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.cd-sport.com",
+        pathname: "/**",
+      },
     ],
   },
 };
