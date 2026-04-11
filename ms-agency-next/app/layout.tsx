@@ -6,6 +6,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";
 import FloatingButtons from "@/components/FloatingButtons";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -89,17 +90,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        {/* Google Analytics 4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-LKR2EH4900"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-LKR2EH4900');
-        `}</Script>
         {/* Calendly */}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <Script
@@ -113,6 +103,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingButtons />
+        <CookieConsent />
       </body>
     </html>
   );
