@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 const portfolioLinks = [
@@ -56,7 +58,16 @@ export default function Footer() {
 
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} MS Agency. Tous droits réservés.</span>
-            <span>Fait avec ♥ en France</span>
+            <span style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
+              <Link href="/mentions-legales" style={{ color: "rgba(255,255,255,0.35)", fontSize: "13px", textDecoration: "underline", textUnderlineOffset: "3px" }}>Mentions légales</Link>
+              <button
+                onClick={() => { localStorage.removeItem("ms_cookie_consent"); window.location.reload(); }}
+                style={{ background: "none", border: "none", color: "rgba(255,255,255,0.35)", fontSize: "13px", textDecoration: "underline", textUnderlineOffset: "3px", cursor: "pointer", padding: 0, fontFamily: "inherit" }}
+              >
+                🍪 Gérer les cookies
+              </button>
+              <span>Fait avec ♥ en France</span>
+            </span>
           </div>
         </div>
       </div>
