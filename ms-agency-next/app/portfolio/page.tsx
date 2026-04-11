@@ -38,7 +38,7 @@ const projects = [
     desc: "Trattoria familiale sans site web, réservations uniquement par téléphone. Objectif : digitaliser les réservations et attirer de nouveaux clients via Google.",
     deliverables: ["Réservation en ligne", "Menu digital", "Photos plats", "SEO local"],
     id: "restaurant",
-    href: null,
+    href: "/templates/restaurant-italien/index.html",
   },
   {
     sector: "Cabinet dentaire",
@@ -48,7 +48,7 @@ const projects = [
     desc: "Cabinet débordé par les appels de prise de RDV. Objectif : automatiser la prise de rendez-vous en ligne et réduire la charge administrative.",
     deliverables: ["Prise de RDV", "Formulaire patient", "Horaires & urgences", "Confiance"],
     id: "dentiste",
-    href: null,
+    href: "/templates/cabinet-dentaire/index.html",
   },
   {
     sector: "Auto-école",
@@ -58,7 +58,7 @@ const projects = [
     desc: "Auto-école locale face à la concurrence des grandes franchises. Objectif : valoriser le suivi personnalisé et capter les inscriptions en ligne toute l'année.",
     deliverables: ["Inscription en ligne", "Tarifs clairs", "Témoignages élèves", "SEO local"],
     id: "autoecole",
-    href: null,
+    href: "/templates/auto-ecole/index.html",
   },
 ];
 
