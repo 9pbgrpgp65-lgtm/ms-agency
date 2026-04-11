@@ -14,7 +14,7 @@ const projects = [
     sector: "Garage automobile",
     name: "Garage Moretti",
     city: "Lyon 6ème",
-    img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
+    img: "https://b730616.smushcdn.com/730616/wp-content/uploads/service-resize-1030x687.jpg?lossy=2&strip=1&webp=1",
     desc: "Garage spécialisé multi-marques en difficulté de visibilité locale. Objectif : générer des appels entrants depuis Google Maps et dominer la recherche 'garage Lyon 6'.",
     deliverables: ["SEO local", "Google Maps", "Formulaire devis", "Page services"],
     id: "garage",

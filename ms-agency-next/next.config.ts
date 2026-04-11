@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         hostname: "www.cd-sport.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "b730616.smushcdn.com",
+        pathname: "/**",
+      },
     ],
   },
 };
