@@ -29,7 +29,7 @@ export default function Footer() {
               </div>
               <p>
                 Agence web spécialisée pour les commerces locaux. Sites professionnels
-                livrés en 48h, dès 500€. Référencement local Google inclus.
+                livrés en 48h, dès 990€. Référencement local Google inclus.
               </p>
             </div>
 
