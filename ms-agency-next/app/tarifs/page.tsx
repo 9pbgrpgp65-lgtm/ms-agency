@@ -281,12 +281,12 @@ export default function TarifsPage() {
                 <h2>Pourquoi choisir MS Agency ?</h2>
                 <div className="pourquoi-items">
                   {[
-                    { icon: "⚡", text: "Livraison garantie en 48h ou remboursement" },
-                    { icon: "💰", text: "Prix fixe tout inclus — pas de coûts cachés" },
-                    { icon: "📍", text: "Spécialisés commerces locaux, on comprend votre marché" },
-                    { icon: "🎯", text: "SEO local dès le lancement pour être trouvé sur Google" },
-                    { icon: "🔧", text: "Support réactif et accompagnement continu" },
-                    { icon: "📱", text: "Design 100% mobile-first et moderne" },
+                    { icon: "→", text: "Livraison garantie en 48h ou remboursement" },
+                    { icon: "→", text: "Prix fixe tout inclus — pas de coûts cachés" },
+                    { icon: "→", text: "Spécialisés commerces locaux, on comprend votre marché" },
+                    { icon: "→", text: "SEO local dès le lancement pour être trouvé sur Google" },
+                    { icon: "→", text: "Support réactif et accompagnement continu" },
+                    { icon: "→", text: "Design 100% mobile-first et moderne" },
                   ].map((item) => (
                     <div key={item.text} className="pourquoi-item">
                       <span className="pourquoi-item-icon">{item.icon}</span>
