@@ -37,6 +37,29 @@ const maintenanceFeatures = [
   "Support réactif",
 ];
 
+const gmbFeatures = [
+  "4 posts Google My Business par mois",
+  "Réponse à tous vos avis Google",
+  "Photos mises à jour",
+  "Rapport mensuel de visibilité",
+];
+
+const seoFeatures = [
+  "Audit complet présence en ligne",
+  "Google My Business optimisé à 100%",
+  "Contenu local rédigé et publié",
+  "Gestion des avis Google",
+  "5 fiches annuaires créées",
+  "Rapport de positionnement mensuel",
+];
+
+const adsFeatures = [
+  "Création des campagnes locales",
+  "Ciblage précis par ville et secteur",
+  "Optimisation mensuelle",
+  "Rapport de performance",
+];
+
 export default function TarifsPage() {
   return (
     <>
@@ -129,6 +152,89 @@ export default function TarifsPage() {
                 </div>
                 <Link href="/contact" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
                   En savoir plus →
+                </Link>
+              </div>
+            </RevealOnScroll>
+
+          </div>
+
+          {/* Séparateur services récurrents */}
+          <div style={{ textAlign: "center", margin: "64px 0 48px" }}>
+            <RevealOnScroll>
+              <span className="label">Services récurrents</span>
+            </RevealOnScroll>
+            <RevealOnScroll delay={1}>
+              <h2 className="title" style={{ marginTop: "12px" }}>Boostez votre visibilité</h2>
+            </RevealOnScroll>
+          </div>
+
+          <div className="tarifs-grid">
+
+            {/* GMB mensuel */}
+            <RevealOnScroll delay={1}>
+              <div className="t-card">
+                <div className="t-card-name">Gestion Google My Business</div>
+                <div className="t-card-price">
+                  <span className="t-card-amount">99</span>
+                  <span className="t-card-currency">€<span style={{ fontSize: "16px", fontWeight: 400, color: "var(--white-50)" }}>/mois</span></span>
+                </div>
+                <p className="t-card-desc">Sans engagement. Annulable à tout moment.</p>
+                <div className="t-features">
+                  {gmbFeatures.map((f) => (
+                    <div key={f} className="t-feature">
+                      <div className="t-feature-check">✓</div>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/contact" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
+                  Démarrer →
+                </Link>
+              </div>
+            </RevealOnScroll>
+
+            {/* SEO local */}
+            <RevealOnScroll delay={2}>
+              <div className="t-card featured">
+                <div className="t-card-name">SEO Local</div>
+                <div className="t-card-price">
+                  <span className="t-card-amount">300</span>
+                  <span className="t-card-currency">€<span style={{ fontSize: "16px", fontWeight: 400, color: "var(--white-50)" }}>/mois</span></span>
+                </div>
+                <p className="t-card-desc">Engagement 3 mois minimum.</p>
+                <div className="t-features">
+                  {seoFeatures.map((f) => (
+                    <div key={f} className="t-feature">
+                      <div className="t-feature-check">✓</div>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/contact" className="btn-primary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
+                  Démarrer →
+                </Link>
+              </div>
+            </RevealOnScroll>
+
+            {/* Google Ads */}
+            <RevealOnScroll delay={3}>
+              <div className="t-card">
+                <div className="t-card-name">Publicité Google Ads</div>
+                <div className="t-card-price">
+                  <span className="t-card-amount">200</span>
+                  <span className="t-card-currency">€<span style={{ fontSize: "16px", fontWeight: 400, color: "var(--white-50)" }}>/mois</span></span>
+                </div>
+                <p className="t-card-desc">Budget publicitaire non inclus (300–500€/mois conseillé).</p>
+                <div className="t-features">
+                  {adsFeatures.map((f) => (
+                    <div key={f} className="t-feature">
+                      <div className="t-feature-check">✓</div>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/contact" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
+                  Démarrer →
                 </Link>
               </div>
             </RevealOnScroll>

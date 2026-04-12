@@ -20,7 +20,7 @@ const services = [
     icon: "📍",
     title: "SEO local Google",
     desc: "Stratégie de référencement local complète : optimisation Google My Business, balises locales, citations web et suivi de positionnement mensuel.",
-    tag: "Résultats en 30j",
+    tag: "Visible sur Google Maps",
     wide: false,
   },
   {
@@ -43,6 +43,58 @@ const services = [
     desc: "Votre site évolue avec votre commerce. Mises à jour de contenu, corrections, améliorations — nous nous occupons de tout.",
     tag: "Suivi mensuel",
     wide: false,
+  },
+  {
+    icon: "📈",
+    title: "SEO local mensuel",
+    desc: "Optimisation continue de votre présence Google : posts Google My Business, gestion des avis, contenu local, rapport mensuel de positionnement.",
+    tag: "Dès 300€/mois",
+    wide: false,
+  },
+  {
+    icon: "📊",
+    title: "Gestion Google My Business",
+    desc: "On s'occupe de votre fiche Google chaque mois : 4 posts publiés, réponses aux avis, photos mises à jour. Vous restez visible sans rien faire.",
+    tag: "99€/mois",
+    wide: false,
+  },
+  {
+    icon: "🎯",
+    title: "Publicité Google Ads locale",
+    desc: "Campagnes Google Ads ciblées sur votre ville et votre secteur. On gère tout, vous recevez les appels.",
+    tag: "200€/mois de gestion",
+    wide: false,
+  },
+];
+
+const timelineSteps = [
+  {
+    num: "1",
+    emoji: "🎨",
+    day: "Jour 0",
+    title: "Votre site déjà prêt",
+    desc: "On identifie votre commerce et on prépare votre site avant même de vous contacter. Vous voyez le résultat concret dès le premier échange.",
+  },
+  {
+    num: "2",
+    emoji: "✅",
+    day: "Jour 1",
+    title: "Validation & personnalisation",
+    desc: "Vous validez le design, on intègre vos vraies informations : textes, photos, coordonnées, horaires. Aucun effort de votre côté.",
+  },
+  {
+    num: "3",
+    emoji: "⚙️",
+    day: "Jours 1–2",
+    title: "Développement & optimisation",
+    desc: "Intégration complète, mobile-first, SEO local, formulaires, WhatsApp, Calendly. Chaque page est testée sur tous les appareils.",
+  },
+  {
+    num: "4",
+    emoji: "🚀",
+    day: "Jour 2",
+    title: "Mise en ligne",
+    desc: "Déploiement sur votre nom de domaine, SSL configuré, Google My Business mis à jour. Votre site est live en 48h.",
   },
 ];
 
@@ -100,36 +152,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="timeline">
-            {[
-              {
-                num: "1",
-                emoji: "💬",
-                day: "Jour 0",
-                title: "Brief & objectifs",
-                desc: "Appel de 30 min pour comprendre votre activité, vos cibles et vos besoins. On définit ensemble la structure du site.",
-              },
-              {
-                num: "2",
-                emoji: "🎨",
-                day: "Jour 1",
-                title: "Design & maquette",
-                desc: "Nous créons le design de votre site et vous le soumettons pour validation. Retours pris en compte le jour même.",
-              },
-              {
-                num: "3",
-                emoji: "⚙️",
-                day: "Jours 1–2",
-                title: "Développement",
-                desc: "Intégration complète, mobile-first, optimisations performance et SEO local. Chaque page est testée.",
-              },
-              {
-                num: "4",
-                emoji: "🚀",
-                day: "Jour 2–3",
-                title: "Mise en ligne",
-                desc: "Déploiement sur votre nom de domaine, configuration SSL et Google My Business. Votre site est live.",
-              },
-            ].map((step, i) => (
+            {timelineSteps.map((step, i) => (
               <RevealOnScroll key={step.num} delay={i + 1}>
                 <div className="tl-step">
                   <div className="tl-num">{step.emoji}</div>

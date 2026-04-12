@@ -320,9 +320,9 @@ export default function HomePage() {
             {[
               {
                 stars: 5,
-                quote: "En 48h j'avais un site professionnel en ligne. Depuis, mes appels ont doublé et je suis en top 3 sur Google pour 'garage Argenteuil'. Je recommande sans hésitation.",
+                quote: "En 48h j'avais un site professionnel en ligne. Depuis, mes appels ont doublé et je suis en top 3 sur Google pour 'garage Lyon 6'. Je recommande sans hésitation.",
                 name: "Karim B.",
-                role: "Gérant — Auto Renfort, Argenteuil",
+                role: "Gérant — Garage Moretti, Lyon 6",
               },
               {
                 stars: 5,
