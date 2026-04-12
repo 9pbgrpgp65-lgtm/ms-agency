@@ -8,7 +8,7 @@ import FAQ from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "MS Agency — Agence web pour commerces locaux",
   description:
-    "Site web professionnel livré en 48h dès 500€. MS Agency spécialisée commerces de proximité : restaurants, garages, artisans, cabinets médicaux.",
+    "Site web professionnel livré en 48h dès 990€. MS Agency spécialisée commerces de proximité : restaurants, garages, artisans, cabinets médicaux.",
 };
 
 const marqueeSectors = [
@@ -291,7 +291,7 @@ export default function HomePage() {
                       <div className="cs-stat-label">Google local</div>
                     </div>
                     <div className="cs-stat">
-                      <div className="cs-stat-val">500€</div>
+                      <div className="cs-stat-val">990€</div>
                       <div className="cs-stat-label">Investissement</div>
                     </div>
                   </div>
@@ -385,9 +385,9 @@ export default function HomePage() {
             </div>
             <div className="stat-item">
               <div className="stat-val">
-                <AnimatedCounter to={500} suffix="€" />
+                <AnimatedCounter to={990} suffix="€" />
               </div>
-              <div className="stat-label">Prix unique</div>
+              <div className="stat-label">Dès</div>
             </div>
             <div className="stat-item">
               <div className="stat-val">

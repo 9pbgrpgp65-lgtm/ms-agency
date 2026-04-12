@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact — Devis gratuit",
   description:
-    "Contactez MS Agency pour un devis gratuit. Réponse sous 24h. Créez votre site professionnel en 48h dès 500€.",
+    "Contactez MS Agency pour un devis gratuit. Réponse sous 24h. Créez votre site professionnel en 48h dès 990€.",
 };
 
 export default function ContactPage() {

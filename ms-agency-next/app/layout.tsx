@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | MS Agency",
   },
   description:
-    "MS Agency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 500€.",
+    "MS Agency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 990€.",
   keywords: [
     "agence web",
     "site web commerce local",
@@ -40,12 +40,12 @@ export const metadata: Metadata = {
     siteName: "MS Agency",
     title: "MS Agency — Agence web pour commerces locaux",
     description:
-      "Site web professionnel livré en 48h dès 500€. Spécialiste des commerces de proximité.",
+      "Site web professionnel livré en 48h dès 990€. Spécialiste des commerces de proximité.",
   },
   twitter: {
     card: "summary_large_image",
     title: "MS Agency — Agence web pour commerces locaux",
-    description: "Site web professionnel livré en 48h dès 500€.",
+    description: "Site web professionnel livré en 48h dès 990€.",
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   name: "MS Agency",
   description:
-    "Agence web spécialisée pour les commerces locaux. Sites professionnels livrés en 48h, dès 500€.",
+    "Agence web spécialisée pour les commerces locaux. Sites professionnels livrés en 48h, dès 990€.",
   url: BASE_URL,
   telephone: "+33783334543",
   email: "contact@ms-agency.fr",
@@ -90,7 +90,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        {/* Calendly */}
+        {/* Calendly — CSS only, JS chargé via FloatingButtons */}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"

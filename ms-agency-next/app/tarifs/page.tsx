@@ -10,29 +10,31 @@ export const metadata: Metadata = {
 };
 
 const vitrineFeatures = [
-  "5 pages (accueil, services, contact…)",
-  "Design mobile-first, rapide, moderne",
-  "SEO local (balises, mots-clés, schema.org)",
-  "Formulaire de contact",
-  "Carte Google Maps intégrée",
-  "Certificat SSL (HTTPS)",
+  "Design sur mesure adapté à votre secteur",
+  "Version mobile (responsive)",
+  "5 pages complètes",
+  "Formulaire de contact avec notification instantanée par message",
+  "Bouton WhatsApp intégré",
+  "Prise de rendez-vous en ligne (Calendly)",
+  "Google Maps intégré",
+  "SEO local de base",
   "Hébergement 1 an inclus",
+  "Certificat SSL (HTTPS)",
+  "Conforme RGPD (bandeau cookies inclus)",
   "Livraison garantie en 48h",
 ];
 
 const packFeatures = [
-  "Tout le contenu du site vitrine",
+  "Tout le pack site vitrine",
   "Google My Business optimisé",
-  "5 fiches annuaires locaux",
-  "Rapport de visibilité inclus",
+  "5 fiches annuaires locaux créées",
 ];
 
 const maintenanceFeatures = [
-  "Nom de domaine inclus",
-  "Sécurité & sauvegardes",
-  "Mises à jour du contenu",
-  "Modifications incluses",
-  "Support — réponse sous 24h",
+  "Renouvellement domaine et hébergement",
+  "Mises à jour sécurité",
+  "Modifications de contenu incluses (sous 48h)",
+  "Support réactif",
 ];
 
 export default function TarifsPage() {
