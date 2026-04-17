@@ -20,11 +20,11 @@ const BASE_URL = "https://ms-agency.fr";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "MS Agency — Agence web pour commerces locaux",
-    template: "%s | MS Agency",
+    default: "ms48agency — Agence web pour commerces locaux",
+    template: "%s | ms48agency",
   },
   description:
-    "MS Agency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 990€.",
+    "ms48agency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 990€.",
   keywords: [
     "agence web",
     "site web commerce local",
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: BASE_URL,
-    siteName: "MS Agency",
-    title: "MS Agency — Agence web pour commerces locaux",
+    siteName: "ms48agency",
+    title: "ms48agency — Agence web pour commerces locaux",
     description:
       "Site web professionnel livré en 48h dès 990€. Spécialiste des commerces de proximité.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MS Agency — Agence web pour commerces locaux",
+    title: "ms48agency — Agence web pour commerces locaux",
     description: "Site web professionnel livré en 48h dès 990€.",
   },
   robots: {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "MS Agency",
+  name: "ms48agency",
   description:
     "Agence web spécialisée pour les commerces locaux. Sites professionnels livrés en 48h, dès 990€.",
   url: BASE_URL,

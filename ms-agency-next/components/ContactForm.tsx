@@ -60,7 +60,7 @@ export default function ContactForm() {
     setSubmitState("loading");
     try {
       const text =
-        `🆕 *Nouvelle demande MS Agency*\n\n` +
+        `🆕 *Nouvelle demande ms48agency*\n\n` +
         `👤 *Nom :* ${formData.prenom} ${formData.nom}\n` +
         `📞 *Téléphone :* ${formData.telephone}\n` +
         `🏪 *Commerce :* ${formData.commerce}\n` +

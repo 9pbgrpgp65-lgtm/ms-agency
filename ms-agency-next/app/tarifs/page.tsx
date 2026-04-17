@@ -278,7 +278,7 @@ export default function TarifsPage() {
 
             <RevealOnScroll delay={2}>
               <div className="pourquoi-text">
-                <h2>Pourquoi choisir MS Agency ?</h2>
+                <h2>Pourquoi choisir ms48agency ?</h2>
                 <div className="pourquoi-items">
                   {[
                     { icon: "✓", text: "Livraison garantie en 48h ou remboursement" },

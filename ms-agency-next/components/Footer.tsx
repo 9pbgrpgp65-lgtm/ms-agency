@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="footer-top">
             <div className="footer-brand">
               <div className="footer-brand-logo">
-                MS <span>Agency</span>
+                ms48<span>agency</span>
               </div>
               <p>
                 Agence web spécialisée pour les commerces locaux. Sites professionnels
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} MS Agency. Tous droits réservés.</span>
+            <span>© {new Date().getFullYear()} ms48agency. Tous droits réservés.</span>
             <span style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
               <Link href="/mentions-legales" style={{ color: "rgba(255,255,255,0.35)", fontSize: "13px", textDecoration: "underline", textUnderlineOffset: "3px" }}>Mentions légales</Link>
               <button
