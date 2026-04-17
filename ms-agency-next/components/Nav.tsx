@@ -33,7 +33,7 @@ export default function Nav() {
     <nav className="nav" role="navigation" aria-label="Navigation principale">
       <div className={`nav-pill${scrolled ? " scrolled" : ""}`}>
         <Link href="/" className="nav-logo">
-          MS<span className="logo-num">48</span><span className="logo-word">agency</span>
+          MS<span className="logo-num">48</span><span className="logo-word">Agency</span>
         </Link>
 
         {/* Desktop links */}
