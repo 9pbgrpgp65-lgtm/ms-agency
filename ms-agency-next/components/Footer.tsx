@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="footer-top">
             <div className="footer-brand">
               <div className="footer-brand-logo">
-                ms48<span>agency</span>
+                ms<span className="logo-num">48</span><span className="logo-word">agency</span>
               </div>
               <p>
                 Agence web spécialisée pour les commerces locaux. Sites professionnels
