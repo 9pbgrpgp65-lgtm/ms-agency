@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Syne, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import CursorGlow from "@/components/CursorGlow";
 import FloatingButtons from "@/components/FloatingButtons";
 import CookieConsent from "@/components/CookieConsent";
 
-const inter = Inter({
+const syne = Syne({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-syne",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-dm",
 });
 
 const BASE_URL = "https://ms-agency.fr";
@@ -84,21 +90,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={inter.variable}>
+    <html lang="fr" className={`${syne.variable} ${dmSans.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        {/* Calendly — CSS only, JS chargé via FloatingButtons */}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
           strategy="lazyOnload"
         />
       </head>
-      <body style={{ fontFamily: "var(--font-inter, 'Inter', sans-serif)" }}>
-        <CursorGlow />
+      <body>
         <Nav />
         <main>{children}</main>
         <Footer />
