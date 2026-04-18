@@ -6,9 +6,9 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
-  title: "ms48agency — Agence web pour commerces locaux",
+  title: "48hAgency — Agence web pour commerces locaux",
   description:
-    "Site web professionnel livré en 48h dès 990€. ms48agency spécialisée commerces de proximité : restaurants, garages, artisans, cabinets médicaux.",
+    "Site web professionnel livré en 48h dès 990€. 48hAgency spécialisée commerces de proximité : restaurants, garages, artisans, cabinets médicaux.",
 };
 
 const marqueeSectors = [
@@ -326,7 +326,7 @@ export default function HomePage() {
               },
               {
                 stars: 5,
-                quote: "Je cherchais quelqu'un qui comprenne les besoins d'un cabinet dentaire. ms48agency a tout géré : le site, la prise de RDV en ligne, le référencement. Résultat top.",
+                quote: "Je cherchais quelqu'un qui comprenne les besoins d'un cabinet dentaire. 48hAgency a tout géré : le site, la prise de RDV en ligne, le référencement. Résultat top.",
                 name: "Dr. Moreau",
                 role: "Chirurgien-dentiste, Lyon",
               },

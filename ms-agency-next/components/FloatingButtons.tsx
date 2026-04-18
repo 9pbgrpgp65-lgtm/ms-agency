@@ -14,23 +14,23 @@ const WA_NUMBER = "33783334543";
 const categories = [
   {
     label: "🌐 Créer mon site web",
-    text: "Bonjour ms48agency, je souhaite créer un site web pour mon commerce. Pouvez-vous me donner plus d'informations ?",
+    text: "Bonjour 48hAgency, je souhaite créer un site web pour mon commerce. Pouvez-vous me donner plus d'informations ?",
   },
   {
     label: "📍 Améliorer mon référencement Google",
-    text: "Bonjour ms48agency, je souhaite améliorer ma visibilité sur Google (SEO local / Google My Business). Pouvez-vous m'aider ?",
+    text: "Bonjour 48hAgency, je souhaite améliorer ma visibilité sur Google (SEO local / Google My Business). Pouvez-vous m'aider ?",
   },
   {
     label: "📢 Lancer une campagne Google Ads",
-    text: "Bonjour ms48agency, je suis intéressé par la publicité Google Ads pour mon commerce. Pouvez-vous me présenter vos offres ?",
+    text: "Bonjour 48hAgency, je suis intéressé par la publicité Google Ads pour mon commerce. Pouvez-vous me présenter vos offres ?",
   },
   {
     label: "🔧 Maintenance & mise à jour",
-    text: "Bonjour ms48agency, j'ai besoin d'aide pour la maintenance ou une mise à jour de mon site web.",
+    text: "Bonjour 48hAgency, j'ai besoin d'aide pour la maintenance ou une mise à jour de mon site web.",
   },
   {
     label: "💰 Demander un devis gratuit",
-    text: "Bonjour ms48agency, je souhaite obtenir un devis gratuit pour mes besoins web. Pouvez-vous me contacter ?",
+    text: "Bonjour 48hAgency, je souhaite obtenir un devis gratuit pour mes besoins web. Pouvez-vous me contacter ?",
   },
 ];
 
@@ -206,7 +206,7 @@ export default function FloatingButtons() {
               <div className="wa-popup-header-left">
                 <div className="wa-popup-avatar">🚀</div>
                 <div>
-                  <div className="wa-popup-name">ms48agency</div>
+                  <div className="wa-popup-name">48hAgency</div>
                   <div className="wa-popup-status">
                     <span className="wa-status-dot" />
                     En ligne

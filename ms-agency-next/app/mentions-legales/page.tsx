@@ -16,19 +16,19 @@ export default function MentionsLegales() {
       <section style={{ marginBottom: 40 }}>
         <h2 style={h2}>Éditeur du site</h2>
         <p style={p}>
-          <strong style={strong}>ms48agency</strong><br />
+          <strong style={strong}>48hAgency</strong><br />
           Entrepreneur individuel<br />
           2 Rue Léonce Reynaud, 75016 Paris<br />
           SIRET : 91942745000011<br />
           N° TVA intracommunautaire : FR62919427450<br />
-          Email : <a href="mailto:contact@ms-agency.fr" style={link}>contact@ms-agency.fr</a><br />
+          Email : <a href="mailto:contact@48hagency.com" style={link}>contact@48hagency.com</a><br />
           Téléphone : 07 83 33 45 43
         </p>
       </section>
 
       <section style={{ marginBottom: 40 }}>
         <h2 style={h2}>Directeur de la publication</h2>
-        <p style={p}>Le directeur de la publication est le représentant légal de ms48agency.</p>
+        <p style={p}>Le directeur de la publication est le représentant légal de 48hAgency.</p>
       </section>
 
       <section style={{ marginBottom: 40 }}>
@@ -43,14 +43,14 @@ export default function MentionsLegales() {
       <section style={{ marginBottom: 40 }}>
         <h2 style={h2}>Propriété intellectuelle</h2>
         <p style={p}>
-          L'ensemble du contenu de ce site (textes, images, logos, structure) est la propriété exclusive de ms48agency et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle. Toute reproduction, même partielle, est interdite sans autorisation préalable écrite.
+          L'ensemble du contenu de ce site (textes, images, logos, structure) est la propriété exclusive de 48hAgency et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle. Toute reproduction, même partielle, est interdite sans autorisation préalable écrite.
         </p>
       </section>
 
       <section style={{ marginBottom: 40 }}>
         <h2 style={h2}>Limitation de responsabilité</h2>
         <p style={p}>
-          ms48agency s'efforce d'assurer l'exactitude des informations publiées sur ce site mais ne peut garantir leur exhaustivité. ms48agency se réserve le droit de modifier le contenu à tout moment sans préavis.
+          48hAgency s'efforce d'assurer l'exactitude des informations publiées sur ce site mais ne peut garantir leur exhaustivité. 48hAgency se réserve le droit de modifier le contenu à tout moment sans préavis.
         </p>
       </section>
 
@@ -63,9 +63,9 @@ export default function MentionsLegales() {
       <section style={{ marginBottom: 40 }}>
         <h2 style={h2}>Responsable du traitement</h2>
         <p style={p}>
-          ms48agency — Entrepreneur individuel<br />
+          48hAgency — Entrepreneur individuel<br />
           2 Rue Léonce Reynaud, 75016 Paris<br />
-          <a href="mailto:contact@ms-agency.fr" style={link}>contact@ms-agency.fr</a>
+          <a href="mailto:contact@48hagency.com" style={link}>contact@48hagency.com</a>
         </p>
       </section>
 
@@ -149,7 +149,7 @@ export default function MentionsLegales() {
           <li>✅ <strong style={strong}>Droit au retrait du consentement</strong> — à tout moment, sans justification</li>
         </ul>
         <p style={{ ...p, marginTop: 16 }}>
-          Pour exercer ces droits : <a href="mailto:contact@ms-agency.fr" style={link}>contact@ms-agency.fr</a>
+          Pour exercer ces droits : <a href="mailto:contact@48hagency.com" style={link}>contact@48hagency.com</a>
         </p>
       </section>
 

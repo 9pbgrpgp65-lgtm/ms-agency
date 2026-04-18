@@ -26,11 +26,11 @@ const BASE_URL = "https://48hagency.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "ms48agency — Agence web pour commerces locaux",
-    template: "%s | ms48agency",
+    default: "48hAgency — Agence web pour commerces locaux",
+    template: "%s | 48hAgency",
   },
   description:
-    "ms48agency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 990€.",
+    "48hAgency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 990€.",
   keywords: [
     "agence web",
     "site web commerce local",
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: BASE_URL,
-    siteName: "ms48agency",
-    title: "ms48agency — Agence web pour commerces locaux",
+    siteName: "48hAgency",
+    title: "48hAgency — Agence web pour commerces locaux",
     description:
       "Site web professionnel livré en 48h dès 990€. Spécialiste des commerces de proximité.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ms48agency — Agence web pour commerces locaux",
+    title: "48hAgency — Agence web pour commerces locaux",
     description: "Site web professionnel livré en 48h dès 990€.",
   },
   robots: {
@@ -65,12 +65,12 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "ms48agency",
+  name: "48hAgency",
   description:
     "Agence web spécialisée pour les commerces locaux. Sites professionnels livrés en 48h, dès 990€.",
   url: BASE_URL,
   telephone: "+33783334543",
-  email: "contact@ms-agency.fr",
+  email: "contact@48hagency.com",
   areaServed: "France",
   priceRange: "€€",
   openingHoursSpecification: [

@@ -30,8 +30,8 @@ export async function POST(req: NextRequest) {
   };
 
   await transporter.sendMail({
-    from: `"ms48agency Site" <${process.env.SMTP_USER}>`,
-    to: process.env.CONTACT_EMAIL ?? "contact@ms-agency.fr",
+    from: `"48hAgency Site" <${process.env.SMTP_USER}>`,
+    to: process.env.CONTACT_EMAIL ?? "contact@48hagency.com",
     subject: `Nouvelle demande — ${prenom} ${nom} (${commerceLabels[commerce] ?? commerce})`,
     text: [
       `Prénom : ${prenom}`,

@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact — Devis gratuit",
   description:
-    "Contactez ms48agency pour un devis gratuit. Réponse sous 24h. Créez votre site professionnel en 48h dès 990€.",
+    "Contactez 48hAgency pour un devis gratuit. Réponse sous 24h. Créez votre site professionnel en 48h dès 990€.",
 };
 
 export default function ContactPage() {
@@ -50,9 +50,9 @@ export default function ContactPage() {
                     <div className="contact-link-icon">📞</div>
                     <span>+33 7 83 33 45 43</span>
                   </a>
-                  <a href="mailto:contact@ms-agency.fr" className="contact-link">
+                  <a href="mailto:contact@48hagency.com" className="contact-link">
                     <div className="contact-link-icon">✉️</div>
-                    <span>contact@ms-agency.fr</span>
+                    <span>contact@48hagency.com</span>
                   </a>
                   <div className="contact-link">
                     <div className="contact-link-icon">📍</div>

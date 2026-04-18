@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://ms-agency.fr/sitemap.xml",
+    sitemap: "https://48hagency.com/sitemap.xml",
   };
 }
