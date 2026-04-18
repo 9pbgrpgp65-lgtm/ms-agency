@@ -1243,14 +1243,14 @@ section {
 }
 
 .stats-inner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 0;
 }
 
 .stat-item {
   text-align: center;
-  padding: 24px 16px;
+  padding: 24px 48px;
   border-right: 1px solid var(--border);
 }
 .stat-item:last-child { border-right: none; }
