@@ -1,32 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 70" width="220" height="70">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@900&amp;family=DM+Sans:wght@300&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@900&amp;family=DM+Sans:wght@300;400;700&amp;display=swap');
     </style>
+    <linearGradient id="grad48" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#A0BAFF"/>
+    </linearGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="220" height="70" fill="#060E1C"/>
+  <rect width="500" height="500" fill="#060E1C"/>
 
-  <!-- Icon: rounded square + lightning bolt -->
-  <rect x="10" y="9" width="52" height="52" rx="12" fill="#3B82F6"/>
-  <polygon
-    points="46,17 24,38 33,38 20,56 40,33 31,33"
-    fill="#FFFFFF"/>
+  <!-- Speed lines (blue on dark) -->
+  <line x1="8"  y1="148" x2="60" y2="148" stroke="#3B82F6" stroke-width="5.5" stroke-linecap="round"/>
+  <line x1="22" y1="170" x2="60" y2="170" stroke="#3B82F6" stroke-width="5.5" stroke-linecap="round"/>
+  <line x1="36" y1="192" x2="60" y2="192" stroke="#3B82F6" stroke-width="5.5" stroke-linecap="round"/>
 
-  <!-- 48H -->
-  <text x="76" y="44"
-        font-family="'Syne', 'Arial Black', sans-serif"
+  <!-- "48h" main headline (gradient white→blue) -->
+  <text x="64" y="268"
+        font-family="'Syne', 'Arial Black', Impact, sans-serif"
         font-weight="900"
-        font-size="34"
-        fill="#FFFFFF"
-        letter-spacing="-1">48H</text>
+        font-size="188"
+        fill="url(#grad48)"
+        letter-spacing="-6">48h</text>
+
+  <!-- Speedometer arc -->
+  <path d="M 384,80 A 75,75 0 0,1 497,145"
+        stroke="#3B82F6" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Needle -->
+  <line x1="422" y1="145" x2="456" y2="82"
+        stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="422" cy="145" r="5" fill="#3B82F6"/>
+  <circle cx="456" cy="82" r="4" fill="none" stroke="#3B82F6" stroke-width="2.5"/>
 
   <!-- AGENCY -->
-  <text x="79" y="57"
-        font-family="'DM Sans', 'Arial', sans-serif"
-        font-weight="300"
-        font-size="9.5"
-        fill="rgba(255,255,255,0.42)"
-        letter-spacing="5.5">AGENCY</text>
+  <text x="250" y="334"
+        font-family="'DM Sans', Arial, sans-serif"
+        font-weight="400"
+        font-size="36"
+        letter-spacing="16"
+        fill="#FFFFFF"
+        text-anchor="middle">AGENCY</text>
+
+  <!-- Divider -->
+  <line x1="108" y1="350" x2="392" y2="350"
+        stroke="#FFFFFF" stroke-width="1.5" opacity="0.15"/>
+
+  <!-- Tagline -->
+  <text x="250" y="392"
+        font-family="'DM Sans', Arial, sans-serif"
+        font-size="13.5"
+        letter-spacing="3"
+        text-anchor="middle">
+    <tspan fill="#FFFFFF" font-weight="300" opacity="0.45">SITES WEB, LIVRÉS EN </tspan><tspan fill="#3B82F6" font-weight="700">48H</tspan>
+  </text>
 </svg>
