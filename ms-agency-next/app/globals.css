@@ -7,33 +7,31 @@
 
 /* ---------- CSS Variables ---------------------------------- */
 :root {
-  /* Light palette */
-  --black:        #060E1C;   /* footer / dark sections */
-  --black-1:      #F8F7F4;   /* main bg */
-  --black-2:      #EEECEA;   /* alt bg */
-  --black-3:      #FFFFFF;   /* card bg */
-  --black-4:      #F0EFEC;   /* card alt */
+  --black:        #020810;
+  --black-1:      #060E1C;
+  --black-2:      #0A1628;
+  --black-3:      #0F1E35;
+  --black-4:      #162840;
 
   --blue:         #3B82F6;
-  --blue-dim:     rgba(59, 130, 246, 0.10);
-  --blue-border:  rgba(59, 130, 246, 0.25);
-  --blue-glow:    rgba(59, 130, 246, 0.14);
+  --blue-dim:     rgba(59, 130, 246, 0.12);
+  --blue-border:  rgba(59, 130, 246, 0.28);
+  --blue-glow:    rgba(59, 130, 246, 0.16);
 
-  /* Text = navy on light bg */
-  --white:        #0F1E35;
-  --white-90:     rgba(15, 30, 53, 0.90);
-  --white-70:     rgba(15, 30, 53, 0.70);
-  --white-50:     rgba(15, 30, 53, 0.50);
-  --white-30:     rgba(15, 30, 53, 0.30);
-  --white-12:     rgba(15, 30, 53, 0.12);
-  --white-6:      rgba(15, 30, 53, 0.06);
-  --white-4:      rgba(15, 30, 53, 0.04);
+  --white:        #FFFFFF;
+  --white-90:     rgba(255, 255, 255, 0.90);
+  --white-70:     rgba(255, 255, 255, 0.70);
+  --white-50:     rgba(255, 255, 255, 0.50);
+  --white-30:     rgba(255, 255, 255, 0.30);
+  --white-12:     rgba(255, 255, 255, 0.12);
+  --white-6:      rgba(255, 255, 255, 0.06);
+  --white-4:      rgba(255, 255, 255, 0.04);
 
-  --green:        #00956E;
-  --green-dim:    rgba(0, 149, 110, 0.10);
+  --green:        #00C48C;
+  --green-dim:    rgba(0, 196, 140, 0.15);
 
-  --border:       rgba(15, 30, 53, 0.10);
-  --border-hover: rgba(15, 30, 53, 0.20);
+  --border:       rgba(255, 255, 255, 0.10);
+  --border-hover: rgba(255, 255, 255, 0.20);
 
   --radius-sm:    6px;
   --radius:       12px;
@@ -204,7 +202,7 @@ section {
   align-items: center;
   gap: 4px;
   padding: 8px 8px 8px 20px;
-  background: rgba(248, 247, 244, 0.88);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
@@ -230,7 +228,7 @@ section {
   font-weight: 300;
   font-size: 13px;
   letter-spacing: 0.08em;
-  color: rgba(15,30,53,0.35);
+  color: rgba(255,255,255,0.35);
   margin-left: 3px;
 }
 
@@ -302,7 +300,7 @@ section {
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
   width: min(320px, calc(100vw - 40px));
-  background: rgba(248, 247, 244, 0.98);
+  background: rgba(10, 10, 10, 0.96);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -557,7 +555,7 @@ section {
   gap: 8px;
   padding: 8px 16px;
   background: var(--green-dim);
-  border: 1px solid rgba(0, 149, 110, 0.22);
+  border: 1px solid rgba(0, 196, 140, 0.25);
   border-radius: var(--radius-pill);
   font-size: 13px;
   font-weight: 600;
@@ -1944,7 +1942,7 @@ section {
   padding-right: 40px;
   cursor: pointer;
 }
-.form-group select option { background: var(--black-3); color: var(--white); }
+.form-group select option { background: #111; }
 
 .form-group textarea {
   resize: vertical;
@@ -2128,49 +2126,6 @@ section {
 .faq-item.open .faq-answer {
   max-height: 300px;
   padding-bottom: 20px;
-}
-
-/* ============================================================
-   DARK SECTIONS — overrides for sections that stay dark
-   ============================================================ */
-.marquee,
-.stats-band,
-.footer {
-  --white:        #FFFFFF;
-  --white-90:     rgba(255, 255, 255, 0.90);
-  --white-70:     rgba(255, 255, 255, 0.70);
-  --white-50:     rgba(255, 255, 255, 0.50);
-  --white-30:     rgba(255, 255, 255, 0.30);
-  --white-12:     rgba(255, 255, 255, 0.12);
-  --white-6:      rgba(255, 255, 255, 0.06);
-  --border:       rgba(255, 255, 255, 0.10);
-  --border-hover: rgba(255, 255, 255, 0.20);
-}
-
-.marquee {
-  background: #0F1E35;
-  border-top-color: rgba(255,255,255,0.08);
-  border-bottom-color: rgba(255,255,255,0.08);
-}
-
-.stats-band {
-  background: #0F1E35;
-  border-top-color: rgba(255,255,255,0.08);
-  border-bottom-color: rgba(255,255,255,0.08);
-}
-
-.footer {
-  background: var(--black);
-  border-top-color: rgba(255,255,255,0.08);
-}
-
-.cta-strip-inner {
-  --white:        #FFFFFF;
-  --white-90:     rgba(255, 255, 255, 0.90);
-  --white-70:     rgba(255, 255, 255, 0.70);
-  --border:       rgba(255, 255, 255, 0.10);
-  background: #0F1E35;
-  border-color: transparent;
 }
 
 /* ============================================================
