@@ -93,12 +93,8 @@ export default function HomePage() {
               <div className="hero-proof-label">Délai livraison</div>
             </div>
             <div className="hero-proof-item">
-              <div className="hero-proof-val">990€</div>
-              <div className="hero-proof-label">À partir de</div>
-            </div>
-            <div className="hero-proof-item">
-              <div className="hero-proof-val">5+</div>
-              <div className="hero-proof-label">Secteurs couverts</div>
+              <div className="hero-proof-val">dès 990€</div>
+              <div className="hero-proof-label">Tout inclus</div>
             </div>
             <div className="hero-proof-item">
               <div className="hero-proof-val blue">100%</div>
@@ -387,13 +383,7 @@ export default function HomePage() {
               <div className="stat-val">
                 <AnimatedCounter to={990} suffix="€" />
               </div>
-              <div className="stat-label">Dès</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-val">
-                <AnimatedCounter to={5} suffix="+" />
-              </div>
-              <div className="stat-label">Secteurs couverts</div>
+              <div className="stat-label">Dès, tout inclus</div>
             </div>
             <div className="stat-item">
               <div className="stat-val blue">
