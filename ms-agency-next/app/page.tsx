@@ -383,7 +383,7 @@ export default function HomePage() {
               <div className="stat-val">
                 <AnimatedCounter to={990} suffix="€" />
               </div>
-              <div className="stat-label">Dès, tout inclus</div>
+              <div className="stat-label">À partir de</div>
             </div>
             <div className="stat-item">
               <div className="stat-val blue">
