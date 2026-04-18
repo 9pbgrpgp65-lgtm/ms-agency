@@ -2,12 +2,12 @@
 
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,700;0,9..40,900&amp;display=swap');
-      text { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@900&amp;family=DM+Sans:wght@300;400;700&amp;display=swap');
+      .f-syne { font-family: 'Syne', sans-serif; font-weight: 900; }
+      .f-dm   { font-family: 'DM Sans', sans-serif; }
     </style>
-    <!-- Drop shadow for badge version -->
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F2044" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#060E1C" flood-opacity="0.18"/>
     </filter>
   </defs>
 
@@ -15,12 +15,12 @@
   <!--  BACKGROUNDS                                            -->
   <!-- ═══════════════════════════════════════════════════════ -->
 
-  <!-- Dark row (top) -->
-  <rect x="0"   y="0" width="267" height="200" fill="#0F2044"/>
-  <rect x="267" y="0" width="267" height="200" fill="#0F2044"/>
-  <rect x="534" y="0" width="266" height="200" fill="#0F2044"/>
+  <!-- Dark row (y 0–200) -->
+  <rect x="0"   y="0" width="267" height="200" fill="#060E1C"/>
+  <rect x="267" y="0" width="267" height="200" fill="#060E1C"/>
+  <rect x="534" y="0" width="266" height="200" fill="#060E1C"/>
 
-  <!-- Light row (bottom) -->
+  <!-- Light row (y 200–400) -->
   <rect x="0"   y="200" width="267" height="200" fill="#FFFFFF"/>
   <rect x="267" y="200" width="267" height="200" fill="#FFFFFF"/>
   <rect x="534" y="200" width="266" height="200" fill="#FFFFFF"/>
@@ -28,120 +28,107 @@
   <!-- Favicon strip -->
   <rect x="0" y="400" width="800" height="80" fill="#F0F4F9"/>
 
-  <!-- ─── Dividers ─── -->
-  <line x1="267" y1="0"   x2="267" y2="400" stroke="#1E3A6E" stroke-width="1"/>
-  <line x1="534" y1="0"   x2="534" y2="400" stroke="#1E3A6E" stroke-width="1"/>
-  <line x1="0"   y1="200" x2="800" y2="200" stroke="#1E3A6E" stroke-width="1" opacity="0.8"/>
-  <line x1="0"   y1="200" x2="800" y2="200" stroke="#CBD5E0" stroke-width="0.5" opacity="0.5"/>
+  <!-- Dividers -->
+  <line x1="267" y1="0"   x2="267" y2="400" stroke="#1E3A6E" stroke-width="1" opacity="0.6"/>
+  <line x1="534" y1="0"   x2="534" y2="400" stroke="#1E3A6E" stroke-width="1" opacity="0.6"/>
+  <line x1="0"   y1="200" x2="800" y2="200" stroke="#1E3A6E" stroke-width="1" opacity="0.4"/>
   <line x1="0"   y1="400" x2="800" y2="400" stroke="#CBD5E0" stroke-width="1"/>
 
-  <!-- ─── Section labels ─── -->
-  <text x="12"  y="15" font-size="8" font-weight="700" fill="#3B82F6" letter-spacing="1.5">01 — TYPOGRAPHIQUE</text>
-  <text x="279" y="15" font-size="8" font-weight="700" fill="#3B82F6" letter-spacing="1.5">02 — ICÔNE + TEXTE</text>
-  <text x="546" y="15" font-size="8" font-weight="700" fill="#3B82F6" letter-spacing="1.5">03 — BADGE</text>
+  <!-- Section labels -->
+  <text x="12"  y="15" class="f-dm" font-size="8" font-weight="700" fill="#3B82F6" letter-spacing="1.5">01 — TYPOGRAPHIQUE</text>
+  <text x="279" y="15" class="f-dm" font-size="8" font-weight="700" fill="#3B82F6" letter-spacing="1.5">02 — ICÔNE + TEXTE</text>
+  <text x="546" y="15" class="f-dm" font-size="8" font-weight="700" fill="#3B82F6" letter-spacing="1.5">03 — BADGE</text>
 
-  <!-- ─── Dark / Light row markers ─── -->
-  <text x="12"  y="197" font-size="7" fill="rgba(255,255,255,0.3)" letter-spacing="1" text-anchor="start">FOND SOMBRE</text>
-  <text x="12"  y="214" font-size="7" fill="rgba(15,32,68,0.35)"   letter-spacing="1" text-anchor="start">FOND CLAIR</text>
+  <!-- Row markers -->
+  <text x="12" y="197" class="f-dm" font-size="7" fill="rgba(255,255,255,0.3)" letter-spacing="1">FOND SOMBRE</text>
+  <text x="12" y="214" class="f-dm" font-size="7" fill="rgba(6,14,28,0.35)"    letter-spacing="1">FOND CLAIR</text>
 
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!--  VERSION 1 — TYPOGRAPHIQUE  (col 1, center x=133)      -->
   <!-- ═══════════════════════════════════════════════════════ -->
 
-  <!-- ── DARK ── -->
-  <!-- MS — giant bold white -->
-  <text x="133" y="112" font-size="70" font-weight="900"
-        fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">MS</text>
-  <!-- 48 — electric blue superscript -->
-  <text x="175" y="77"  font-size="22" font-weight="700" fill="#3B82F6">48</text>
-  <!-- AGENCY — thin spaced -->
-  <text x="133" y="135" font-size="9" font-weight="300"
-        fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="6.5">AGENCY</text>
+  <!-- DARK -->
+  <text x="133" y="107" class="f-syne" font-size="64" font-weight="900"
+        fill="#FFFFFF" text-anchor="middle" letter-spacing="-3">48h</text>
+  <text x="133" y="131" class="f-dm" font-size="9" font-weight="300"
+        fill="rgba(255,255,255,0.38)" text-anchor="middle" letter-spacing="7">AGENCY</text>
 
-  <!-- ── LIGHT ── -->
-  <text x="133" y="312" font-size="70" font-weight="900"
-        fill="#0F2044" text-anchor="middle" letter-spacing="-2">MS</text>
-  <text x="175" y="277" font-size="22" font-weight="700" fill="#3B82F6">48</text>
-  <text x="133" y="335" font-size="9" font-weight="300"
-        fill="rgba(15,32,68,0.45)" text-anchor="middle" letter-spacing="6.5">AGENCY</text>
+  <!-- LIGHT -->
+  <text x="133" y="307" class="f-syne" font-size="64" font-weight="900"
+        fill="#060E1C" text-anchor="middle" letter-spacing="-3">48h</text>
+  <text x="133" y="331" class="f-dm" font-size="9" font-weight="300"
+        fill="rgba(6,14,28,0.38)" text-anchor="middle" letter-spacing="7">AGENCY</text>
 
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!--  VERSION 2 — ICÔNE + TEXTE  (col 2, center x=400)      -->
   <!-- ═══════════════════════════════════════════════════════ -->
 
-  <!-- ── DARK — Electric blue icon ── -->
-  <rect x="342" y="76" width="46" height="46" rx="11" fill="#3B82F6"/>
-  <!-- Lightning bolt (white, centered in icon) -->
-  <polygon points="372,83 360,100 367,100 357,115 375,97 368,97"
-           fill="#FFFFFF"/>
-  <!-- Text right of icon -->
-  <text x="398" y="102" font-size="23" font-weight="900" fill="#FFFFFF">MS48</text>
-  <text x="399" y="119" font-size="8.5" font-weight="400" fill="#3B82F6" letter-spacing="4">AGENCY</text>
+  <!-- DARK — blue icon -->
+  <rect x="344" y="77" width="44" height="44" rx="10" fill="#3B82F6"/>
+  <!-- Lightning bolt (white) -->
+  <polygon points="371,84 359,100 366,100 357,114 374,97 367,97" fill="#FFFFFF"/>
+  <!-- Text -->
+  <text x="398" y="102" class="f-syne" font-size="22" font-weight="900" fill="#FFFFFF">48h</text>
+  <text x="399" y="118" class="f-dm" font-size="8.5" font-weight="400" fill="#3B82F6" letter-spacing="4">AGENCY</text>
 
-  <!-- ── LIGHT — Navy icon ── -->
-  <rect x="342" y="276" width="46" height="46" rx="11" fill="#0F2044"/>
-  <polygon points="372,283 360,300 367,300 357,315 375,297 368,297"
-           fill="#FFFFFF"/>
-  <text x="398" y="302" font-size="23" font-weight="900" fill="#0F2044">MS48</text>
-  <text x="399" y="319" font-size="8.5" font-weight="400" fill="#3B82F6" letter-spacing="4">AGENCY</text>
+  <!-- LIGHT — navy icon -->
+  <rect x="344" y="277" width="44" height="44" rx="10" fill="#060E1C"/>
+  <polygon points="371,284 359,300 366,300 357,314 374,297 367,297" fill="#FFFFFF"/>
+  <text x="398" y="302" class="f-syne" font-size="22" font-weight="900" fill="#060E1C">48h</text>
+  <text x="399" y="318" class="f-dm" font-size="8.5" font-weight="400" fill="#3B82F6" letter-spacing="4">AGENCY</text>
 
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!--  VERSION 3 — BADGE  (col 3, center x=667)              -->
   <!-- ═══════════════════════════════════════════════════════ -->
 
-  <!-- ── DARK — White badge on navy ── -->
-  <rect x="639" y="63" width="56" height="56" rx="13"
-        fill="#FFFFFF" filter="url(#shadow)"/>
-  <!-- MS inside badge -->
-  <text x="667" y="103" font-size="28" font-weight="900"
-        fill="#0F2044" text-anchor="middle" letter-spacing="-1">MS</text>
-  <!-- 48 chip (bottom-right corner of badge) -->
-  <rect x="665" y="107" width="24" height="13" rx="3.5" fill="#3B82F6"/>
-  <text x="677" y="117.5" font-size="8" font-weight="700"
-        fill="#FFFFFF" text-anchor="middle">48</text>
-  <!-- AGENCY label -->
-  <text x="667" y="140" font-size="8.5" font-weight="300"
-        fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="5">AGENCY</text>
+  <!-- DARK — white badge on navy bg -->
+  <rect x="640" y="65" width="54" height="54" rx="12" fill="#FFFFFF" filter="url(#shadow)"/>
+  <text x="667" y="101" class="f-syne" font-size="24" font-weight="900"
+        fill="#060E1C" text-anchor="middle" letter-spacing="-1">48</text>
+  <rect x="656" y="105" width="22" height="11" rx="3" fill="#3B82F6"/>
+  <text x="667" y="114" class="f-dm" font-size="8" font-weight="700"
+        fill="#FFFFFF" text-anchor="middle">h</text>
+  <text x="667" y="141" class="f-dm" font-size="8.5" font-weight="300"
+        fill="rgba(255,255,255,0.42)" text-anchor="middle" letter-spacing="5">AGENCY</text>
 
-  <!-- ── LIGHT — Navy badge on white ── -->
-  <rect x="639" y="263" width="56" height="56" rx="13"
-        fill="#0F2044" filter="url(#shadow)"/>
-  <text x="667" y="303" font-size="28" font-weight="900"
-        fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">MS</text>
-  <rect x="665" y="307" width="24" height="13" rx="3.5" fill="#3B82F6"/>
-  <text x="677" y="317.5" font-size="8" font-weight="700"
-        fill="#FFFFFF" text-anchor="middle">48</text>
-  <text x="667" y="340" font-size="8.5" font-weight="300"
-        fill="rgba(15,32,68,0.4)" text-anchor="middle" letter-spacing="5">AGENCY</text>
+  <!-- LIGHT — navy badge on white bg -->
+  <rect x="640" y="265" width="54" height="54" rx="12" fill="#060E1C" filter="url(#shadow)"/>
+  <text x="667" y="301" class="f-syne" font-size="24" font-weight="900"
+        fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">48</text>
+  <rect x="656" y="305" width="22" height="11" rx="3" fill="#3B82F6"/>
+  <text x="667" y="314" class="f-dm" font-size="8" font-weight="700"
+        fill="#FFFFFF" text-anchor="middle">h</text>
+  <text x="667" y="341" class="f-dm" font-size="8.5" font-weight="300"
+        fill="rgba(6,14,28,0.38)" text-anchor="middle" letter-spacing="5">AGENCY</text>
 
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!--  FAVICON 64×64                                         -->
   <!-- ═══════════════════════════════════════════════════════ -->
 
-  <text x="20" y="422" font-size="8" font-weight="700"
+  <text x="20" y="422" class="f-dm" font-size="8" font-weight="700"
         fill="#3B82F6" letter-spacing="1.5">FAVICON 64×64</text>
 
   <!-- Dark favicon -->
-  <rect x="330" y="408" width="64" height="64" rx="13" fill="#0F2044"/>
-  <text x="362" y="447" font-size="27" font-weight="900"
-        fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">MS</text>
-  <text x="376" y="426" font-size="13" font-weight="700" fill="#3B82F6">48</text>
+  <rect x="330" y="408" width="64" height="64" rx="13" fill="#060E1C"/>
+  <text x="353" y="448" class="f-syne" font-size="23" font-weight="900"
+        fill="#FFFFFF" text-anchor="middle" letter-spacing="-1">48</text>
+  <text x="371" y="428" class="f-dm" font-size="13" font-weight="700" fill="#3B82F6">h</text>
 
   <!-- Light favicon -->
   <rect x="406" y="408" width="64" height="64" rx="13"
         fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
-  <text x="438" y="447" font-size="27" font-weight="900"
-        fill="#0F2044" text-anchor="middle" letter-spacing="-1">MS</text>
-  <text x="452" y="426" font-size="13" font-weight="700" fill="#3B82F6">48</text>
+  <text x="429" y="448" class="f-syne" font-size="23" font-weight="900"
+        fill="#060E1C" text-anchor="middle" letter-spacing="-1">48</text>
+  <text x="447" y="428" class="f-dm" font-size="13" font-weight="700" fill="#3B82F6">h</text>
 
   <!-- Favicon labels -->
-  <text x="362" y="476" font-size="7" fill="rgba(15,32,68,0.4)"
+  <text x="362" y="476" class="f-dm" font-size="7" fill="rgba(6,14,28,0.4)"
         text-anchor="middle" letter-spacing="0.5">SOMBRE</text>
-  <text x="438" y="476" font-size="7" fill="rgba(15,32,68,0.4)"
+  <text x="438" y="476" class="f-dm" font-size="7" fill="rgba(6,14,28,0.4)"
         text-anchor="middle" letter-spacing="0.5">CLAIR</text>
 
 </svg>
