@@ -214,15 +214,23 @@ section {
 }
 
 .nav-logo {
-  font-size: 15px;
+  font-family: var(--font-heading);
+  font-size: 16px;
   font-weight: 900;
   color: var(--white);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
   margin-right: 12px;
   white-space: nowrap;
 }
-.nav-logo .logo-num  { color: var(--blue); letter-spacing: -0.02em; }
-.nav-logo .logo-word { color: rgba(255,255,255,0.45); font-weight: 500; letter-spacing: 0.01em; }
+.nav-logo .logo-num  { color: var(--blue); }
+.nav-logo .logo-word {
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.35);
+  margin-left: 3px;
+}
 
 .nav-links {
   display: flex;
@@ -346,14 +354,22 @@ section {
 .footer-brand {}
 
 .footer-brand-logo {
+  font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 900;
   color: var(--white);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
   margin-bottom: 12px;
 }
-.footer-brand-logo .logo-num  { color: var(--blue); letter-spacing: -0.02em; }
-.footer-brand-logo .logo-word { color: rgba(255,255,255,0.4); font-weight: 500; letter-spacing: 0.01em; }
+.footer-brand-logo .logo-num  { color: var(--blue); }
+.footer-brand-logo .logo-word {
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.3);
+  margin-left: 3px;
+}
 
 .footer-brand p {
   font-size: 14px;
