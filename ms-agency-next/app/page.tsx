@@ -93,8 +93,8 @@ export default function HomePage() {
               <div className="hero-proof-label">Délai livraison</div>
             </div>
             <div className="hero-proof-item">
-              <div className="hero-proof-val">dès 990€</div>
-              <div className="hero-proof-label">Tout inclus</div>
+              <div className="hero-proof-val">990€</div>
+              <div className="hero-proof-label">À partir de</div>
             </div>
             <div className="hero-proof-item">
               <div className="hero-proof-val blue">100%</div>
