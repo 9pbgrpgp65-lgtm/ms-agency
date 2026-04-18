@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
   variable: "--font-dm",
 });
 
-const BASE_URL = "https://ms-agency.fr";
+const BASE_URL = "https://48hagency.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
