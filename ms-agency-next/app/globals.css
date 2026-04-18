@@ -484,13 +484,13 @@ section {
 .hero-inner {
   position: relative;
   z-index: 1;
-  text-align: left;
+  text-align: center;
   padding: 140px 24px 80px;
   max-width: var(--container-w);
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 24px;
 }
 
