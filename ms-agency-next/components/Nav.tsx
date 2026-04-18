@@ -33,8 +33,7 @@ export default function Nav() {
     <nav className="nav" role="navigation" aria-label="Navigation principale">
       <div className={`nav-pill${scrolled ? " scrolled" : ""}`}>
         <Link href="/" className="nav-logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-48h.jpg" alt="48h Agency" style={{ height: 36, width: "auto", borderRadius: 6 }} />
+          48<span className="logo-num">h</span><span className="logo-word">Agency</span>
         </Link>
 
         {/* Desktop links */}
