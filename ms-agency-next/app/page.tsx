@@ -153,24 +153,24 @@ export default function HomePage() {
           <div className="services-cards">
             {[
               {
-                icon: "⚡",
+                num: "01",
                 title: "Site vitrine 48h",
                 desc: "Design premium, mobile-first, rapide à charger. Votre présence en ligne en moins de 2 jours.",
               },
               {
-                icon: "📍",
+                num: "02",
                 title: "SEO local Google",
                 desc: "Apparaissez en tête sur Google Maps et dans les recherches locales de votre ville.",
               },
               {
-                icon: "🔧",
+                num: "03",
                 title: "Hébergement + maintenance",
                 desc: "Hébergement sécurisé, certificat SSL, sauvegardes automatiques et mises à jour inclus.",
               },
             ].map((card, i) => (
               <RevealOnScroll key={card.title} delay={i + 1}>
                 <div className="s-card">
-                  <div className="s-card-icon">{card.icon}</div>
+                  <div className="s-card-num">{card.num}</div>
                   <h3>{card.title}</h3>
                   <p>{card.desc}</p>
                 </div>

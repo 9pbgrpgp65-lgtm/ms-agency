@@ -7,16 +7,16 @@
 
 /* ---------- CSS Variables ---------------------------------- */
 :root {
-  --black:        #000000;
-  --black-1:      #0A0A0A;
-  --black-2:      #111111;
-  --black-3:      #1A1A1A;
-  --black-4:      #222222;
+  --black:        #020810;
+  --black-1:      #060E1C;
+  --black-2:      #0A1628;
+  --black-3:      #0F1E35;
+  --black-4:      #162840;
 
-  --blue:         #0066FF;
-  --blue-dim:     rgba(0, 102, 255, 0.12);
-  --blue-border:  rgba(0, 102, 255, 0.30);
-  --blue-glow:    rgba(0, 102, 255, 0.18);
+  --blue:         #3B82F6;
+  --blue-dim:     rgba(59, 130, 246, 0.12);
+  --blue-border:  rgba(59, 130, 246, 0.28);
+  --blue-glow:    rgba(59, 130, 246, 0.16);
 
   --white:        #FFFFFF;
   --white-90:     rgba(255, 255, 255, 0.90);
@@ -443,16 +443,12 @@ section {
   background: var(--black-1);
 }
 
-/* Grid background */
+/* Subtle top accent */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+  background: radial-gradient(ellipse 60% 40% at 50% -5%, rgba(59,130,246,0.10) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -472,11 +468,13 @@ section {
 .hero-inner {
   position: relative;
   z-index: 1;
-  text-align: center;
-  padding: 120px 24px 80px;
+  text-align: left;
+  padding: 140px 24px 80px;
+  max-width: var(--container-w);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
 }
 
@@ -532,7 +530,7 @@ section {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-guarantee {
@@ -791,8 +789,13 @@ section {
   transform: translateY(-3px);
 }
 
-.s-card-icon {
-  font-size: 28px;
+.s-card-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  font-family: var(--font-heading);
+  margin-bottom: 8px;
 }
 
 .s-card h3 {
