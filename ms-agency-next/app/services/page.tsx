@@ -59,6 +59,13 @@ const services = [
     wide: false,
   },
   {
+    icon: "✦",
+    title: "Visibilité sur les IA",
+    desc: "Vos clients cherchent maintenant sur ChatGPT et Google AI. On optimise votre présence pour apparaître dans ces nouvelles recherches — là où vos concurrents sont encore invisibles.",
+    tag: "149€ — option",
+    wide: false,
+  },
+  {
     icon: "🎯",
     title: "Publicité Google Ads locale",
     desc: "Campagnes Google Ads ciblées sur votre ville et votre secteur. On gère tout, vous recevez les appels.",

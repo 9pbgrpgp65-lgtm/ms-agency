@@ -37,6 +37,13 @@ const maintenanceFeatures = [
   "Support réactif",
 ];
 
+const iaFeatures = [
+  "Données structurées Schema.org (votre commerce reconnu par toutes les IA)",
+  "Page FAQ optimisée pour ChatGPT et Google AI (10 questions/réponses sur votre secteur et ville)",
+  "Fiche Bing Places créée",
+  "Description unifiée sur tous vos supports",
+];
+
 const gmbFeatures = [
   "4 posts Google My Business par mois",
   "Réponse à tous vos avis Google",
@@ -133,8 +140,35 @@ export default function TarifsPage() {
               </div>
             </RevealOnScroll>
 
-            {/* Maintenance */}
+            {/* Pack Visibilité IA */}
             <RevealOnScroll delay={3}>
+              <div className="t-card" style={{ position: "relative" }}>
+                <div className="t-card-badge" style={{ position: "absolute", top: "16px", right: "16px", background: "var(--blue)", color: "#fff", fontSize: "10px", fontWeight: 700, letterSpacing: "0.1em", padding: "3px 10px", borderRadius: "99px" }}>NOUVEAU</div>
+                <div className="t-card-name">Pack Visibilité IA</div>
+                <div className="t-card-price">
+                  <span className="t-card-amount">149</span>
+                  <span className="t-card-currency">€</span>
+                </div>
+                <p className="t-card-desc">Paiement unique. Sans engagement.</p>
+                <div className="t-features">
+                  {iaFeatures.map((f) => (
+                    <div key={f} className="t-feature">
+                      <div className="t-feature-check">✓</div>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <p style={{ fontSize: "13px", color: "var(--white-70)", marginTop: "16px", marginBottom: "16px", lineHeight: 1.5 }}>
+                  Apparaissez quand vos clients cherchent sur ChatGPT, Perplexity ou Google AI.
+                </p>
+                <Link href="/contact" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
+                  Ajouter à mon site →
+                </Link>
+              </div>
+            </RevealOnScroll>
+
+            {/* Maintenance */}
+            <RevealOnScroll delay={4}>
               <div className="t-card">
                 <div className="t-card-name">Maintenance</div>
                 <div className="t-card-price">

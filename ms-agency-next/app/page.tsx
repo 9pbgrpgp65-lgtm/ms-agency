@@ -163,6 +163,11 @@ export default function HomePage() {
                 title: "Hébergement + maintenance",
                 desc: "Hébergement sécurisé, certificat SSL, sauvegardes automatiques et mises à jour inclus.",
               },
+              {
+                num: "04",
+                title: "Visible sur ChatGPT et les IA",
+                desc: "Vos clients cherchent aussi sur les intelligences artificielles. On optimise votre présence pour apparaître dans leurs réponses.",
+              },
             ].map((card, i) => (
               <RevealOnScroll key={card.title} delay={i + 1}>
                 <div className="s-card">
