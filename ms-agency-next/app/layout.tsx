@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import CookieConsent from "@/components/CookieConsent";
+import SiteShell from "@/components/SiteShell";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -107,11 +104,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-        <FloatingButtons />
-        <CookieConsent />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
