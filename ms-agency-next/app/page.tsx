@@ -245,15 +245,15 @@ export default function HomePage() {
             {[
               {
                 title: "On commence par comprendre votre commerce",
-                text: "Un appel de 15 min suffit. On note vos points forts, votre concurrence, vos anecdotes. Tout ce qu'on apprend sert à rédiger vos textes — pas un mot copié d'un autre client.",
+                text: "Un appel de 15 minutes suffit. On note vos points forts, votre concurrence, ce qui vous rend unique. Tout ce qu'on apprend sert à rédiger vos textes. Pas un mot copié d'un autre client.",
               },
               {
                 title: "On s'occupe de tout, vraiment",
-                text: "Domaine, hébergement, Google My Business, tests mobile — tout est configuré. On installe aussi Telegram sur votre téléphone pour que vous receviez vos contacts directement.",
+                text: "Domaine, hébergement, Google My Business, tests mobile : tout est configuré. Dès qu'un client vous contacte via le site, vous recevez une notification instantanée sur votre téléphone.",
               },
               {
-                title: "Livré en 48h, sans vous impliquer",
-                text: "Pas de réunion, pas de maquette à valider, pas de technique à comprendre. Vous donnez vos informations le lundi, votre présence en ligne est complète avant la fin de la semaine.",
+                title: "Vous validez, on met en ligne",
+                text: "On vous envoie le lien de votre site avant la mise en ligne. Vous regardez, vous nous dites si quelque chose ne vous convient pas. On ajuste et on déploie. Votre site est en ligne en 48h.",
               },
             ].map((p, i) => (
               <RevealOnScroll key={p.title} delay={i + 1}>
