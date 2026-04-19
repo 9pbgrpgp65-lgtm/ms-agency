@@ -187,10 +187,10 @@ export default function HomePage() {
           <div className="section-header">
             <div className="section-header-left">
               <RevealOnScroll>
-                <span className="label">Nos réalisations</span>
+                <span className="label">Nos modèles</span>
               </RevealOnScroll>
               <RevealOnScroll delay={1}>
-                <h2 className="title">Ils nous ont fait confiance</h2>
+                <h2 className="title">Des bases de travail par secteur</h2>
               </RevealOnScroll>
             </div>
             <RevealOnScroll delay={2}>
