@@ -244,16 +244,16 @@ export default function HomePage() {
           <div className="testimonials-grid">
             {[
               {
-                title: "Votre site, pas un modèle",
-                text: "On rédige vos textes, on choisit vos couleurs, on intègre vos photos. Chaque site est unique.",
+                title: "On commence par comprendre votre commerce",
+                text: "Un appel de 15 min suffit. On note vos points forts, votre concurrence, vos anecdotes. Tout ce qu'on apprend sert à rédiger vos textes — pas un mot copié d'un autre client.",
               },
               {
-                title: "48h chrono",
-                text: "Vous nous donnez vos informations. On s'occupe de tout. Votre site est en ligne avant la fin de la semaine.",
+                title: "On s'occupe de tout, vraiment",
+                text: "Domaine, hébergement, Google My Business, tests mobile — tout est configuré. On installe aussi Telegram sur votre téléphone pour que vous receviez vos contacts directement.",
               },
               {
-                title: "Zéro effort de votre côté",
-                text: "Pas de réunion, pas de maquette à valider, pas de technique à comprendre. Juste un site professionnel livré.",
+                title: "Livré en 48h, sans vous impliquer",
+                text: "Pas de réunion, pas de maquette à valider, pas de technique à comprendre. Vous donnez vos informations le lundi, votre présence en ligne est complète avant la fin de la semaine.",
               },
             ].map((p, i) => (
               <RevealOnScroll key={p.title} delay={i + 1}>
