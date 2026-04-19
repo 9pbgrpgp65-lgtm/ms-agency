@@ -4,6 +4,7 @@ import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FAQ from "@/components/FAQ";
+import MethodTimeline from "@/components/MethodTimeline";
 
 export const metadata: Metadata = {
   title: "48hAgency — Agence web pour commerces locaux",
@@ -222,24 +223,7 @@ export default function HomePage() {
             </RevealOnScroll>
           </div>
 
-          <RevealOnScroll className="method-timeline">
-            <div className="method-line">
-              <div className="method-line-fill" />
-            </div>
-            {methodSteps.map((step, i) => (
-              <div
-                key={step.day}
-                className="method-step"
-                style={{ "--method-i": i } as React.CSSProperties}
-              >
-                <div className="method-step-dot" />
-                <div className="method-step-icon">{step.icon}</div>
-                <div className="method-step-day">{step.day}</div>
-                <h3 className="method-step-title">{step.title}</h3>
-                <p className="method-step-desc">{step.desc}</p>
-              </div>
-            ))}
-          </RevealOnScroll>
+          <MethodTimeline steps={methodSteps} />
         </div>
       </section>
 
