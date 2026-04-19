@@ -2365,3 +2365,111 @@ section {
   border: 1px solid rgba(29,53,87,0.25);
 }
 
+/* ── MÉTHODE TIMELINE ─────────────────────────────────────── */
+.method-section {
+  padding: 80px 40px;
+  border-top: 1px solid var(--border);
+}
+
+.method-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.method-line {
+  position: absolute;
+  top: 10px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: var(--border);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.method-line-fill {
+  height: 1px;
+  width: 0;
+  background: linear-gradient(90deg, var(--blue), var(--white-30));
+  transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.reveal.method-timeline.visible .method-line-fill {
+  width: 100%;
+}
+
+.method-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition-delay: calc(var(--method-i, 0) * 0.15s + 0.1s);
+}
+
+.reveal.method-timeline.visible .method-step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.method-step-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 3px solid var(--black);
+  box-shadow: 0 0 0 1px var(--blue);
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.method-step-icon {
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.method-step-day {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.method-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.method-step-desc {
+  font-size: 13px;
+  color: var(--white-50);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .method-timeline {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 0;
+  }
+  .method-line { display: none; }
+}
+
+@media (max-width: 480px) {
+  .method-timeline {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .method-section { padding: 64px 24px; }
+}
+
