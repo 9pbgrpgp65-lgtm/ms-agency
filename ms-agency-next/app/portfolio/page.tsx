@@ -78,8 +78,9 @@ export default function PortfolioPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={2}>
             <p className="sub">
-              Des exemples de ce qu&apos;on crée pour chaque secteur.
-              Votre site sera personnalisé avec vos textes, vos couleurs et vos photos.
+              Des bases de travail par secteur.
+              À partir de là, on reconstruit autour de votre commerce : vos textes rédigés
+              sur mesure, votre univers visuel, vos spécificités.
             </p>
           </RevealOnScroll>
         </div>
