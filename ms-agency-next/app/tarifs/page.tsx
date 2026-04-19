@@ -28,6 +28,8 @@ const packFeatures = [
   "Tout le pack site vitrine",
   "Google My Business optimisé",
   "5 fiches annuaires locaux créées",
+  "Votre commerce reconnu par toutes les intelligences artificielles (ChatGPT, Google AI...)",
+  "Présence unifiée sur les nouveaux moteurs de recherche IA",
 ];
 
 const maintenanceFeatures = [
@@ -38,10 +40,9 @@ const maintenanceFeatures = [
 ];
 
 const iaFeatures = [
-  "Données structurées Schema.org (votre commerce reconnu par toutes les IA)",
-  "Page FAQ optimisée pour ChatGPT et Google AI (10 questions/réponses sur votre secteur et ville)",
+  "Votre commerce reconnu par toutes les intelligences artificielles (ChatGPT, Google AI...)",
   "Fiche Bing Places créée",
-  "Description unifiée sur tous vos supports",
+  "Présence unifiée sur les nouveaux moteurs de recherche IA",
 ];
 
 const gmbFeatures = [
@@ -125,7 +126,7 @@ export default function TarifsPage() {
                   <span className="t-card-amount">1 490</span>
                   <span className="t-card-currency">€</span>
                 </div>
-                <p className="t-card-desc">Site + présence locale complète sur Google.</p>
+                <p className="t-card-desc">Site + présence locale complète + visibilité sur les IA.</p>
                 <div className="t-features">
                   {packFeatures.map((f) => (
                     <div key={f} className="t-feature">
@@ -159,7 +160,7 @@ export default function TarifsPage() {
                   ))}
                 </div>
                 <p style={{ fontSize: "13px", color: "var(--white-70)", marginTop: "16px", marginBottom: "16px", lineHeight: 1.5 }}>
-                  Apparaissez quand vos clients cherchent sur ChatGPT, Perplexity ou Google AI.
+                  Optimisé pour être reconnu par toutes les intelligences artificielles (ChatGPT, Google AI...)
                 </p>
                 <Link href="/contact" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginTop: "auto" }}>
                   Ajouter à mon site →
