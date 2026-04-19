@@ -227,92 +227,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===================== CASE STUDY ===================== */}
-      <section className="case-study">
-        <div className="container">
-          <RevealOnScroll>
-            <div className="cs-wrap">
-              <div className="cs-inner">
-                <div className="cs-left">
-                  <div className="cs-sector">Étude de cas · Garage automobile</div>
-                  <h2>
-                    De invisible sur Google à{" "}
-                    <span style={{ color: "var(--blue)" }}>+40% d&apos;appels</span> en plus
-                  </h2>
-
-                  <div className="cs-items">
-                    <div className="cs-item">
-                      <div className="cs-item-icon before">❌</div>
-                      <div className="cs-item-text">
-                        <strong>Avant</strong>
-                        <span>Aucune présence en ligne, pas de site web</span>
-                      </div>
-                    </div>
-                    <div className="cs-item">
-                      <div className="cs-item-icon before">❌</div>
-                      <div className="cs-item-text">
-                        <strong>Avant</strong>
-                        <span>Introuvable sur Google Maps Argenteuil</span>
-                      </div>
-                    </div>
-                    <div className="cs-item">
-                      <div className="cs-item-icon after">✅</div>
-                      <div className="cs-item-text">
-                        <strong>Après</strong>
-                        <span>Site livré en 48h avec SEO local optimisé</span>
-                      </div>
-                    </div>
-                    <div className="cs-item">
-                      <div className="cs-item-icon after">✅</div>
-                      <div className="cs-item-text">
-                        <strong>Après</strong>
-                        <span>Top 3 Google pour &quot;garage Argenteuil&quot;</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <Link href="/contact" className="btn-primary">
-                    Même résultat pour moi →
-                  </Link>
-                </div>
-
-                <div className="cs-right">
-                  <h3>Résultats à 3 mois</h3>
-                  <div className="cs-stats">
-                    <div className="cs-stat">
-                      <div className="cs-stat-val">48H</div>
-                      <div className="cs-stat-label">Délai de livraison</div>
-                    </div>
-                    <div className="cs-stat">
-                      <div className="cs-stat-val">+40%</div>
-                      <div className="cs-stat-label">Appels entrants</div>
-                    </div>
-                    <div className="cs-stat">
-                      <div className="cs-stat-val">Top 3</div>
-                      <div className="cs-stat-label">Google local</div>
-                    </div>
-                    <div className="cs-stat">
-                      <div className="cs-stat-val">990€</div>
-                      <div className="cs-stat-label">Investissement</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      {/* ===================== TESTIMONIALS ===================== */}
+      {/* ===================== PROMISES ===================== */}
       <section className="testimonials-section">
         <div className="container">
           <div className="section-header">
             <div className="section-header-left">
               <RevealOnScroll>
-                <span className="label">Témoignages</span>
+                <span className="label">Notre engagement</span>
               </RevealOnScroll>
               <RevealOnScroll delay={1}>
-                <h2 className="title">Ce que disent nos clients</h2>
+                <h2 className="title">Ce qu&apos;on vous promet</h2>
               </RevealOnScroll>
             </div>
           </div>
@@ -320,34 +244,22 @@ export default function HomePage() {
           <div className="testimonials-grid">
             {[
               {
-                stars: 5,
-                quote: "En 48h j'avais un site professionnel en ligne. Depuis, mes appels ont doublé et je suis en top 3 sur Google pour 'garage Lyon 6'. Je recommande sans hésitation.",
-                name: "Karim B.",
-                role: "Gérant — Garage Moretti, Lyon 6",
+                title: "Votre site, pas un modèle",
+                text: "On rédige vos textes, on choisit vos couleurs, on intègre vos photos. Chaque site est unique.",
               },
               {
-                stars: 5,
-                quote: "Je cherchais quelqu'un qui comprenne les besoins d'un cabinet dentaire. 48hAgency a tout géré : le site, la prise de RDV en ligne, le référencement. Résultat top.",
-                name: "Dr. Moreau",
-                role: "Chirurgien-dentiste, Lyon",
+                title: "48h chrono",
+                text: "Vous nous donnez vos informations. On s'occupe de tout. Votre site est en ligne avant la fin de la semaine.",
               },
               {
-                stars: 5,
-                quote: "Prix clair, délai tenu, équipe réactive. Mon restaurant a maintenant une vraie présence en ligne et les réservations en ligne ont décollé dès la première semaine.",
-                name: "Leila S.",
-                role: "Restauratrice — Le Comptoir, Paris",
+                title: "Zéro effort de votre côté",
+                text: "Pas de réunion, pas de maquette à valider, pas de technique à comprendre. Juste un site professionnel livré.",
               },
-            ].map((t, i) => (
-              <RevealOnScroll key={i} delay={i + 1}>
+            ].map((p, i) => (
+              <RevealOnScroll key={p.title} delay={i + 1}>
                 <div className="testimonial-card">
-                  <div className="testimonial-stars">
-                    {"★".repeat(t.stars)}
-                  </div>
-                  <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="testimonial-author">
-                    <span className="testimonial-name">{t.name}</span>
-                    <span className="testimonial-role">{t.role}</span>
-                  </div>
+                  <h3 style={{ marginBottom: "12px", fontSize: "18px" }}>{p.title}</h3>
+                  <p className="testimonial-quote" style={{ fontStyle: "normal" }}>{p.text}</p>
                 </div>
               </RevealOnScroll>
             ))}

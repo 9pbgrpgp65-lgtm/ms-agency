@@ -15,7 +15,7 @@ const projects = [
     name: "Garage Moretti",
     city: "Lyon 6ème",
     img: "https://b730616.smushcdn.com/730616/wp-content/uploads/service-resize-1030x687.jpg?lossy=2&strip=1&webp=1",
-    desc: "Garage spécialisé multi-marques en difficulté de visibilité locale. Objectif : générer des appels entrants depuis Google Maps et dominer la recherche 'garage Lyon 6'.",
+    desc: "Modèle de démonstration — votre site sera entièrement personnalisé pour votre commerce.",
     deliverables: ["SEO local", "Google Maps", "Formulaire devis", "Page services"],
     id: "garage",
     href: "/templates/garage/index.html",
@@ -25,7 +25,7 @@ const projects = [
     name: "Plomberie Benali",
     city: "Bordeaux Centre",
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
-    desc: "Plombier indépendant sans présence en ligne. Objectif : capturer les urgences 24h/24 et remplacer le bouche-à-oreille par un flux de leads constant.",
+    desc: "Modèle de démonstration — votre site sera entièrement personnalisé pour votre commerce.",
     deliverables: ["Appel urgence direct", "WhatsApp flottant", "SEO local", "Avis clients"],
     id: "artisan",
     href: "/templates/artisan-plombier/index.html",
@@ -35,7 +35,7 @@ const projects = [
     name: "La Trattoria di Roma",
     city: "Paris 11e",
     img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
-    desc: "Trattoria familiale sans site web, réservations uniquement par téléphone. Objectif : digitaliser les réservations et attirer de nouveaux clients via Google.",
+    desc: "Modèle de démonstration — votre site sera entièrement personnalisé pour votre commerce.",
     deliverables: ["Réservation en ligne", "Menu digital", "Photos plats", "SEO local"],
     id: "restaurant",
     href: "/templates/restaurant-italien/index.html",
@@ -45,7 +45,7 @@ const projects = [
     name: "Cabinet Dr. Moreau",
     city: "Lyon 3e",
     img: "https://www.premiercap.fr/wp-content/uploads/2021/06/dentiste.jpg",
-    desc: "Cabinet débordé par les appels de prise de RDV. Objectif : automatiser la prise de rendez-vous en ligne et réduire la charge administrative.",
+    desc: "Modèle de démonstration — votre site sera entièrement personnalisé pour votre commerce.",
     deliverables: ["Prise de RDV", "Formulaire patient", "Horaires & urgences", "Confiance"],
     id: "dentiste",
     href: "/templates/cabinet-dentaire/index.html",
@@ -55,7 +55,7 @@ const projects = [
     name: "Auto-École Liberté",
     city: "Nantes Centre",
     img: "https://www.cd-sport.com/wp-content/uploads/2020/12/B9719446957Z.1_20190502133740_000GKDDGVF8C.1-0.jpg",
-    desc: "Auto-école locale face à la concurrence des grandes franchises. Objectif : valoriser le suivi personnalisé et capter les inscriptions en ligne toute l'année.",
+    desc: "Modèle de démonstration — votre site sera entièrement personnalisé pour votre commerce.",
     deliverables: ["Inscription en ligne", "Tarifs clairs", "Témoignages élèves", "SEO local"],
     id: "autoecole",
     href: "/templates/auto-ecole/index.html",
@@ -73,13 +73,13 @@ export default function PortfolioPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
             <h1 className="title" style={{ marginTop: "12px", marginBottom: "16px" }}>
-              Nos réalisations
+              Nos modèles par secteur
             </h1>
           </RevealOnScroll>
           <RevealOnScroll delay={2}>
             <p className="sub">
-              Des sites web qui fonctionnent vraiment — pour de vrais commerces locaux
-              partout en France.
+              Des exemples de ce qu&apos;on crée pour chaque secteur.
+              Votre site sera personnalisé avec vos textes, vos couleurs et vos photos.
             </p>
           </RevealOnScroll>
         </div>
