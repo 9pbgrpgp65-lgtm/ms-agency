@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    sector: "Auto-école",
+    name: "Auto-École Liberté",
+    city: "Nantes Centre",
+    img: "https://www.cd-sport.com/wp-content/uploads/2020/12/B9719446957Z.1_20190502133740_000GKDDGVF8C.1-0.jpg",
+    desc: "Modèle de démonstration — votre site sera entièrement personnalisé pour votre commerce.",
+    deliverables: ["Inscription en ligne", "Tarifs clairs", "Témoignages élèves", "SEO local"],
+    id: "autoecole",
+    href: "/templates/auto-ecole/index.html",
+  },
+  {
     sector: "Garage automobile",
     name: "Garage Moretti",
     city: "Lyon 6ème",
@@ -49,16 +59,6 @@ const projects = [
     deliverables: ["Prise de RDV", "Formulaire patient", "Horaires & urgences", "Confiance"],
     id: "dentiste",
     href: "/templates/cabinet-dentaire/index.html",
-  },
-  {
-    sector: "Auto-école",
-    name: "Auto-École Liberté",
-    city: "Nantes Centre",
-    img: "https://www.cd-sport.com/wp-content/uploads/2020/12/B9719446957Z.1_20190502133740_000GKDDGVF8C.1-0.jpg",
-    desc: "Modèle de démonstration — votre site sera entièrement personnalisé pour votre commerce.",
-    deliverables: ["Inscription en ligne", "Tarifs clairs", "Témoignages élèves", "SEO local"],
-    id: "autoecole",
-    href: "/templates/auto-ecole/index.html",
   },
 ];
 

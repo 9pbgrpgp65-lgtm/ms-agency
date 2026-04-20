@@ -41,7 +41,7 @@ const portfolioItems = [
   {
     sector: "Garage automobile",
     name: "Garage Moretti",
-    img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
+    img: "https://b730616.smushcdn.com/730616/wp-content/uploads/service-resize-1030x687.jpg?lossy=2&strip=1&webp=1",
     tag: "SEO local",
     href: "/portfolio#garage",
   },
