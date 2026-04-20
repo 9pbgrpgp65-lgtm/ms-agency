@@ -69,7 +69,7 @@ export default function HomePage() {
             <span className="hero-dim-text">Votre</span>{" "}
             <RotatingWord />
             <br />
-            <span className="hero-gradient-text">mérite mieux</span>
+            mérite mieux
           </h1>
 
           <p className="hero-sub">

@@ -6,13 +6,14 @@ const words = [
   "restaurant",
   "garage",
   "boulangerie",
-  "coiffeur",
-  "artisan",
-  "dentiste",
+  "salon",
+  "cabinet",
   "auto-école",
   "pharmacie",
-  "ostéopathe",
   "pressing",
+  "atelier",
+  "épicerie",
+  "commerce",
 ];
 
 export default function RotatingWord() {
@@ -47,7 +48,7 @@ export default function RotatingWord() {
           transform: translateY(-10px);
         }
       `}</style>
-      <span className={`rw ${visible ? "rw-visible" : "rw-hidden"}`}>
+      <span className={`rw hero-gradient-text ${visible ? "rw-visible" : "rw-hidden"}`}>
         {words[index]}
       </span>
     </>
