@@ -32,31 +32,15 @@ export default function RotatingWord() {
   }, []);
 
   return (
-    <>
-      <style>{`
-        .rw-wrap {
-          display: block;
-          overflow: hidden;
-        }
-        .rw {
-          display: block;
-          transition: opacity 0.25s ease, transform 0.25s ease;
-          will-change: opacity, transform;
-        }
-        .rw-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .rw-hidden {
-          opacity: 0;
-          transform: translateY(8px);
-        }
-      `}</style>
-      <span className="rw-wrap">
-        <span className={`rw hero-gradient-text ${visible ? "rw-visible" : "rw-hidden"}`}>
-          {words[index]}
-        </span>
-      </span>
-    </>
+    <span
+      className="hero-gradient-text"
+      style={{
+        display: "block",
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.25s ease",
+      }}
+    >
+      {words[index]}
+    </span>
   );
 }

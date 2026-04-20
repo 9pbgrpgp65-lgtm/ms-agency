@@ -541,14 +541,8 @@ section {
   line-height: 1.6;
 }
 
-.hero-rotating-sub {
-  font-family: var(--font-heading);
-  font-size: clamp(20px, 3vw, 42px);
-  font-weight: 800;
-  color: var(--white-50);
-  line-height: 1.04;
-  letter-spacing: -0.04em;
-  margin: 0 0 32px;
+.hero-sub-line {
+  font-size: clamp(20px, 3vw, 44px);
 }
 
 .hero-actions {
