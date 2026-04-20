@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@900&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="#0F2044"/>
+
+  <!-- "48" bold -->
+  <text x="32" y="42"
+        font-family="'Syne', 'Arial Black', Impact, sans-serif"
+        font-weight="900"
+        font-size="34"
+        fill="#FFFFFF"
+        text-anchor="middle"
+        letter-spacing="-1">48</text>
+
+  <!-- "h" accent in blue (top-right) -->
+  <text x="51" y="27"
+        font-family="'Syne', 'Arial Black', sans-serif"
+        font-weight="900"
+        font-size="16"
+        fill="#3B82F6">h</text>
+
+  <!-- Small speedometer arc (top-right corner) -->
+  <path d="M 46,10 A 10,10 0 0,1 58,22"
+        stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+</svg>

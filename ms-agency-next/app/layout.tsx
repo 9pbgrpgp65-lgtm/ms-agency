@@ -50,10 +50,6 @@ export const metadata: Metadata = {
     title: "48hAgency — Agence web pour commerces locaux",
     description: "Site web professionnel livré en 48h dès 990€.",
   },
-  icons: {
-    icon: "/logo-48h.jpg",
-    apple: "/logo-48h.jpg",
-  },
   robots: {
     index: true,
     follow: true,
