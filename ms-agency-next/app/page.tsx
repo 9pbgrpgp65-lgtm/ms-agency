@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import RotatingWord from "@/components/RotatingWord";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FAQ from "@/components/FAQ";
 import MethodTimeline from "@/components/MethodTimeline";
@@ -65,10 +66,10 @@ export default function HomePage() {
           </div>
 
           <h1>
-            Votre commerce local{" "}
-            <span className="hero-dim-text">mérite</span>
+            <span className="hero-dim-text">Votre</span>{" "}
+            <RotatingWord />
             <br />
-            <span className="hero-gradient-text">mieux qu&apos;un site moyen</span>
+            <span className="hero-gradient-text">mérite mieux</span>
           </h1>
 
           <p className="hero-sub">
