@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import ContactForm from "@/components/ContactForm";
+import AvailabilityBadge from "@/components/AvailabilityBadge";
 
 export const metadata: Metadata = {
   title: "Contact — Devis gratuit",
@@ -85,19 +86,7 @@ export default function ContactPage() {
                   <div style={{ fontSize: "15px", color: "var(--white-70)" }}>
                     Lun–Ven, 9h–19h
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <div
-                      style={{
-                        width: "8px",
-                        height: "8px",
-                        borderRadius: "50%",
-                        background: "var(--green)",
-                      }}
-                    />
-                    <span style={{ fontSize: "14px", color: "var(--green)", fontWeight: 600 }}>
-                      Disponible maintenant
-                    </span>
-                  </div>
+                  <AvailabilityBadge />
                 </div>
               </div>
             </RevealOnScroll>

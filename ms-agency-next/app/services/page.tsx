@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import MethodTimeline from "@/components/MethodTimeline";
+import { methodSteps } from "@/lib/methodSteps";
 
 export const metadata: Metadata = {
   title: "Services — Création de site web 48h",
@@ -74,36 +76,6 @@ const services = [
   },
 ];
 
-const timelineSteps = [
-  {
-    num: "1",
-    emoji: "🎨",
-    day: "Jour 0",
-    title: "Votre site déjà prêt",
-    desc: "On identifie votre commerce et on prépare votre site avant même de vous contacter. Vous voyez le résultat concret dès le premier échange.",
-  },
-  {
-    num: "2",
-    emoji: "✅",
-    day: "Jour 1",
-    title: "Validation & personnalisation",
-    desc: "Vous validez le design, on intègre vos vraies informations : textes, photos, coordonnées, horaires. Aucun effort de votre côté.",
-  },
-  {
-    num: "3",
-    emoji: "⚙️",
-    day: "Jours 1–2",
-    title: "Développement & optimisation",
-    desc: "Intégration complète, mobile-first, SEO local, formulaires, WhatsApp, Calendly. Chaque page est testée sur tous les appareils.",
-  },
-  {
-    num: "4",
-    emoji: "🚀",
-    day: "Jour 2",
-    title: "Mise en ligne",
-    desc: "Déploiement sur votre nom de domaine, SSL configuré, Google My Business mis à jour. Votre site est live en 48h.",
-  },
-];
 
 export default function ServicesPage() {
   return (
@@ -158,20 +130,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="timeline">
-            {timelineSteps.map((step, i) => (
-              <RevealOnScroll key={step.num} delay={i + 1}>
-                <div className="tl-step">
-                  <div className="tl-num">{step.emoji}</div>
-                  <div>
-                    <div className="tl-day">{step.day}</div>
-                    <h3>{step.title}</h3>
-                    <p>{step.desc}</p>
-                  </div>
-                </div>
-              </RevealOnScroll>
-            ))}
-          </div>
+          <MethodTimeline steps={methodSteps} />
         </div>
       </section>
 

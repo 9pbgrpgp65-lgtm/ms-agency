@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 declare global {
   interface Window {
@@ -35,7 +36,10 @@ const categories = [
 ];
 
 export default function FloatingButtons() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  if (pathname.startsWith("/demo")) return null;
 
   const openCalendly = () => {
     if (window.Calendly) {
