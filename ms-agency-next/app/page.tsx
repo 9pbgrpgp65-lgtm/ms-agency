@@ -66,7 +66,8 @@ export default function HomePage() {
           </div>
 
           <h1>
-            <span className="hero-dim-text">Votre</span>{" "}
+            <span className="hero-dim-text">Votre</span>
+            <br />
             <RotatingWord />
             <br />
             mérite mieux
