@@ -35,7 +35,7 @@ export default function RotatingWord() {
     <span
       className="hero-gradient-text"
       style={{
-        display: "block",
+        display: "inline",
         opacity: visible ? 1 : 0,
         transition: "opacity 0.25s ease",
       }}
