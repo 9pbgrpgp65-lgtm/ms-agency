@@ -34,10 +34,14 @@ export default function RotatingWord() {
   return (
     <>
       <style>{`
+        .rw-wrap {
+          display: block;
+          overflow: hidden;
+        }
         .rw {
-          display: inline-block;
-          position: relative;
-          transition: opacity 0.3s ease, transform 0.3s ease;
+          display: block;
+          transition: opacity 0.25s ease, transform 0.25s ease;
+          will-change: opacity, transform;
         }
         .rw-visible {
           opacity: 1;
@@ -45,11 +49,13 @@ export default function RotatingWord() {
         }
         .rw-hidden {
           opacity: 0;
-          transform: translateY(-10px);
+          transform: translateY(8px);
         }
       `}</style>
-      <span className={`rw hero-gradient-text ${visible ? "rw-visible" : "rw-hidden"}`}>
-        {words[index]}
+      <span className="rw-wrap">
+        <span className={`rw hero-gradient-text ${visible ? "rw-visible" : "rw-hidden"}`}>
+          {words[index]}
+        </span>
       </span>
     </>
   );

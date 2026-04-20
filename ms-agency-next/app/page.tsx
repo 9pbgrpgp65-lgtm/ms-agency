@@ -69,9 +69,10 @@ export default function HomePage() {
             <span className="hero-dim-text">Votre</span>
             <br />
             <RotatingWord />
-            <br />
-            mérite mieux
           </h1>
+          <p className="hero-rotating-sub">
+            mérite mieux qu&apos;un site moyen
+          </p>
 
           <p className="hero-sub">
             Des sites web professionnels livrés en 48h, optimisés pour le SEO local
