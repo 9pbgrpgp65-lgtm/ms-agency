@@ -25,8 +25,8 @@ export default function RotatingWord() {
       setTimeout(() => {
         setIndex((i) => (i + 1) % words.length);
         setVisible(true);
-      }, 350);
-    }, 2400);
+      }, 250);
+    }, 1600);
     return () => clearInterval(interval);
   }, []);
 
