@@ -47,7 +47,7 @@ export default function RotatingWord() {
           transform: translateY(-10px);
         }
       `}</style>
-      <span className={`rw hero-gradient-text ${visible ? "rw-visible" : "rw-hidden"}`}>
+      <span className={`rw ${visible ? "rw-visible" : "rw-hidden"}`}>
         {words[index]}
       </span>
     </>
