@@ -542,11 +542,12 @@ section {
 }
 
 .hero-rotating-sub {
-  font-size: clamp(28px, 4vw, 52px);
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 3vw, 42px);
   font-weight: 800;
   color: var(--white-50);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
   margin: 0 0 32px;
 }
 
