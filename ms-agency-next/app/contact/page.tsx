@@ -84,7 +84,7 @@ export default function ContactPage() {
                     Disponibilités
                   </div>
                   <div style={{ fontSize: "15px", color: "var(--white-70)" }}>
-                    Lun–Ven, 9h–19h
+                    7j/7, 24h/24
                   </div>
                   <AvailabilityBadge />
                 </div>

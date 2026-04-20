@@ -42,8 +42,8 @@ const services = [
   {
     icon: "🔧",
     title: "Maintenance & mises à jour",
-    desc: "Votre site évolue avec votre commerce. Mises à jour de contenu, corrections, améliorations — nous nous occupons de tout.",
-    tag: "Suivi mensuel",
+    desc: "Votre site évolue avec votre commerce. Mises à jour de contenu, corrections, améliorations — nous nous occupons de tout. Support inclus 24h/24, 7j/7.",
+    tag: "Support 24h/24 7j/7",
     wide: false,
   },
   {
