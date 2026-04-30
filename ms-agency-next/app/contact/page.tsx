@@ -47,9 +47,9 @@ export default function ContactPage() {
                 </p>
 
                 <div className="contact-links">
-                  <a href="tel:+33783334543" className="contact-link">
+                  <a href="tel:+33780830898" className="contact-link">
                     <div className="contact-link-icon">📞</div>
-                    <span>+33 7 83 33 45 43</span>
+                    <span>+33 7 80 83 08 98</span>
                   </a>
                   <a href="mailto:contact@48hagency.com" className="contact-link">
                     <div className="contact-link-icon">✉️</div>

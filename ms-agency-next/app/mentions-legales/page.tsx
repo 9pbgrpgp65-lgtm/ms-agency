@@ -22,7 +22,7 @@ export default function MentionsLegales() {
           SIRET : 91942745000011<br />
           N° TVA intracommunautaire : FR62919427450<br />
           Email : <a href="mailto:contact@48hagency.com" style={link}>contact@48hagency.com</a><br />
-          Téléphone : 07 83 33 45 43
+          Téléphone : 07 80 83 08 98
         </p>
       </section>
 

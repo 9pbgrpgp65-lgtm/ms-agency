@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-const WA_NUMBER = "33783334543";
+const WA_NUMBER = "33780830898";
 
 const categories = [
   {
