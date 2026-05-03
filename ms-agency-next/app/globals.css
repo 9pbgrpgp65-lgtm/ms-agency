@@ -39,7 +39,7 @@
   --radius-xl:    28px;
   --radius-pill:  999px;
 
-  --font-heading: var(--font-syne), 'Syne', system-ui, sans-serif;
+  --font-heading: var(--font-syne), 'Montserrat', system-ui, sans-serif;
   --font:         var(--font-dm), 'DM Sans', system-ui, -apple-system, sans-serif;
 
   --nav-h:        68px;

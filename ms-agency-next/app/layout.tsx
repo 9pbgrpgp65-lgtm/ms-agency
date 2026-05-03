@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { Montserrat, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import SiteShell from "@/components/SiteShell";
 
-const syne = Syne({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
   variable: "--font-syne",
 });
@@ -66,7 +66,7 @@ const localBusinessSchema = {
   description:
     "Agence web spécialisée pour les commerces locaux. Sites professionnels livrés en 48h, dès 990€.",
   url: BASE_URL,
-  telephone: "+33783334543",
+  telephone: "+33780830898",
   email: "contact@48hagency.com",
   areaServed: "France",
   priceRange: "€€",
@@ -87,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${syne.variable} ${dmSans.variable}`}>
+    <html lang="fr" className={`${montserrat.variable} ${dmSans.variable}`}>
       <head>
         <script
           type="application/ld+json"
