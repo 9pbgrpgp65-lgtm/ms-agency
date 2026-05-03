@@ -32,6 +32,13 @@ const marqueeSectors = [
 
 const portfolioItems = [
   {
+    sector: "Auto-école",
+    name: "Auto-École Liberté",
+    img: "https://www.cd-sport.com/wp-content/uploads/2020/12/B9719446957Z.1_20190502133740_000GKDDGVF8C.1-0.jpg",
+    tag: "Inscription en ligne",
+    href: "/portfolio#autoecole",
+  },
+  {
     sector: "Artisan plombier",
     name: "Plomberie Benali",
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
