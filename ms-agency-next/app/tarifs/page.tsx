@@ -123,7 +123,7 @@ export default function TarifsPage() {
               <div className="t-card featured">
                 <div className="t-card-name">Pack visibilité</div>
                 <div className="t-card-price">
-                  <span className="t-card-amount">1 490</span>
+                  <span className="t-card-amount">990</span>
                   <span className="t-card-currency">€</span>
                 </div>
                 <p className="t-card-desc">Site + présence locale complète + visibilité sur les IA.</p>
