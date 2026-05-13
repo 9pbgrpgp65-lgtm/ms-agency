@@ -6,7 +6,7 @@ import AvailabilityBadge from "@/components/AvailabilityBadge";
 export const metadata: Metadata = {
   title: "Contact — Devis gratuit",
   description:
-    "Contactez 48hAgency pour un devis gratuit. Réponse sous 24h. Créez votre site professionnel en 48h dès 990€.",
+    "Contactez 48hAgency pour un devis gratuit. Réponse sous 24h. Créez votre site professionnel en 48h dès 500€.",
 };
 
 export default function ContactPage() {

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | 48hAgency",
   },
   description:
-    "48hAgency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 990€.",
+    "48hAgency crée des sites web professionnels pour les commerces locaux en 48h. SEO local, prise de RDV en ligne, maintenance incluse. Tarifs transparents dès 500€.",
   keywords: [
     "agence web",
     "site web commerce local",
@@ -43,12 +43,12 @@ export const metadata: Metadata = {
     siteName: "48hAgency",
     title: "48hAgency — Agence web pour commerces locaux",
     description:
-      "Site web professionnel livré en 48h dès 990€. Spécialiste des commerces de proximité.",
+      "Site web professionnel livré en 48h dès 500€. Spécialiste des commerces de proximité.",
   },
   twitter: {
     card: "summary_large_image",
     title: "48hAgency — Agence web pour commerces locaux",
-    description: "Site web professionnel livré en 48h dès 990€.",
+    description: "Site web professionnel livré en 48h dès 500€.",
   },
   robots: {
     index: true,
@@ -64,7 +64,7 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   name: "48hAgency",
   description:
-    "Agence web spécialisée pour les commerces locaux. Sites professionnels livrés en 48h, dès 990€.",
+    "Agence web spécialisée pour les commerces locaux. Sites professionnels livrés en 48h, dès 500€.",
   url: BASE_URL,
   telephone: "+33780830898",
   email: "contact@48hagency.com",

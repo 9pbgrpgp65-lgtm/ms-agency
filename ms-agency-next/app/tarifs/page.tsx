@@ -4,9 +4,9 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
 export const metadata: Metadata = {
-  title: "Tarifs — Site vitrine à partir de 990€ tout inclus",
+  title: "Tarifs — Site vitrine à partir de 500€ tout inclus",
   description:
-    "Tarifs clairs et sans surprise. Site vitrine 990€, Pack visibilité 1 490€, maintenance 50€/mois. Livraison en 48h garantie.",
+    "Tarifs clairs et sans surprise. Site vitrine 500€, Pack visibilité 990€, maintenance 50€/mois. Livraison en 48h garantie.",
 };
 
 const vitrineFeatures = [
@@ -100,7 +100,7 @@ export default function TarifsPage() {
               <div className="t-card">
                 <div className="t-card-name">Site vitrine</div>
                 <div className="t-card-price">
-                  <span className="t-card-amount">990</span>
+                  <span className="t-card-amount">500</span>
                   <span className="t-card-currency">€</span>
                 </div>
                 <p className="t-card-desc">Paiement unique. Prix fixe. Aucun frais caché.</p>
@@ -298,7 +298,7 @@ export default function TarifsPage() {
                 </div>
                 <div className="pourquoi-stat">
                   <div className="pourquoi-stat-val">
-                    <AnimatedCounter to={990} suffix="€" />
+                    <AnimatedCounter to={500} suffix="€" />
                   </div>
                   <div className="pourquoi-stat-label">À partir de</div>
                 </div>
